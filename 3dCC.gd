@@ -199,7 +199,7 @@ func _process_movement(delta):
 		elif turn_boost > 1.01:
 			velocity = Vector3(velocity.x, velocity.y + ((Vector3(velocity.x, 0, velocity.z).dot(collision.normal)) * - 2) , velocity.z)
 		else:
-			velocity = velocity
+				velocity = velocity
 
 func _update_hud():
 	var cursor_object = $UpperCollider/Camera/RayCast.get_collider()

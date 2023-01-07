@@ -21,6 +21,7 @@ var c = 0
 var timer = 0
 var object_look_at
 
+var countedyet=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pathnode.curve=curv;
@@ -47,13 +48,22 @@ func _process(delta):
 		head.rotation.z*=-1
 		if rayc.is_colliding():
 			if rayc.get_collider().is_in_group("player"):
+				if countedyet == 0:
+					global.seenby = global.seenby + 1
+					countedyet = 1
 				global.bar += delta;
-				print(global.bar)
 				var farness = head.global_translation.distance_to(rayc.get_collision_point())
-				if global.bar >= 1:
+				if global.bar >= 1 or farness <= 10:
+					global.bar = 1
 					global.spotted = true
-	if playerbox == 0 and global.bar > 0:
-		global.bar -= delta / 2
+			else:
+				if countedyet == 1:
+					global.seenby = global.seenby - 1
+					countedyet = 0
+	if global.seenby == 0 and global.bar > 0:
+		global.bar -= delta/6
+		if global.bar < 0:
+			global.bar = 0
 		
 	
 func _on_Vision_area_entered(area):
@@ -63,4 +73,8 @@ func _on_Vision_area_entered(area):
 
 func _on_Vision_area_exited(area):
 	if area.is_in_group("player"):
+		if countedyet == 1:
+			global.seenby = global.seenby - 1
+			print (global.seenby)
+			countedyet = 0;
 		playerbox = 0

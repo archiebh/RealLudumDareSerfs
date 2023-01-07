@@ -157,7 +157,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38015, 0, 0 )
 curve = SubResource( 18 )
 
 [node name="PathFollow" type="PathFollow" parent="Guards/TempPaths/Path"]
-transform = Transform( -0.123533, 0, -0.992339, 0, 1, 0, 0.992339, 0, -0.123533, -0.549449, 0, -4.13795 )
+transform = Transform( -0.123533, 0, -0.992339, 0, 1, 0, 0.992339, 0, -0.123533, -20.1972, 0, -29.5802 )
 offset = 35.2066
 
 [node name="Obstructors" type="Spatial" parent="."]

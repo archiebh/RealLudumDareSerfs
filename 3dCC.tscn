@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
 [ext_resource path="res://Working Textures/comphair.png" type="Texture" id=3]
 [ext_resource path="res://Working Textures/leafs.png" type="Texture" id=4]
 [ext_resource path="res://Visible HUD.gd" type="Script" id=5]
+[ext_resource path="res://Real Textures/Wheat.png" type="Texture" id=6]
+[ext_resource path="res://Real Textures/meter.png" type="Texture" id=7]
 
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.469099
@@ -13,6 +15,8 @@ height = 1.09348
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 height = 0.5
+
+[sub_resource type="Theme" id=5]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.31452, 0.328562, 0.99339 )
@@ -69,6 +73,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
 [node name="Hidden" type="Sprite" parent="HUD"]
+visible = false
 position = Vector2( 959, 538.5 )
 scale = Vector2( 1.00729, 1.00648 )
 texture = ExtResource( 4 )
@@ -79,6 +84,25 @@ margin_left = 730.0
 margin_top = 257.0
 margin_right = 1222.0
 margin_bottom = 478.0
+
+[node name="Sprite" type="Sprite" parent="HUD"]
+position = Vector2( 92, 961 )
+scale = Vector2( 0.18925, 0.18925 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+margin_left = 878.32
+margin_top = 585.012
+margin_right = 1078.32
+margin_bottom = 625.012
+rect_min_size = Vector2( 0, 40 )
+theme = SubResource( 5 )
+color = Color( 1, 0.0745098, 0.0745098, 1 )
+
+[node name="Meter" type="Sprite" parent="HUD"]
+position = Vector2( 969, 617.006 )
+scale = Vector2( 0.27, 0.330012 )
+texture = ExtResource( 7 )
 
 [node name="BushGetter" type="Area" parent="." groups=["player"]]
 

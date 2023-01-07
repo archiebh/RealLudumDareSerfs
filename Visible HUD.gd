@@ -6,8 +6,16 @@ extends Control
 # var b = "text"
 onready var leafs = $Hidden
 onready var label = $RichTextLabel
+onready var rect = $ColorRect
+onready var meter = $Meter
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	if global.bar >= 0:
+		if rect.rect_size.x <= 200:
+			meter.visible = true
+			rect.rect_size.x = global.bar*200
+		if rect.rect_size.x == 0:
+			meter.visible = false
 	if global.hidden == true:
 		leafs.visible = true
 	else:

@@ -7,6 +7,7 @@ var spotted = false
 var playerhead = Vector3()
 var wheat = 0
 var bar = 0
+var seenby = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
