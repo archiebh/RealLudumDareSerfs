@@ -1,0 +1,171 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
+[ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=4]
+[ext_resource path="res://Working Textures/tree.png" type="Texture" id=5]
+[ext_resource path="res://Working Textures/fence.png" type="Texture" id=6]
+[ext_resource path="res://Working Textures/wheat.jpeg" type="Texture" id=7]
+[ext_resource path="res://Working Textures/straw.jpg" type="Texture" id=8]
+[ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 8 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203217, 3.8147e-06, 0.260124 )
+use_collision = true
+width = 50.0
+height = 1.0
+depth = 50.0
+material = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.5723, 3.66422, 0 )
+
+[node name="Bush" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74692, 0.140996, 4.25137 )
+
+[node name="Bush2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95579, -0.0938621, -8.03282 )
+
+[node name="Bush3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226503, -0.0938621, 6.62749 )
+
+[node name="Tree" type="Sprite3D" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.02881, 7.21664, 22.0846 )
+billboard = 2
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="fence" type="Spatial" parent="."]
+
+[node name="Fence" type="Sprite3D" parent="fence"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.12874, 0.815202, 1.34353 )
+texture = ExtResource( 6 )
+
+[node name="Fence2" type="Sprite3D" parent="fence"]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 4.11047, 0.815202, -0.615817 )
+texture = ExtResource( 6 )
+
+[node name="Fence3" type="Sprite3D" parent="fence"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.12874, 0.815202, -2.59022 )
+texture = ExtResource( 6 )
+
+[node name="CSGSphere" type="CSGSphere" parent="fence"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96096, 0, -0.585216 )
+radius = 2.01061
+material = SubResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="fence"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12639, 1.3783, -0.758301 )
+visible = false
+use_collision = true
+width = 4.45233
+height = 2.45024
+depth = 4.60509
+
+[node name="House" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.244, 0, 0, 0, 1, 6.01443, 1.91775, -9.80812 )
+
+[node name="CSGBox2" type="CSGBox" parent="House"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = SubResource( 5 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="House"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = SubResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="House"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
+texture = ExtResource( 9 )
+
+[node name="Tree2" type="Sprite3D" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.774, 7.21664, -14.7592 )
+billboard = 2
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Tree3" type="Sprite3D" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.09, 7.21664, 8.97081 )
+billboard = 2
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Tree3" type="Sprite3D" parent="Tree3"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.56157, -6.90646, -26.5769 )
+billboard = 2
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree3/Tree3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="House2" type="CSGCombiner" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1.244, 0, 0.707107, 0, 0.707107, 4.19738, 1.95202, 7.78442 )
+
+[node name="CSGBox2" type="CSGBox" parent="House2"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = SubResource( 5 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="House2"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = SubResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="House2"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
+texture = ExtResource( 9 )
