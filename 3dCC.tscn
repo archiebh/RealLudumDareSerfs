@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
 [ext_resource path="res://Working Textures/comphair.png" type="Texture" id=3]
+[ext_resource path="res://Working Textures/leafs.png" type="Texture" id=4]
+[ext_resource path="res://Visible HUD.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -42,6 +44,7 @@ shape = SubResource( 1 )
 [node name="HUD" type="Control" parent="."]
 margin_right = 1922.0
 margin_bottom = 1071.0
+script = ExtResource( 5 )
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 visible = false
@@ -51,10 +54,21 @@ margin_top = -1.0
 margin_right = 1918.0
 margin_bottom = 1079.0
 
-[node name="Sprite" type="Sprite" parent="HUD"]
+[node name="CrossHair" type="Sprite" parent="HUD"]
 position = Vector2( 969, 511 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
+
+[node name="Hidden" type="Sprite" parent="HUD"]
+position = Vector2( 959, 538.5 )
+scale = Vector2( 1.00729, 1.00648 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
+margin_left = 730.0
+margin_top = 257.0
+margin_right = 1222.0
+margin_bottom = 478.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553719, -0.824122 )
@@ -65,3 +79,6 @@ shape = SubResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="BushGetter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105966, -0.26245, 0 )
 shape = SubResource( 3 )
+
+[connection signal="area_entered" from="BushGetter" to="." method="_on_BushGetter_area_entered"]
+[connection signal="area_exited" from="BushGetter" to="." method="_on_BushGetter_area_exited"]
