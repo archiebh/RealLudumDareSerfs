@@ -1,0 +1,451 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Working Textures/brick.jpg" type="Texture" id=5]
+[ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[sub_resource type="Curve3D" id=8]
+_data = {
+"points": PoolVector3Array( -1.3756, 0, -0.152564, 1.3756, 0, 0.152564, -99.6613, 0, 14.6351, 0, 0, 0, 0, 0, 0, -97.0411, 0, 12.6984, 0, 0, 0, 0, 0, 0, -83.2565, 0, -10.4278, 1.36707, 0, 1.13922, -1.36707, 0, -1.13922, -83.8261, 0, -13.2758, 0, 0, 0, 0, 0, 0, -87.5855, 0, -14.0733, 0, 0, 0, 0, 0, 0, -108.319, 0, -13.2758, 0.683533, 0, -1.48099, -0.683533, 0, 1.48099, -111.281, 0, -11.7949, 0, 0, 0, 0, 0, 0, -110.598, 0, -8.37719, 0, 0, 0, 0, 0, 0, -101.94, 0, 12.3566, -0.717049, 0, 0.152564, 0.717049, 0, -0.152564, -99.6613, 0, 14.6351 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 5 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0257, 3.8147e-06, 0.260124 )
+use_collision = true
+width = 150.0
+height = 0.284833
+depth = 100.0
+material = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.671, 3.66422, 0 )
+
+[node name="Wheatfield" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -109.341, 0, -6.71536 )
+
+[node name="Wheat" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Guards" type="Spatial" parent="."]
+
+[node name="Man1" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 8 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="TempPaths" type="Spatial" parent="Guards"]
+
+[node name="Path1" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 8 )
+
+[node name="Obstructors" type="Spatial" parent="."]
+
+[node name="CSGBox2" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.877062, 0, -0.480377, 0, 1.244, 0, 0.480377, 0, 0.877062, -117.138, 1.32978, -5.72617 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="Wheatfield2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.4506, 0, -40.5409 )
+
+[node name="Wheat" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Wheatfield3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5345, 0, 17.4977 )
+
+[node name="Wheat" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Wheatfield4" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.6168, 0, 18.503 )
+
+[node name="Wheat" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Wheatfield5" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0013, 0, -22.5998 )
+
+[node name="Wheat" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Wheatfield6" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08876, 0, -40.2331 )
+
+[node name="Wheat" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81128, 0.402928, 12.7888 )
+
+[node name="Wheat2" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 14.9485 )
+
+[node name="Wheat3" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 17.1181 )
+
+[node name="Wheat4" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 19.238 )
+
+[node name="Wheat5" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76215, 0.37668, 21.1972 )
+
+[node name="Wheat6" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50514, 0.402928, 12.7888 )
+
+[node name="Wheat7" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 14.9485 )
+
+[node name="Wheat8" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 17.1181 )
+
+[node name="Wheat9" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 19.238 )
+
+[node name="Wheat10" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45601, 0.37668, 21.1972 )
+
+[node name="Wheat11" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30898, 0.402928, 12.7888 )
+
+[node name="Wheat12" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 14.9485 )
+
+[node name="Wheat13" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 17.1181 )
+
+[node name="Wheat14" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 19.238 )
+
+[node name="Wheat15" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25985, 0.37668, 21.1972 )
+
+[node name="Wheat16" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0028, 0.402928, 12.7888 )
+
+[node name="Wheat17" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 14.9485 )
+
+[node name="Wheat18" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 17.1181 )
+
+[node name="Wheat19" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 19.238 )
+
+[node name="Wheat20" parent="Wheatfield6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
+
+[node name="Bushes" type="Spatial" parent="."]
+
+[node name="Bush" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.116, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.431, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.431, -0.0938583, -4.88605 )
