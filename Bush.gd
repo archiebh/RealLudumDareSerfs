@@ -19,11 +19,11 @@ func _ready():
 func _on_Bush_area_entered(area):
 	if global.crouching == true:
 		if area.is_in_group("player"):
-			sprite.visible = false
+			sprite.opacity = 0.5
 	pass # Replace with function body.
 
 
 func _on_Bush_area_exited(area):
 	if area.is_in_group("player"):
-		sprite.visible = true
+		sprite.opacity = 1
 	pass # Replace with function body.

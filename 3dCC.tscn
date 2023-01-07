@@ -15,7 +15,7 @@ radius = 0.5
 height = 0.5
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.303744, 0.477056, 0.231172 )
+extents = Vector3( 0.31452, 0.328562, 0.99339 )
 
 [node name="3dCC" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -84,6 +84,12 @@ margin_bottom = 478.0
 
 [node name="CollisionShape" type="CollisionShape" parent="BushGetter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105966, -0.26245, 0 )
+shape = SubResource( 3 )
+
+[node name="Hands" type="Area" parent="." groups=["hands"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Hands"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0448797, 0.514401, -1.00099 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="BushGetter" to="." method="_on_BushGetter_area_entered"]
