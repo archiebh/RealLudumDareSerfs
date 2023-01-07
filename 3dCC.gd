@@ -16,9 +16,13 @@ export var max_climb_angle = .6
 export var angle_of_freedom = 80
 export var boost_accumulation_speed = 1
 export var max_boost_multiplier = 2
+onready var BushGetter = $BushGetter
+var inbush = false
+var bushcount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	BushGetter.monitorable = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Tween.connect("tween_all_completed", self, "_on_tween_all_completed")
 
@@ -39,6 +43,8 @@ func _input(event):
 		camera_rot.x = clamp(camera_rot.x, 90 + angle_of_freedom * -1, 90 + angle_of_freedom)
 		$UpperCollider/Camera.rotation_degrees = camera_rot
 
+func _process(delta):
+	global.bushcount = bushcount
 
 var inbetween = false
 func _on_tween_all_completed():
@@ -54,6 +60,10 @@ var crouch_floor = false #true if started crouching on the floor
 var input_dir = Vector3(0, 0, 0)
 func _process_input(delta):
 	# Toggle mouse capture
+	if bushcount > 0 and crouching == true:
+		global.hidden = true
+	else:
+		global.hidden = false
 	if Input.is_action_just_pressed("ui_cancel"):
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -71,6 +81,7 @@ func _process_input(delta):
 			crouch_floor = true
 		crouching = true
 		global.crouching = true
+		BushGetter.monitorable = true
 		$Tween.interpolate_property($LowerCollider, "translation", 
 				Vector3(0, -.25, 0), Vector3(0,.25, 0), .1, Tween.TRANS_LINEAR)
 		$Tween.start()
@@ -79,6 +90,7 @@ func _process_input(delta):
 	if Input.is_action_just_released("crouch"):
 		crouching = false
 		global.crouching = false
+		BushGetter.monitorable = false
 		$Tween.interpolate_property($LowerCollider, "translation", 
 				Vector3(0, .25, 0), Vector3(0, -.25, 0), .1, Tween.TRANS_LINEAR)
 		$Tween.start()
@@ -199,3 +211,15 @@ func _update_hud():
 	
 	$HUD/Crosshair.material.set_shader_param("spread", velocity.length()/4 + 1)
 		
+
+
+func _on_BushGetter_area_entered(area):
+	if area.is_in_group("bush"):
+		bushcount = bushcount + 1
+	pass # Replace with function body.
+
+
+func _on_BushGetter_area_exited(area):
+	if area.is_in_group("bush"):
+		bushcount = bushcount - 1
+	pass # Replace with function body.

@@ -4,13 +4,14 @@
 [ext_resource path="res://Bush.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=2]
-radius = 1.73698
+radius = 1.0111
 
 [node name="Bush" type="Area" groups=["bush"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1275 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996023, 0 )
 shape = SubResource( 2 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
