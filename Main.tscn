@@ -29,7 +29,7 @@ mesh = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66422, 0 )
 
-[node name="Area" type="Area" parent="."]
+[node name="Area" type="Area" parent="." groups=["bush"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1275 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
