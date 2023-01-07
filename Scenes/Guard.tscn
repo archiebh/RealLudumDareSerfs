@@ -12,7 +12,7 @@ _data = {
 }
 
 [sub_resource type="ConvexPolygonShape" id=3]
-points = PoolVector3Array( 0, 0, 0, 2, 5, -3, 2, 5, 3, 2, -5, -3, 2, -5, 3, 20, 13, -5, 20, -13, -5, 20, 13, 5, 20, -13, 5 )
+points = PoolVector3Array( 0, 0, 0, 4, 5, -4, 4, 5, 4, 4, -5, -4, 4, -5, 4, 17, 17, -5, 17, -17, -5, 17, 17, 5, 17, -17, 5, 20, 10, -5, 20, -10, -5, 20, 10, 5, 20, -10, 5 )
 
 [node name="Man" type="MeshInstance"]
 mesh = SubResource( 6 )
@@ -26,12 +26,12 @@ curve = SubResource( 1 )
 rotation_mode = 4
 
 [node name="Vision" type="Area" parent="." groups=["guardvision"]]
-transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+transform = Transform( -1.96158e-08, -0.448757, 1.96158e-08, 0, -3.0598e-08, -0.7, 0.708619, -3.09747e-08, 1.35395e-15, 0, 0, 0 )
 collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Vision"]
-transform = Transform( 1, 0, 0, 0, 1.359, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, -3.55271e-15, 2.11758e-22, 0, 1.359, -3.55271e-15, 2.11758e-22, 3.55271e-15, 1, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="Head" type="Spatial" parent="."]
@@ -52,13 +52,14 @@ width = 0.2
 height = 0.2
 depth = 20.0
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.304706, 0, 1.94288 )
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( -1, -2.63307e-08, 8.33633e-08, 0, 0.953565, 0.301188, -8.74228e-08, 0.301188, -0.953565, 0, 0.205, -0.53 )
 light_color = Color( 0.843137, 0.721569, 0.298039, 1 )
-light_energy = 4.523
-shadow_enabled = true
-omni_range = 5.49
-omni_attenuation = 0.5
+light_energy = 12.771
+spot_range = 16.0
+spot_attenuation = 3.73213
+spot_angle = 42.62
+spot_angle_attenuation = 3.13833
 
 [connection signal="area_entered" from="Vision" to="." method="_on_Vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_Vision_area_exited"]
