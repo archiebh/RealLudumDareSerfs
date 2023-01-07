@@ -41,18 +41,16 @@ func _process(delta):
 	rotation.y=follownode.rotation.y
 	rotation.z=follownode.rotation.z
 	if playerbox == 1 and not global.hidden:
-		print(object_look_at.global_translation)
 		head.look_at(object_look_at.global_translation, Vector3.UP)
 		head.rotation.z*=-1
-		print(rayc.cast_to)
 		if rayc.is_colliding():
+			print(rayc.get_collider().name)
 			if rayc.get_collider().is_in_group("player"):
 				global.spotted = true
 	
 func _on_Vision_area_entered(area):
 	if area.is_in_group("player"):
 		object_look_at = area
-		print("SMELL")
 		playerbox = 1
 
 func _on_Vision_area_exited(area):

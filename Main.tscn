@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
-[ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -11,12 +10,6 @@ uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
 
 [sub_resource type="CapsuleMesh" id=1]
-
-[sub_resource type="Curve3D" id=4]
-_data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -14.0954, 0, -15.6968, 0, 0, 0, 0, 0, 0, 18.4159, 0, -16.2573, 0, 0, 0, 0, 0, 0, -3.71022, 0, 15.0895, 0, 0, 0, 0, 0, 0, -13.7217, 0, 21.2988, 0, 0, 0, 0, 0, 0, -14.0954, 0, -15.6968 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
-}
 
 [node name="Spatial" type="Spatial"]
 
@@ -44,13 +37,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314791, -0.0938621, 12.1193
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314791, -0.0938621, 10.9218 )
 
-[node name="Man" parent="." instance=ExtResource( 4 )]
-curv = SubResource( 4 )
-speed = 1.0
-y_offset = 1.5
-stopcount = 2
-stops = [ 0.25, 0.75 ]
-times = [ 2.0, 2.0 ]
-
-[node name="Path" type="Path" parent="."]
-curve = SubResource( 4 )
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 0.877062, 0, -0.480377, 0, 1.244, 0, 0.480377, 0, 0.877062, 6.01443, 1.32978, 9.59308 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702

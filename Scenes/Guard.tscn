@@ -27,6 +27,8 @@ rotation_mode = 4
 
 [node name="Vision" type="Area" parent="." groups=["guardvision"]]
 transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Vision"]
 transform = Transform( 1, 0, 0, 0, 1.359, 0, 0, 0, 1, 0, 0, 0 )
@@ -39,6 +41,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27309, 0.383514 )
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.773586, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, 30 )
+collision_mask = 8
 collide_with_areas = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 debug_shape_thickness = 5
