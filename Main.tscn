@@ -1,8 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
-width = 14.0378
+width = 100.0
 height = 0.284833
-depth = 14.4512
+depth = 100.0
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
