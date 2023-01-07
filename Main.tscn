@@ -1,3 +1,8 @@
 [gd_scene format=2]
 
 [node name="Spatial" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 14.0378
+height = 0.284833
+depth = 14.4512
