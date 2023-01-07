@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -6,31 +6,93 @@
 [ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Working Textures/brick.jpg" type="Texture" id=5]
 [ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Working Textures/bush2.png" type="Texture" id=7]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
 
+[sub_resource type="Curve3D" id=9]
+_data = {
+"points": PoolVector3Array( -3.28562, 0, -0.788549, 3.28562, 0, 0.788549, -101.099, 0, 17.1543, 0, 0, 0, 0, 0, 0, -84, 0, -7, 3.41705, 0, 1.18282, -3.41705, 0, -1.18282, -87, 0, -10, 0, 0, 0, 0, 0, 0, -109, 0, -11, 0.525696, 0, -4.20559, -0.525696, 0, 4.20559, -113, 0, -8, -1.98425, 0, -2.31418, 1.98425, 0, 2.31418, -107, 0, 15, 0, 0, 0, 0, 0, 0, -101.099, 0, 17.1543 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
+}
+
 [sub_resource type="Curve3D" id=8]
 _data = {
-"points": PoolVector3Array( -1.3756, 0, -0.152564, 1.3756, 0, 0.152564, -99.6613, 0, 14.6351, 0, 0, 0, 0, 0, 0, -97.0411, 0, 12.6984, 0, 0, 0, 0, 0, 0, -83.2565, 0, -10.4278, 1.36707, 0, 1.13922, -1.36707, 0, -1.13922, -83.8261, 0, -13.2758, 0, 0, 0, 0, 0, 0, -87.5855, 0, -14.0733, 0, 0, 0, 0, 0, 0, -108.319, 0, -13.2758, 0.683533, 0, -1.48099, -0.683533, 0, 1.48099, -111.281, 0, -11.7949, 0, 0, 0, 0, 0, 0, -110.598, 0, -8.37719, 0, 0, 0, 0, 0, 0, -101.94, 0, 12.3566, -0.717049, 0, 0.152564, 0.717049, 0, -0.152564, -99.6613, 0, 14.6351 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -63.5136, 0, 43.577, 0, 0, 0, 0, 0, 0, -48.1061, 0, 43.7444, 0.105534, 0, 1.42474, -0.105534, 0, -1.42474, -46.8219, 0, 42.4048, 0, 0, 0, 0, 0, 0, -47.0858, 0, 29.0544, -1.10813, 0, 0.105536, 1.10813, 0, -0.105536, -46.0304, 0, 27.4714, 0, 0, 0, 0, 0, 0, -34.5797, 0, 27.2603, 0, 0, -1.21366, 0, 0, 1.21366, -33.1022, 0, 28.4212, 0, 0, 0, 0, 0, 0, -32.8384, 0, 42.352, 1.58304, 0, -0.0527687, -1.58304, 0, 0.0527687, -34.2631, 0, 44.0406, 0, 0, 0, 0, 0, 0, -49.3548, 0, 42.9852, -0.105534, 0, 1.42474, 0.105534, 0, -1.42474, -50.7795, 0, 41.5077, 0, 0, 0, 0, 0, 0, -49.4076, 0, 29.846, 1.74134, 0, 0.211073, -1.74134, 0, -0.211073, -50.4629, 0, 27.5769, 0, 0, 0, 0, 0, 0, -61.5442, 0, 27.1548, 0.527679, 0, -1.58304, -0.527679, 0, 1.58304, -63.5494, 0, 28.7378, -0.211075, 0, -1.00259, 0.211075, 0, 1.00259, -64.8158, 0, 41.9298, 0, 0, 0, 0, 0, 0, -63.5136, 0, 43.577 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=10]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -71.2692, 0, -24.01, 0, 0, 0, 0, 0, 0, -19.5163, 0, -24.01, 2.58084, 0, 1.63001, -2.58084, 0, -1.63001, -19.5163, 0, -26.8625, 0, 0, 0, 0, 0, 0, -70.4542, 0, -27.4058, 0.679169, 0, -1.08667, -0.679169, 0, 1.08667, -72.3398, 0, -26.3041, 0, 0, 0, 0, 0, 0, -71.2692, 0, -24.01 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=11]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -14.9915, 0, 11.3841, 0, 0, 0, 0, 0, 0, -22.7333, 0, 3.97633, 2.5, 0, -1, -2.5, 0, 1, -27.2318, 0, 3.0927, 0, 0, 0, 0, 0, 0, -30.5451, 0, 6.32453, 0, 0, 0, 0, 0, 0, -39.7102, 0, 23.2521, 0, 0, 0, 0, 0, 0, -53.2025, 0, 1.70186, -2, 0, -0.6, 2, 0, 0.6, -51.5714, 0, -0.452672, 0, 0, 0, 0, 0, 0, -45.3731, 0, 1.33795, 0, 0, 0, 0, 0, 0, -36.5577, 0, 1.20021, -1.1, 0, 1.9, 1.1, 0, -1.9, -33.2519, 0, -0.521543, 0, 0, 0, 0, 0, 0, -23.7639, 0, -13.668, -2.6, 0, -0.2, 2.6, 0, 0.2, -18.7366, 0, -14.9795, 0, 0, 0, 0, 0, 0, -12.5072, 0, -3.28566, 3, 0, -0.7, -3, 0, 0.7, -14.5837, 0, 1.19515, 0, 0, 0, 0, 0, 0, -19.2191, 0, 6.37662, -0.4, 0, -0.7, 0.4, 0, 0.7, -19.266, 0, 7.80692, 0, 0, 0, 0, 0, 0, -14.9915, 0, 11.3841 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=12]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -7.53581, 0, -14.6857, 0, 0, 0, 0, 0, 0, 19.3491, 0, -14.6857, 0, 0, 0, 0, 0, 0, -7.53581, 0, -14.6857 ),
+"tilts": PoolRealArray( 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=13]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -0.65291, 0, -63.1359, 0, 0, 0, 0, 0, 0, -1.52722, 0, -40.404, -2.7, 0, -0.2, 2.7, 0, 0.2, 0.877119, 0, -37.4532, 0, 0, 0, 0, 0, 0, 15.3031, 0, -37.3439, -0.1, 0, 1.6, 0.1, 0, -1.6, 17.3796, 0, -39.3111, 0, 0, 0, 0, 0, 0, 15.4124, 0, -41.4969, 2.3, 0, -0.1, -2.3, 0, 0.1, -4.04085, 0, -42.2619, 0, 0, 0, 0, 0, 0, -6.66376, 0, -45.2127, 0, 0, 0, 0, 0, 0, -4.15172, 0, -63.1073, -1.4, 0, 0.1, 1.4, 0, -0.1, -2.49884, 0, -64.5536, 0, 0, 0, 0, 0, 0, -0.65291, 0, -63.1359 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 5 )
 uv1_triplanar = true
 
+[sub_resource type="PlaneMesh" id=14]
+size = Vector2( 9.512, 3.311 )
+
 [node name="Spatial" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0257, 3.8147e-06, 0.260124 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.026, -2.34004, 5 )
 use_collision = true
 width = 150.0
-height = 0.284833
-depth = 100.0
+height = 5.0
+depth = 90.0
 material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGBox"]
+transform = Transform( -1.13133e-08, -0.258819, 0.965926, 1, -4.37114e-08, 0, 4.2222e-08, 0.965926, 0.258819, -15.974, 5.34004, -5 )
+operation = 2
+radius = 3.395
+height = 30.671
+sides = 10
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="CSGBox"]
+transform = Transform( -1.77636e-15, -2.98023e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, 2.98023e-08, -19.7664, 5.34004, 24.044 )
+operation = 2
+radius = 3.395
+height = 30.671
+sides = 10
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="CSGBox"]
+transform = Transform( -3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, -29.9565, 5.34004, 49.044 )
+operation = 2
+radius = 3.395
+height = 30.671
+sides = 10
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="CSGBox"]
+transform = Transform( -2.18557e-08, -0.5, 0.866025, 1, -4.37114e-08, 0, 3.78552e-08, 0.866025, 0.5, -4.55619, 5.34004, -32.4618 )
+operation = 2
+radius = 3.395
+height = 30.671
+sides = 10
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.671, 3.66422, 0 )
@@ -101,7 +163,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95371, 0.37668, 21.1972 )
 [node name="Guards" type="Spatial" parent="."]
 
 [node name="Man1" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 9 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="Man2" parent="Guards" instance=ExtResource( 6 )]
 curv = SubResource( 8 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="Man3" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 10 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="Man4" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 11 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="Man5" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 12 )
+speed = 0.6
+y_offset = 2.0
+stopcount = 2
+stops = [ 0.5, 0.6 ]
+times = [ 2.0, 0.0 ]
+
+[node name="Man6" parent="Guards" instance=ExtResource( 6 )]
+curv = SubResource( 13 )
 speed = 0.6
 y_offset = 2.0
 stopcount = 2
@@ -111,7 +213,22 @@ times = [ 2.0, 0.0 ]
 [node name="TempPaths" type="Spatial" parent="Guards"]
 
 [node name="Path1" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 9 )
+
+[node name="Path2" type="Path" parent="Guards/TempPaths"]
 curve = SubResource( 8 )
+
+[node name="Path3" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 10 )
+
+[node name="Path4" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 11 )
+
+[node name="Path5" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 12 )
+
+[node name="Path6" type="Path" parent="Guards/TempPaths"]
+curve = SubResource( 13 )
 
 [node name="Obstructors" type="Spatial" parent="."]
 
@@ -121,6 +238,160 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="Obstructors"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.0041, 5, 30.676 )
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.877062, 0, -0.480377, 0, 1.244, 0, 0.480377, 0, 0.877062, -50.1384, 1.32978, -11.7262 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.0225123, 0, -0.999746, 0, 1.244, 0, 0.999746, 0, 0.0225123, -25.1384, 1.32978, 8.27383 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox5" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.0225123, 0, -0.999746, 0, 1.244, 0, 0.999746, 0, 0.0225123, -25.1384, 1.32978, 15.2738 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox6" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.480377, 0, -0.877062, 0, 1.244, 0, 0.877062, 0, -0.480377, -25.1384, 1.32978, 22.2738 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox7" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -15.0041, 5, 11.676 )
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox8" type="CSGBox" parent="Obstructors"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9959, 5, -51.324 )
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox8"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox8"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox9" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -16.0041, 5, -51.324 )
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox9"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox9"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox10" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -16.0041, 5, -67.324 )
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox10"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox10"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox12" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.7, 0, -3.0598e-08, 4.37114e-08, 2.37689e-15, 1, 0, -1.244, 1.91069e-15, -56.6671, -0.225046, -23.7262 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 8.0
+depth = 0.807702
+material = SubResource( 4 )
+
+[node name="CSGBox13" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.7, 0, -3.0598e-08, 4.37114e-08, 2.37689e-15, 1, 0, -1.244, 1.91069e-15, -54.6671, -0.225046, -27.7262 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 9.42397
 depth = 0.807702
 material = SubResource( 4 )
 
@@ -449,3 +720,259 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.431, -0.0938583, -3.68855
 
 [node name="Bush3" parent="Bushes" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.431, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.116, 3.8147e-06, 2.31965 )
+
+[node name="Bush5" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.431, -0.0938583, 1.31145 )
+
+[node name="Bush6" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.431, -0.0938583, 0.113954 )
+
+[node name="Bush7" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.1161, 3.8147e-06, 18.3197 )
+
+[node name="Bush8" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.4309, -0.0938583, 17.3115 )
+
+[node name="Bush9" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.4309, -0.0938583, 16.114 )
+
+[node name="Bush10" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.1161, 3.8147e-06, -13.6803 )
+
+[node name="Bush11" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.4309, -0.0938583, -14.6885 )
+
+[node name="Bush12" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.4309, -0.0938583, -15.886 )
+
+[node name="Bush13" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.1161, 3.8147e-06, 17.3197 )
+
+[node name="Bush14" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.4309, -0.0938583, 16.3115 )
+
+[node name="Bush15" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.4309, -0.0938583, 15.114 )
+
+[node name="Bush16" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.1161, 3.8147e-06, -2.68035 )
+
+[node name="Bush17" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4309, -0.0938583, -3.68855 )
+
+[node name="Bush18" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4309, -0.0938583, -4.88605 )
+
+[node name="Bush19" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1161, 3.8147e-06, -2.68035 )
+
+[node name="Bush20" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4309, -0.0938583, -3.68855 )
+
+[node name="Bush21" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4309, -0.0938583, -4.88605 )
+
+[node name="Bush22" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.1161, 3.8147e-06, -18.6803 )
+
+[node name="Bush23" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4309, -0.0938583, -19.6885 )
+
+[node name="Bush24" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4309, -0.0938583, -20.886 )
+
+[node name="Bush25" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8839, 3.8147e-06, -39.6803 )
+
+[node name="Bush26" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56911, -0.0938583, -40.6885 )
+
+[node name="Bush27" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56911, -0.0938583, -41.886 )
+
+[node name="Bush28" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1161, 3.8147e-06, -26.6803 )
+
+[node name="Bush29" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43089, -0.0938583, -27.6885 )
+
+[node name="Bush30" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43089, -0.0938583, -28.886 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026001, -2.34004, -60 )
+use_collision = true
+width = 49.913
+height = 5.0
+depth = 40.0
+material = SubResource( 3 )
+
+[node name="Boundstuff" type="Spatial" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.3, 0, 0, 0, 2.7, 0, 0, 0, 1, -118.8, 4.5, -13 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.3, 0, 0, 0, 2.7, 0, 0, 0, 1, -108.8, 4.5, -13 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.3, 0, 0, 0, 2.7, 0, 0, 0, 1, -98.8, 4.5, -13 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -5.68248e-08, 0, 1, 0, 2.7, 0, -1.3, 0, -4.37114e-08, -92.8, 4.5, -19 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -5.68248e-08, 0, 1, 0, 2.7, 0, -1.3, 0, -4.37114e-08, -92.8, 4.5, -26 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -5.68248e-08, 0, 1, 0, 2.7, 0, -1.3, 0, -4.37114e-08, -92.8, 4.5, -34 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -1.3, 0, -8.74228e-08, 0, 2.7, 0, 1.1365e-07, 0, -1, 19.2, 4.5, 23 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D7"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -1.3, 0, -8.74228e-08, 0, 2.7, 0, 1.1365e-07, 0, -1, 9.2, 4.5, 23 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -1.3, 0, -8.74228e-08, 0, 2.7, 0, 1.1365e-07, 0, -1, -0.799996, 4.5, 23 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.70474e-07, 0, -1, 0, 2.7, 0, 1.3, 0, 1.31134e-07, -6.8, 4.5, 29 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D10"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.70474e-07, 0, -1, 0, 2.7, 0, 1.3, 0, 1.31134e-07, -6.8, 4.5, 36 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D11"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( 1.70474e-07, 0, -1, 0, 2.7, 0, 1.3, 0, 1.31134e-07, -6.8, 4.5, 44 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D12"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -0.919239, 0, -0.707107, 0, 2.7, 0, 0.919239, 0, -0.707107, 21.2711, 4.5, 4.29214 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D13"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -0.919239, 0, -0.707107, 0, 2.7, 0, 0.919239, 0, -0.707107, 14.2, 4.5, 11.3632 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D14"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
+
+[node name="Sprite3D15" type="Sprite3D" parent="Boundstuff"]
+transform = Transform( -0.919239, 0, -0.707107, 0, 2.7, 0, 0.919239, 0, -0.707107, 7.12894, 4.5, 18.4343 )
+shaded = true
+texture = ExtResource( 7 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundstuff/Sprite3D15"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+use_collision = true
+mesh = SubResource( 14 )
