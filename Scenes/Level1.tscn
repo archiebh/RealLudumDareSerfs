@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -53,12 +53,6 @@ _data = {
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -81.8962, 0, 47.7018, 0, 0, 0, 0, 0, 0, -76.1925, 0, 40.5721, 0, 0, 0, 0, 0, 0, -76.034, 0, 13.3209, 0, 0, 0, 0, 0, 0, -68.2706, 0, -16.3068, 0, 0, 0, 0, 0, 0, -55.7541, 0, -39.4387, 0, 0, 0, 0, 0, 0, -65.7356, 0, -15.5147, 0, 0, 0, 0, 0, 0, -73.1822, 0, 13.6378, 0, 0, 0, 0, 0, 0, -73.6575, 0, 41.2058, 0, 0, 0, 0, 0, 0, -81.8962, 0, 47.7018 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 )
-}
-
-[sub_resource type="Curve3D" id=16]
-_data = {
-"points": PoolVector3Array( 1.1, 0, -8, -1.1, 0, 8, -57.0216, 0, 35.1854, -3.4, 0, 3.8, 3.4, 0, -3.8, -39.5935, 0, 33.601, -2.2, 0, 4.2, 2.2, 0, -4.2, -42.2869, 0, -6.32513, 1.2, 0, 1.3, -1.2, 0, -1.3, -12.8176, 0, -23.9117, 4.5, 0, -9.1, -4.5, 0, 9.1, -79.8365, 0, -24.0701, 3.6, 0, -3.5, -3.6, 0, 3.5, -79.995, 0, 10.7861, 0.5, 0, 4.4, -0.5, 0, -4.4, -117.228, 0, 10.4692, 0, 0, 0, 0, 0, 0, -78, 0, -22, -8.9, 0, -2.7, 8.9, 0, 2.7, -11, 0, -27, 2.9, 0, -4.9, -2.9, 0, 4.9, -42.9207, 0, -10.2861, 2.4, 0, -3.8, -2.4, 0, 3.8, -42.6038, 0, 30.5907, 0, 0, 0, 0, 0, 0, -57.0216, 0, 35.1854 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -230,14 +224,6 @@ stopcount = 2
 stops = [ 0.496, 0.996 ]
 times = [ 4.0, 4.0 ]
 
-[node name="Man8" parent="Guards" instance=ExtResource( 6 )]
-curv = SubResource( 16 )
-speed = 0.2
-y_offset = 1.0
-stopcount = 10
-stops = [ 0.045, 0.134, 0.21, 0.361, 0.525, 0.64, 0.789, 0.873, 0.963, 0.999 ]
-times = [ 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 ]
-
 [node name="TempPaths" type="Spatial" parent="Guards"]
 
 [node name="Path1" type="Path" parent="Guards/TempPaths"]
@@ -260,13 +246,6 @@ curve = SubResource( 13 )
 
 [node name="Path7" type="Path" parent="Guards/TempPaths"]
 curve = SubResource( 15 )
-
-[node name="Path8" type="Path" parent="Guards/TempPaths"]
-curve = SubResource( 16 )
-
-[node name="PathFollow" type="PathFollow" parent="Guards/TempPaths/Path8"]
-transform = Transform( 0.995713, 0, -0.0923962, 0, 1, 0, 0.0923962, 0, 0.995713, -56.6607, 0, 35.1575 )
-offset = 451.647
 
 [node name="Obstructors" type="Spatial" parent="."]
 

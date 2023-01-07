@@ -46,9 +46,15 @@ func _process(delta):
 		head.look_at(object_look_at.global_translation, Vector3.UP)
 		head.rotation.z*=-1
 		if rayc.is_colliding():
-			print(rayc.get_collider().name)
 			if rayc.get_collider().is_in_group("player"):
-				global.spotted = true
+				global.bar += delta;
+				print(global.bar)
+				var farness = head.global_translation.distance_to(rayc.get_collision_point())
+				if global.bar >= 1:
+					global.spotted = true
+	if playerbox == 0 and global.bar > 0:
+		global.bar -= delta / 2
+		
 	
 func _on_Vision_area_entered(area):
 	if area.is_in_group("player"):
