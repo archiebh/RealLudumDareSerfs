@@ -60,8 +60,8 @@ texture = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553719, -0.824122 )
 shape = SubResource( 2 )
 
-[node name="Area" type="Area" parent="."]
+[node name="BushGetter" type="Area" parent="." groups=["player"]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="BushGetter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105966, -0.26245, 0 )
 shape = SubResource( 3 )

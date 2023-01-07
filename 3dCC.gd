@@ -70,6 +70,7 @@ func _process_input(delta):
 		if on_floor:
 			crouch_floor = true
 		crouching = true
+		global.crouching = true
 		$Tween.interpolate_property($LowerCollider, "translation", 
 				Vector3(0, -.25, 0), Vector3(0,.25, 0), .1, Tween.TRANS_LINEAR)
 		$Tween.start()
@@ -77,6 +78,7 @@ func _process_input(delta):
 		
 	if Input.is_action_just_released("crouch"):
 		crouching = false
+		global.crouching = false
 		$Tween.interpolate_property($LowerCollider, "translation", 
 				Vector3(0, .25, 0), Vector3(0, -.25, 0), .1, Tween.TRANS_LINEAR)
 		$Tween.start()

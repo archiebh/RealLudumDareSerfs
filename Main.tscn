@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Working Textures/967cf472265ccc4ca3944b95dc25cadf.png" type="Texture" id=2]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=3]
@@ -10,9 +10,6 @@ uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
 
 [sub_resource type="CapsuleMesh" id=1]
-
-[sub_resource type="SphereShape" id=2]
-radius = 1.73698
 
 [node name="Spatial" type="Spatial"]
 
@@ -29,13 +26,4 @@ mesh = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66422, 0 )
 
-[node name="Area" type="Area" parent="." groups=["bush"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1275 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 2 )
-
-[node name="Sprite3D" type="Sprite3D" parent="Area"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.5, -0.0129809, 1.02938, 0.0126019 )
-billboard = 2
-texture = ExtResource( 2 )
+[node name="Bush" parent="." instance=ExtResource( 2 )]
