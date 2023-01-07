@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/guardmove.gd" type="Script" id=1]
 
-[sub_resource type="CapsuleMesh" id=2]
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 1, 2, 1 )
 
 [sub_resource type="Curve3D" id=1]
 _data = {
@@ -10,9 +11,11 @@ _data = {
 "tilts": PoolRealArray(  )
 }
 
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 0, 0, 0, 2, 5, -3, 2, 5, 3, 2, -5, -3, 2, -5, 3, 20, 13, -5, 20, -13, -5, 20, 13, 5, 20, -13, 5 )
+
 [node name="Man" type="MeshInstance"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 6 )
 skeleton = NodePath("../..")
 script = ExtResource( 1 )
 
@@ -20,3 +23,31 @@ script = ExtResource( 1 )
 curve = SubResource( 1 )
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
+rotation_mode = 4
+
+[node name="Vision" type="Area" parent="." groups=["guardvision"]]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Vision"]
+transform = Transform( 1, 0, 0, 0, 1.359, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27309, 0.383514 )
+
+[node name="RayCast" type="RayCast" parent="Head"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.773586, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 30 )
+collide_with_areas = true
+debug_shape_custom_color = Color( 1, 0, 0, 1 )
+debug_shape_thickness = 5
+
+[node name="CSGBox" type="CSGBox" parent="Head/RayCast"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+width = 0.2
+height = 0.2
+depth = 20.0
+
+[connection signal="area_entered" from="Vision" to="." method="_on_Vision_area_entered"]
+[connection signal="area_exited" from="Vision" to="." method="_on_Vision_area_exited"]

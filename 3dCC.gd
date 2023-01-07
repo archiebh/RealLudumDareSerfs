@@ -17,6 +17,7 @@ export var angle_of_freedom = 80
 export var boost_accumulation_speed = 1
 export var max_boost_multiplier = 2
 onready var BushGetter = $BushGetter
+onready var head = $UpperCollider
 var inbush = false
 var bushcount = 0
 
@@ -44,6 +45,7 @@ func _input(event):
 		$UpperCollider/Camera.rotation_degrees = camera_rot
 
 func _process(delta):
+	global.playerhead = head.translation
 	global.bushcount = bushcount
 
 var inbetween = false
@@ -89,6 +91,7 @@ func _process_input(delta):
 		
 	if Input.is_action_just_released("crouch"):
 		crouching = false
+		global.hidden=false
 		global.crouching = false
 		BushGetter.monitorable = false
 		$Tween.interpolate_property($LowerCollider, "translation", 
