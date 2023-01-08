@@ -9,8 +9,7 @@ _data = {
 }
 
 [sub_resource type="CylinderShape" id=2]
-height = 0.5
-radius = 4.67
+radius = 6.3
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
