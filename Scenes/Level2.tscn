@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -60,7 +60,7 @@ uv1_triplanar = true
 background_color = Color( 0.760784, 0.760784, 0.760784, 1 )
 background_energy = 6.32
 ambient_light_color = Color( 0.737255, 0.737255, 0.737255, 1 )
-ambient_light_energy = 0.0
+ambient_light_energy = 1.44
 fog_color = Color( 0.0392157, 0.027451, 0.0627451, 1 )
 fog_sun_color = Color( 0.992157, 0.992157, 0.992157, 1 )
 fog_depth_begin = 0.0
@@ -78,6 +78,9 @@ _data = {
 
 [sub_resource type="PlaneMesh" id=19]
 size = Vector2( 9.595, 2 )
+
+[sub_resource type="PlaneMesh" id=20]
+size = Vector2( 150, 30 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -258,7 +261,6 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 8.48842
-height = 4.21903
 depth = 0.807702
 material = SubResource( 4 )
 
@@ -298,7 +300,6 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 4.0
-height = 4.21903
 depth = 0.807702
 material = SubResource( 4 )
 
@@ -1092,7 +1093,7 @@ material = ExtResource( 11 )
 
 [node name="Watchman" parent="." instance=ExtResource( 10 )]
 curv = SubResource( 13 )
-speed = 1.0
+speed = 0.3
 y_offset = 2.0
 stopcount = 2
 stops = [ 0.0, 0.5 ]
@@ -1165,7 +1166,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.116, 3.8147e-06, -2.68035
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.116, 3.8147e-06, 2.31965 )
 
 [node name="Bushe2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -171.728, 7.6294e-06, -59.9526 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0112, 7.6294e-06, -31.5189 )
 
 [node name="Bush" parent="Bushe2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -1310,6 +1311,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.116, 3.8147e-06, -2.68035
 
 [node name="Bush17" parent="Bushes6" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.116, 3.8147e-06, 2.31965 )
+
+[node name="Bush18" parent="Bushes6" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -97.1965, -0.0938583, -30.9625 )
 
 [node name="Boundary" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.603, 0, 5.07187 )
@@ -1489,3 +1493,29 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.0
 visible = false
 use_collision = true
 mesh = SubResource( 19 )
+
+[node name="World Border" type="Spatial" parent="."]
+
+[node name="CSGMesh" type="CSGMesh" parent="World Border"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -50.1416, 1.7986, -49.5946 )
+visible = false
+use_collision = true
+mesh = SubResource( 20 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="World Border"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -50.1416, 1.7986, 49.1581 )
+visible = false
+use_collision = true
+mesh = SubResource( 20 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="World Border"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 10.9627, 1.7986, 11.0934 )
+visible = false
+use_collision = true
+mesh = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="World Border/CSGMesh3"]
+transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 53.1268, 8.58307e-06, 1.09901 )
+operation = 2
+width = 6.09886
+depth = 9.57895
