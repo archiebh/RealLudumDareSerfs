@@ -1,6 +1,9 @@
 extends Area
 
 onready var glow = $Glow
+onready var wheataudio = get_tree().current_scene.get_node("SOUNDS").get_node("WheatSound")
+
+var rng = RandomNumberGenerator.new()
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -9,6 +12,7 @@ onready var glow = $Glow
 var takeable = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
 	glow.visible = 0
 	pass # Replace with function body.
 
@@ -36,4 +40,7 @@ func _on_Wheat_area_exited(area):
 	pass # Replace with function body.
 
 func took():
+	wheataudio.pitch_scale = rng.randf_range(0.85, 1.3)
+	wheataudio.play()
+	
 	queue_free()
