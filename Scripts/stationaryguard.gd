@@ -11,6 +11,15 @@ onready var rayc = $Head/RayCast
 onready var head = $Head
 var playerbox = 0
 var object_look_at
+var rng = RandomNumberGenerator.new()
+
+onready var aggrostream = $AggroPlayer
+var aggro_vox = [preload("res://Sounds/Voice/Guard/Aggro/1.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/2.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/3.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/4.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/5.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/6.mp3"),]
 
 var countedyet=0
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +47,8 @@ func _process(delta):
 				if global.bar >= 1 or farness <= 10:
 					global.bar = 1
 					global.spotted = true
+					aggrostream.stream = aggro_vox[rng.randi_range(0, 5)]
+					aggrostream.play()
 			else:
 				if countedyet == 1:
 					global.seenby = global.seenby - 1

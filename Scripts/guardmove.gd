@@ -16,10 +16,18 @@ onready var follownode = get_node("Path/PathFollow");
 onready var vision = $Vision
 onready var rayc = $Head/RayCast
 onready var head = $Head
+onready var aggrostream = $AggroPlayer
+onready var ambientstream = $AmbientPlayer
+
 var playerbox = 0
 var c = 0
 var timer = 0
 var object_look_at
+var rng = RandomNumberGenerator.new()
+
+
+var tick
+var elapsed = 0
 
 var ap = "res://Sounds/Voice/Guard/Ambient/"
 var bp = "res://Sounds/Voice/Guard/Aggro/"
@@ -35,12 +43,24 @@ preload("res://Sounds/Voice/Guard/Ambient/8.mp3"),
 preload("res://Sounds/Voice/Guard/Ambient/9.mp3"),
 preload("res://Sounds/Voice/Guard/Ambient/10.mp3"),
 preload("res://Sounds/Voice/Guard/Ambient/11.mp3"),
-preload("res://Sounds/Voice/Guard/Ambient/12.mp3"),]
-var aggro_vox = []
+preload("res://Sounds/Voice/Guard/Ambient/12.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/13.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/14.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/15.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/16.mp3")]
+
+var aggro_vox = [preload("res://Sounds/Voice/Guard/Aggro/1.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/2.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/3.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/4.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/5.mp3"),
+preload("res://Sounds/Voice/Guard/Aggro/6.mp3"),]
 
 var countedyet=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
+	tick=rng.randf_range(8.5, 19.5)
 	pathnode.curve=curv;
 	var c = 0;
 	var timer = 0;
@@ -48,6 +68,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if elapsed >= tick:
+		elapsed=0
+		tick=rng.randf_range(8.5, 19.5)
+		ambientstream.stream = ambient_vox[rng.randi_range(0, 15)]
+		ambientstream.play()
 	if global.spotted == true:
 		look_at(global.catch_pos, Vector3.UP)
 		rotation.y += deg2rad(180)
@@ -78,6 +103,9 @@ func _process(delta):
 				if global.bar >= 1 or farness <= 10:
 					global.bar = 1
 					global.spotted = true
+					ambientstream.stop()
+					aggrostream.stream = aggro_vox[rng.randi_range(0, 5)]
+					aggrostream.play()
 			else:
 				if countedyet == 1:
 					global.seenby = global.seenby - 1
@@ -86,6 +114,7 @@ func _process(delta):
 		global.bar -= delta/6
 		if global.bar < 0:
 			global.bar = 0
+	elapsed+=delta
 		
 	
 func _on_Vision_area_entered(area):
