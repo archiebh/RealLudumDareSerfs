@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=1]
 [ext_resource path="res://Working Textures/TEMPLATE 2.png" type="Texture" id=2]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=3]
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Working Textures/brick.jpg" type="Texture" id=6]
 [ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=7]
 [ext_resource path="res://Materials/Brick.tres" type="Material" id=8]
 [ext_resource path="res://Scenes/Tower.tscn" type="PackedScene" id=9]
@@ -15,14 +14,6 @@
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 6 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 6 )
 uv1_triplanar = true
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -1218,7 +1209,7 @@ collision_mask = 9
 width = 6.96977
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox2" type="CSGBox" parent="Wallhandler/CSGBox2"]
 transform = Transform( 0.480544, 0, -0.87697, 0, 1.244, 0, 0.87697, 0, 0.480544, 134.862, 1.32978, 14.9781 )
@@ -1228,7 +1219,7 @@ collision_mask = 9
 width = 15.3922
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox3" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.945785, 0, -0.324793, 0, 1.244, 0, 0.324793, 0, 0.945785, 3.24397, 1.32978, -18.6972 )
@@ -1238,7 +1229,7 @@ collision_mask = 9
 width = 24.2379
 height = 3.94987
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox4" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.25288, 0, -0.967498, 0, 1.244, 0, 0.967498, 0, 0.25288, 27.2117, 1.32978, -2.10257 )
@@ -1248,14 +1239,14 @@ collision_mask = 9
 width = 16.6732
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox4"]
 transform = Transform( 0.967556, 0.00763372, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495232, 0, -0.112875, 0 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox5" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.25288, 0, -0.967498, 0, 1.244, 0, 0.967498, 0, 0.25288, 19.6788, 1.32978, 28.5427 )
@@ -1265,14 +1256,14 @@ collision_mask = 9
 width = 14.7657
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox5"]
 transform = Transform( 0.967556, 0.00763372, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495232, 1.05199, -0.112875, -0.0392685 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox6" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.53447, 0, -0.845187, 0, 1.244, 0, 0.845187, 0, 0.53447, 37.6551, 1.32978, 22.7218 )
@@ -1282,7 +1273,7 @@ collision_mask = 9
 width = 14.7657
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox7" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.857419, 0, -0.514619, 0, 1.244, 0, 0.514619, 0, 0.857419, 35.4294, 1.32978, 47.4606 )
@@ -1292,14 +1283,14 @@ collision_mask = 9
 width = 14.7657
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox7"]
 transform = Transform( 0.967556, 0.00763357, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495233, -1.82115, -0.112875, -0.032505 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox8" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.161104, 0, -0.986937, 0, 1.244, 0, 0.986937, 0, 0.161104, 50.6679, 1.32978, 66.8921 )
@@ -1309,7 +1300,7 @@ collision_mask = 9
 width = 14.7657
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox9" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.600253, 0, 0.79981, 0, 1.244, 0, -0.79981, 0, 0.600253, 47.6047, 1.32978, 76.8739 )
@@ -1319,7 +1310,7 @@ collision_mask = 9
 width = 14.7657
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox10" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.600253, 0, 0.79981, 0, 1.244, 0, -0.79981, 0, 0.600253, 119.255, 1.32978, 49.3201 )
@@ -1329,14 +1320,14 @@ collision_mask = 9
 width = 17.6554
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox10"]
 transform = Transform( 0.967556, 0.00763372, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495232, 0, -0.112875, 0 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox11" type="CSGBox" parent="Wallhandler"]
 transform = Transform( -0.0153578, 0, 0.999882, 0, 1.244, 0, -0.999882, 0, -0.0153578, 126.663, 1.32978, 21.9513 )
@@ -1346,14 +1337,14 @@ collision_mask = 9
 width = 17.6554
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox11"]
 transform = Transform( 0.967556, 0.00763372, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495232, 0, -0.112875, 0 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox12" type="CSGBox" parent="Wallhandler"]
 transform = Transform( -0.0153578, 0, 0.999882, 0, 1.244, 0, -0.999882, 0, -0.0153578, 112.085, 1.32978, -2.61068 )
@@ -1363,7 +1354,7 @@ collision_mask = 9
 width = 17.6554
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox13" type="CSGBox" parent="Wallhandler"]
 transform = Transform( -0.999999, 0, -0.00101182, 0, 1.244, 0, 0.00101182, 0, -0.999999, 134.55, 1.32978, -15.99 )
@@ -1373,14 +1364,14 @@ collision_mask = 9
 width = 40.9048
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Wallhandler/CSGBox13"]
 transform = Transform( 0.967556, 0.00763371, 0.25258, 0.203029, -0.049582, -0.776775, 0.00659373, 1.24245, -0.0495232, -3.25342, -0.112875, -0.00329208 )
 operation = 2
 radius = 2.59599
 height = 1.40874
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox14" type="CSGBox" parent="Wallhandler"]
 transform = Transform( -0.999999, 0, -0.00101182, 0, 1.244, 0, 0.00101182, 0, -0.999999, 36.3181, 1.32978, -15.99 )
@@ -1390,7 +1381,7 @@ collision_mask = 9
 width = 12.9801
 height = 2.2062
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox15" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.0163884, 0, 0.999866, 0, 1.244, 0, -0.999866, 0, 0.0163884, 30.4633, 1.32978, -12.6228 )
@@ -1400,7 +1391,7 @@ collision_mask = 9
 width = 6.17088
 height = 2.2062
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox16" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.0163884, 0, 0.999866, 0, 1.244, 0, -0.999866, 0, 0.0163884, 42.2281, 1.32978, -12.9365 )
@@ -1410,7 +1401,7 @@ collision_mask = 9
 width = 6.17088
 height = 2.2062
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox17" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.422793, 0, 0.906226, 0, 1.244, 0, -0.906226, 0, 0.422793, 100.379, 1.32978, 83.7798 )
@@ -1420,7 +1411,7 @@ collision_mask = 9
 width = 29.0918
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="CSGBox18" type="CSGBox" parent="Wallhandler"]
 transform = Transform( 0.000156432, 0, -1, 0, 1.244, 0, 1, 0, 0.000156432, 53.6055, 1.32978, 83.7798 )
@@ -1430,7 +1421,7 @@ collision_mask = 9
 width = 14.9298
 height = 5.12833
 depth = 1.13637
-material = SubResource( 3 )
+material = ExtResource( 8 )
 
 [node name="Buildinghandler" type="Spatial" parent="."]
 
@@ -1442,7 +1433,7 @@ collision_mask = 9
 width = 28.5739
 height = 11.0189
 depth = 12.7763
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox8" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.926719, 0, -0.375756, 0, 1.244, 0, 0.375756, 0, 0.926719, -102.47, 1.32978, -40.7225 )
@@ -1452,7 +1443,7 @@ collision_mask = 9
 width = 14.9112
 height = 11.0189
 depth = 6.5221
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox9" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.256525, 0, -0.966538, 0, 1.244, 0, 0.966538, 0, 0.256525, -89.1496, 1.32978, -17.2784 )
@@ -1462,7 +1453,7 @@ collision_mask = 9
 width = 16.2398
 height = 11.0189
 depth = 7.43965
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox10" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.878675, 0, -0.47742, 0, 1.244, 0, 0.47742, 0, 0.878675, -77.8099, 1.32978, -0.245006 )
@@ -1472,7 +1463,7 @@ collision_mask = 9
 width = 12.1766
 height = 11.0189
 depth = 10.5748
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox11" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.689897, 0, -0.723907, 0, 1.244, 0, 0.723907, 0, 0.689897, -100.837, 1.32978, 14.136 )
@@ -1482,7 +1473,7 @@ collision_mask = 9
 width = 15.6781
 height = 11.0189
 depth = 13.5346
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox12" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, -77.7243, 1.32978, 27.4041 )
@@ -1492,7 +1483,7 @@ collision_mask = 9
 width = 14.4051
 height = 11.0189
 depth = 16.4043
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox13" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.639439, 0, 0.768842, 0, 1.244, 0, -0.768842, 0, 0.639439, -69.849, 1.32978, 46.6644 )
@@ -1502,7 +1493,7 @@ collision_mask = 9
 width = 10.7047
 height = 11.0189
 depth = 12.6351
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox14" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, -12.2879, 1.32978, 35.0093 )
@@ -1512,7 +1503,7 @@ collision_mask = 9
 width = 13.1324
 height = 11.0189
 depth = 17.4577
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox15" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, -15.4567, 1.32978, 2.21191 )
@@ -1522,7 +1513,7 @@ collision_mask = 9
 width = 13.1324
 height = 11.0189
 depth = 17.1425
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox16" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, 5.29915, 1.32978, 8.07425 )
@@ -1532,7 +1523,7 @@ collision_mask = 9
 width = 8.71172
 height = 11.0189
 depth = 13.5837
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox17" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, 4.43692, 1.32978, -19.7328 )
@@ -1542,7 +1533,7 @@ collision_mask = 9
 width = 8.71172
 height = 11.0189
 depth = 13.5837
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox18" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, -12.3766, 1.32978, -22.535 )
@@ -1552,7 +1543,7 @@ collision_mask = 9
 width = 8.71172
 height = 11.0189
 depth = 11.6268
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox19" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.671177, 0, -0.741297, 0, 1.244, 0, 0.741297, 0, 0.671177, -8.85747, 1.32978, -40.4242 )
@@ -1562,7 +1553,7 @@ collision_mask = 9
 width = 8.71172
 height = 11.0189
 depth = 12.3866
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="Church" type="CSGBox" parent="Buildinghandler"]
 transform = Transform( 0.999987, 0, -0.00513157, 0, 1.244, 0, 0.00513157, 0, 0.999987, -46.5403, 1.32978, 68.4604 )
@@ -1572,7 +1563,7 @@ collision_mask = 9
 width = 21.0163
 height = 23.1328
 depth = 30.3381
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="Church2" type="CSGBox" parent="Buildinghandler/Church"]
 transform = Transform( -4.37722e-08, 0, 1, 0, 1, 0, -1, 0, -4.37722e-08, 0, 0, 0 )
@@ -1582,7 +1573,7 @@ collision_mask = 9
 width = 20.4428
 height = 14.0743
 depth = 45.7687
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Buildinghandler/Church/Church2"]
 transform = Transform( -0.866029, -0.621992, -0.000687399, -0.401925, 0.866027, 0.00206253, -0.000687574, 0.00319178, -0.999997, -2.65604, 10.6722, 14.1404 )
@@ -1590,7 +1581,7 @@ operation = 2
 width = 22.1751
 height = 6.22402
 depth = 78.0174
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox2" type="CSGBox" parent="Buildinghandler/Church/Church2"]
 transform = Transform( 0.86603, 0.621992, 0.000687494, -0.401925, 0.866027, 0.00206253, 0.000687493, -0.00319184, 0.999997, 2.90738, 10.7227, 14.1119 )
@@ -1598,14 +1589,14 @@ operation = 2
 width = 22.1751
 height = 6.22402
 depth = 80.2339
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Buildinghandler/Church"]
 transform = Transform( 0.999987, -0.00567557, -2.68948e-10, 0, -4.83448e-08, 1.199, -0.00513162, -1.10599, -5.24093e-08, -0.0785942, 4.76837e-07, -15.3153 )
 operation = 2
 radius = 7.5685
 height = 1.54843
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Buildinghandler/Church"]
 transform = Transform( 0.866029, 0.621992, 0.000687493, -0.401924, 0.866027, 0.00206253, 0.000687493, -0.00319184, 0.999997, 2.8349, 14.0764, -0.0145035 )
@@ -1613,7 +1604,7 @@ operation = 2
 width = 22.1751
 height = 6.22402
 depth = 32.2065
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox2" type="CSGBox" parent="Buildinghandler/Church"]
 transform = Transform( -0.86603, -0.621992, -0.000687582, -0.401925, 0.866027, 0.00206253, -0.000687418, 0.0031919, -0.999997, -2.72858, 14.1269, 0.0140839 )
@@ -1621,21 +1612,21 @@ operation = 2
 width = 22.6887
 height = 6.22402
 depth = 32.2065
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox3" type="CSGBox" parent="Buildinghandler/Church"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0627441, 11.5273, -12.2257 )
 width = 1.431
 height = 8.64102
 depth = 1.30665
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="CSGBox4" type="CSGBox" parent="Buildinghandler/Church/CSGBox3"]
 transform = Transform( 2.62893e-05, -1.24398, 0.0051315, 0.803848, -4.37114e-08, -0.00412506, 0.0051315, 0.00638368, 0.999974, 0, 2.6027, 0 )
 width = 1.431
 height = 3.13068
 depth = 1.30665
-material = SubResource( 2 )
+material = ExtResource( 8 )
 
 [node name="Towerhandler" type="Spatial" parent="."]
 
