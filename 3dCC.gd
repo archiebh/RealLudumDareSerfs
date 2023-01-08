@@ -61,6 +61,9 @@ var crouching = false
 var crouch_floor = false #true if started crouching on the floor
 var input_dir = Vector3(0, 0, 0)
 func _process_input(delta):
+	if global.spotted == true:
+		move_speed = 0
+		global.catch_pos = global_translation
 	# Toggle mouse capture
 	if bushcount > 0 and crouching == true:
 		global.hidden = true

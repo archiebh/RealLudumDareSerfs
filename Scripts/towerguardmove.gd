@@ -26,6 +26,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if global.spotted == true:
+		global_translation.x = global.catch_pos.x
+		global_translation.z = global.catch_pos.z
+		return;
 	if (follownode.unit_offset >= stops[c] and c != 0) or (follownode.unit_offset >= stops[c] and c == 0 and follownode.unit_offset < stops[-1]):
 		timer += delta
 		if timer >= times[c]:

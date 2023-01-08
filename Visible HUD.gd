@@ -10,6 +10,8 @@ onready var rect = $ColorRect
 onready var meter = $Meter
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	if global.spotted == true:
+		global.bar = 1
 	if global.bar >= 0:
 		if rect.rect_size.x <= 200:
 			meter.visible = true

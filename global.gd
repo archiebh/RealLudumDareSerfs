@@ -5,6 +5,7 @@ var hidden = false
 var bushcount = 0
 var spotted = false
 var playerhead = Vector3()
+var catch_pos = Vector3()
 var wheat = 0
 var bar = 0
 var seenby = 0
