@@ -10,6 +10,7 @@ onready var rect = $ColorRect
 onready var meter = $Meter
 onready var wheatcounter = $Label
 onready var anim = $AnimationPlayer
+onready var deathsound = $DeathSound
 
 var open_played = false
 
@@ -29,6 +30,7 @@ func _process(delta):
 		if deathplayed == false:
 			deathplayed = true
 			anim.play("Death")
+			deathsound.play()
 	if global.bar >= 0:
 		if rect.rect_size.x <= 200:
 			meter.visible = true

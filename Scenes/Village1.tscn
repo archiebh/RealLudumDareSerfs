@@ -35,12 +35,12 @@ uv1_triplanar = true
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 10, 10, 4 )
 
-[sub_resource type="PanoramaSky" id=8]
+[sub_resource type="PanoramaSky" id=10]
 panorama = ExtResource( 12 )
 
 [sub_resource type="Environment" id=9]
 background_mode = 2
-background_sky = SubResource( 8 )
+background_sky = SubResource( 10 )
 background_sky_orientation = Basis( 1, 0, 0, 0, 0.955, 0, 0, 0, 1 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 
