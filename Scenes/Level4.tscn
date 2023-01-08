@@ -183,7 +183,7 @@ curve = SubResource( 6 )
 curve = SubResource( 7 )
 
 [node name="PathFollow" type="PathFollow" parent="Guards/Maze/TempPaths/Path4"]
-transform = Transform( 0.812126, 0, -0.583474, 0, 1, 0, 0.583474, 0, 0.812126, -74.9966, 0, -9.36084 )
+transform = Transform( 0.812126, 0, -0.583474, 0, 1, 0, 0.583474, 0, 0.812126, -74.9984, 0, -9.36076 )
 offset = 52.2284
 
 [node name="Garden" type="Spatial" parent="Guards"]

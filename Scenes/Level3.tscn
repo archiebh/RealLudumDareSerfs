@@ -105,7 +105,7 @@ fog_sun_color = Color( 0.992157, 0.992157, 0.992157, 1 )
 fog_depth_begin = 0.0
 fog_depth_end = 61.9
 
-[node name="Spatial" type="Spatial"]
+[node name="Level3" type="Spatial"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 12.1328, 0, 0, 0, -5.30342e-07, 12.1328, 0, -12.1328, -5.30342e-07, -49.2412, 0.150101, 17.1691 )
