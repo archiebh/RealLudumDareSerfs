@@ -18,6 +18,7 @@ onready var rayc = $Head/RayCast
 onready var head = $Head
 onready var aggrostream = $AggroPlayer
 onready var ambientstream = $AmbientPlayer
+onready var footstep = $Footstep
 
 var playerbox = 0
 var c = 0
@@ -25,6 +26,8 @@ var timer = 0
 var object_look_at
 var rng = RandomNumberGenerator.new()
 
+var step_tick = 0.9
+var step_elapsed = 0
 
 var tick
 var elapsed = 0
@@ -77,6 +80,12 @@ func _process(delta):
 		look_at(global.catch_pos, Vector3.UP)
 		rotation.y += deg2rad(180)
 		return;
+	if step_elapsed > step_tick and global.spotted == false:
+		step_elapsed = 0
+		footstep.pitch_scale = rng.randf_range(0.85, 1.3)
+		footstep.play()
+		
+		
 	if (follownode.unit_offset >= stops[c] and c != 0) or (follownode.unit_offset >= stops[c] and c == 0 and follownode.unit_offset < stops[-1]):
 		timer += delta
 		if timer >= times[c]:
@@ -86,6 +95,7 @@ func _process(delta):
 	else:
 		follownode.unit_offset += speed*delta*0.05
 		follownode.unit_offset = fmod(follownode.unit_offset, 1.0)
+		step_elapsed+=delta
 	translation=follownode.translation+Vector3(x_offset, y_offset, z_offset)
 	rotation.y=follownode.rotation.y
 	rotation.z=follownode.rotation.z
