@@ -22,6 +22,7 @@ onready var footstep = $Footstep
 var inbush = false
 var bushcount = 0
 var walking = false
+onready var rustle = $Rustler
 
 var rng = RandomNumberGenerator.new()
 
@@ -52,9 +53,13 @@ func _input(event):
 		$UpperCollider/Camera.rotation_degrees = camera_rot
 
 func _process(delta):
+	if bushcount > 0 and rustle.playing == false:
+		rustle.play()
+	if bushcount == 0 or input_dir == Vector3.ZERO:
+		rustle.stop()
 	global.playerhead = head.translation
 	global.bushcount = bushcount
-	
+	rustle.volume_db = -10 + (velocity.x+velocity.y)*3
 	if input_dir != Vector3.ZERO and !crouching:
 		passed+=delta
 		if passed >= steplength:
