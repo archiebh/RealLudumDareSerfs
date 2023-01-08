@@ -69,5 +69,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.407357, 0.828065 )
 light_color = Color( 0.843137, 0.721569, 0.298039, 1 )
 shadow_enabled = true
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="area_entered" from="Vision" to="." method="_on_Vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_Vision_area_exited"]

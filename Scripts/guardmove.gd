@@ -21,6 +21,23 @@ var c = 0
 var timer = 0
 var object_look_at
 
+var ap = "res://Sounds/Voice/Guard/Ambient/"
+var bp = "res://Sounds/Voice/Guard/Aggro/"
+
+var ambient_vox = [preload("res://Sounds/Voice/Guard/Ambient/1.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/2.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/3.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/4.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/5.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/6.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/7.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/8.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/9.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/10.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/11.mp3"),
+preload("res://Sounds/Voice/Guard/Ambient/12.mp3"),]
+var aggro_vox = []
+
 var countedyet=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
