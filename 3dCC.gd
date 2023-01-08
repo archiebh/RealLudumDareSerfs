@@ -18,11 +18,18 @@ export var boost_accumulation_speed = 1
 export var max_boost_multiplier = 2
 onready var BushGetter = $BushGetter
 onready var head = $UpperCollider
+onready var footstep = $Footstep
 var inbush = false
 var bushcount = 0
+var walking = false
 
+var rng = RandomNumberGenerator.new()
+
+var steplength = 0.5
+var passed = 0.4
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
 	BushGetter.monitorable = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Tween.connect("tween_all_completed", self, "_on_tween_all_completed")
@@ -47,6 +54,16 @@ func _input(event):
 func _process(delta):
 	global.playerhead = head.translation
 	global.bushcount = bushcount
+	
+	if input_dir != Vector3.ZERO and !crouching:
+		passed+=delta
+		if passed >= steplength:
+			passed = 0
+			footstep.pitch_scale = rng.randf_range(0.85, 1.3)
+			footstep.play()
+	else:
+		if footstep.get_playback_position() > 0.5:
+			footstep.stop()
 
 var inbetween = false
 func _on_tween_all_completed():
@@ -82,6 +99,7 @@ func _process_input(delta):
 	
 	# Crouch
 	if Input.is_action_just_pressed("crouch"):
+		footstep.playing = false
 		if on_floor:
 			crouch_floor = true
 		crouching = true

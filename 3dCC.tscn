@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Real Textures/meter.png" type="Texture" id=7]
 [ext_resource path="res://Working Textures/fakeloader.jpg" type="Texture" id=8]
 [ext_resource path="res://Sounds/Death.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/Player Footstep.mp3" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.469099
@@ -31,7 +32,7 @@ font_data = SubResource( 6 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Death"
-length = 6.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Arrow:translation")
 tracks/0/interp = 1
@@ -99,7 +100,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 4.5, 5.8 ),
+"times": PoolRealArray( 2.3, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -190,6 +191,18 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HUD/Label2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -358,7 +371,6 @@ text = "The Gate Hath Opened"
 align = 1
 
 [node name="Splash" type="Sprite" parent="HUD"]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 959, 533 )
 scale = Vector2( 2.63462, 2.62439 )
 texture = ExtResource( 8 )
@@ -406,6 +418,10 @@ radius = 0.0626368
 height = 0.140206
 cone = true
 material = SubResource( 9 )
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.595
 
 [connection signal="animation_finished" from="HUD/AnimationPlayer" to="HUD" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="BushGetter" to="." method="_on_BushGetter_area_entered"]
