@@ -11,6 +11,7 @@ onready var meter = $Meter
 onready var wheatcounter = $Label
 onready var anim = $AnimationPlayer
 onready var deathsound = $DeathSound
+onready var gateaudio = get_tree().current_scene.get_node("SOUNDS").get_node("GateSound")
 
 var open_played = false
 
@@ -24,6 +25,7 @@ func _process(delta):
 	if global.wheat >= 100 and !open_played:
 		anim.play("Opened")
 		open_played=true
+		gateaudio.play()
 	wheatcounter.text = str(global.wheat)
 	if global.spotted == true:
 		global.bar = 1
