@@ -69,7 +69,7 @@ extents = Vector3( 10, 10, 4 )
 [sub_resource type="PlaneMesh" id=17]
 size = Vector2( 150, 10 )
 
-[node name="Spatial" type="Spatial"]
+[node name="Level1" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.026, -2.34004, 5 )
