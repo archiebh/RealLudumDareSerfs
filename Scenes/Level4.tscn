@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Working Textures/Level4.png" type="Texture" id=1]
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Scenes/StationaryGuard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Tower.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Real Textures/Real Night Sky Taler.png" type="Texture" id=11]
+[ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=14]
 
 [sub_resource type="Curve3D" id=4]
 _data = {
@@ -1967,3 +1970,15 @@ sides = 15
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 20 )
+
+[node name="SOUNDS" type="Spatial" parent="."]
+
+[node name="WheatSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 12 )
+
+[node name="GateSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 13 )
+
+[node name="NightTimeSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 14 )
+autoplay = true

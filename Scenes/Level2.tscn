@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://Working Textures/gate.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=14]
 [ext_resource path="res://Real Textures/Real Night Sky Taler.png" type="Texture" id=15]
+[ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=18]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -1540,5 +1543,17 @@ script = ExtResource( 14 )
 [node name="CollisionShape" type="CollisionShape" parent="ENDZONE"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -82 )
 shape = SubResource( 21 )
+
+[node name="SOUNDS" type="Spatial" parent="."]
+
+[node name="NightTimeSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 17 )
+autoplay = true
+
+[node name="WheatSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 16 )
+
+[node name="GateSound" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 18 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
