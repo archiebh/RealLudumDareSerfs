@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
@@ -104,6 +104,22 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=14]
+resource_name = "Opened"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="Animation" id=11]
 length = 0.001
 tracks/0/type = "value"
@@ -177,6 +193,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HUD/Label2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -321,20 +349,23 @@ color = Color( 0.278431, 0, 0, 0.364706 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
 root_node = NodePath("../..")
 anims/Death = SubResource( 10 )
+anims/Opened = SubResource( 14 )
 anims/RESET = SubResource( 11 )
 anims/lvlend = SubResource( 13 )
 anims/lvlstart = SubResource( 12 )
 
 [node name="Label2" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -432.5
+margin_left = -946.5
 margin_top = -70.0
-margin_right = 432.5
+margin_right = 946.5
 margin_bottom = 70.0
 custom_fonts/font = SubResource( 7 )
+text = "The Gate Hath Opened"
 align = 1
 
 [node name="Splash" type="Sprite" parent="HUD"]

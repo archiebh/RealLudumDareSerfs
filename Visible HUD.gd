@@ -11,6 +11,8 @@ onready var meter = $Meter
 onready var wheatcounter = $Label
 onready var anim = $AnimationPlayer
 
+var open_played = false
+
 func _ready():
 	global.seenby=0
 	anim.play("lvlstart")
@@ -18,6 +20,9 @@ func _ready():
 var deathplayed = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	if global.wheat >= 100 and !open_played:
+		anim.play("Opened")
+		open_played=true
 	wheatcounter.text = str(global.wheat)
 	if global.spotted == true:
 		global.bar = 1
@@ -56,5 +61,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		global.village_done = false
 		global.seenby = 0
 		queue_free()
-		get_tree().change_scene("res://Scenes/Level1.tscn")
+		get_tree().reload_scene("res://Scenes/Level1.tscn")
 	pass # Replace with function body.
