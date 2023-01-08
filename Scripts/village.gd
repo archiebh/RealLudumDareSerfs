@@ -34,7 +34,7 @@ func _process(delta):
 		pile.radius += delta
 		if pile.radius >= target_size:
 			growing = false
-	if global_translation.distance_to(playr.global_translation) < 4 and !global.village_done:
+	if global_translation.distance_to(playr.global_translation) < 14 and !global.village_done:
 		lightup.light_energy = 4;
 		if Input.is_action_just_pressed("grab"):
 			global.village_done = 1
