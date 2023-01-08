@@ -5,12 +5,15 @@ extends Area
 # var a = 2
 # var b = "text"
 var is_level;
+var is_final_level = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_level = false;
 	if "Level" in get_tree().get_current_scene().get_name():
 		is_level = true;
+	if "4" in get_tree().get_current_scene().get_name():
+		is_final_level = true;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +48,8 @@ func nextScene():
 
 func _on_ENDZONE_area_entered(area):
 	if area.is_in_group("player"):
+		if is_final_level:
+			nextScene()
 		if is_level:
 			if global.wheat >= 100:
 				print("Level Complete")

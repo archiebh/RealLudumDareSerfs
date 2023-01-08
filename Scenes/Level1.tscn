@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/Voice/Serf/12.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Scripts/Voicelines.gd" type="Script" id=15]
+[ext_resource path="res://Sounds/Voice/Serf/11.mp3" type="AudioStream" id=16]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -91,6 +94,7 @@ fog_depth_begin = 0.0
 fog_depth_end = 61.9
 
 [node name="Level1" type="Spatial"]
+script = ExtResource( 15 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.026, -2.34004, 5 )
@@ -1616,5 +1620,13 @@ stream = ExtResource( 12 )
 
 [node name="GateSound" type="AudioStreamPlayer" parent="SOUNDS"]
 stream = ExtResource( 13 )
+
+[node name="StartVoice" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 16 )
+volume_db = -8.0
+
+[node name="MidVoice" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 14 )
+volume_db = -3.0
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
