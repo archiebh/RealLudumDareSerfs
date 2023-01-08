@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=1]
+[ext_resource path="res://Working Textures/TEMPLATE 2.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 12.1328, 0, 0, 0, -5.30342e-07, 12.1328, 0, -12.1328, -5.30342e-07, -49.2412, 0.150101, 17.1691 )
+texture = ExtResource( 2 )
+
+[node name="floor" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.4191, -4.70152, 0.598434 )
+use_collision = true
+width = 53.6773
+height = 9.22013
+depth = 100.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3043, -4.70152, 31.723 )
+use_collision = true
+width = 62.4734
+height = 9.22013
+depth = 100.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41249, -4.70152, 2.28999 )
+use_collision = true
+width = 53.6773
+height = 9.22013
+depth = 100.0
+material = SubResource( 1 )
