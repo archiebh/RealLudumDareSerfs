@@ -75,6 +75,5 @@ func _on_Vision_area_exited(area):
 	if area.is_in_group("player"):
 		if countedyet == 1:
 			global.seenby = global.seenby - 1
-			print (global.seenby)
 			countedyet = 0;
 		playerbox = 0

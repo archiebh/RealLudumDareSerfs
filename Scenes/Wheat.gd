@@ -15,6 +15,7 @@ func _ready():
 func _process(delta):
 	if takeable == 1 and Input.is_action_just_pressed("grab"):
 		global.wheat = global.wheat + 1
+		print(global.wheat)
 		took()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
