@@ -8,6 +8,7 @@ var playerhead = Vector3()
 var catch_pos = Vector3()
 var wheat = 0
 var bar = 0
+var village_done = false
 var seenby = 0
 # Declare member variables here. Examples:
 # var a = 2
