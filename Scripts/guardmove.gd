@@ -55,6 +55,7 @@ func _process(delta):
 				if countedyet == 0:
 					global.seenby = global.seenby + 1
 					countedyet = 1
+					print(global.seenby)
 				global.bar += delta;
 				var farness = head.global_translation.distance_to(rayc.get_collision_point())
 				if global.bar >= 1 or farness <= 10:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Visible HUD.gd" type="Script" id=5]
 [ext_resource path="res://Real Textures/Wheat.png" type="Texture" id=6]
 [ext_resource path="res://Real Textures/meter.png" type="Texture" id=7]
+[ext_resource path="res://Working Textures/fakeloader.jpg" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.469099
@@ -29,7 +30,7 @@ font_data = SubResource( 6 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Death"
-length = 2.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Arrow:translation")
 tracks/0/interp = 1
@@ -89,6 +90,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HUD/Splash:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2.3, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -152,6 +165,50 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HUD/Splash:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "lvlend"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/Splash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "lvlstart"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/Splash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="BoxShape" id=3]
@@ -265,6 +322,25 @@ color = Color( 0.278431, 0, 0, 0.364706 )
 root_node = NodePath("../..")
 anims/Death = SubResource( 10 )
 anims/RESET = SubResource( 11 )
+anims/lvlend = SubResource( 13 )
+anims/lvlstart = SubResource( 12 )
+
+[node name="Label2" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -432.5
+margin_top = -70.0
+margin_right = 432.5
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 7 )
+align = 1
+
+[node name="Splash" type="Sprite" parent="HUD"]
+position = Vector2( 959, 533 )
+scale = Vector2( 2.63462, 2.62439 )
+texture = ExtResource( 8 )
 
 [node name="BushGetter" type="Area" parent="." groups=["player"]]
 
@@ -307,5 +383,6 @@ height = 0.140206
 cone = true
 material = SubResource( 9 )
 
+[connection signal="animation_finished" from="HUD/AnimationPlayer" to="HUD" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="BushGetter" to="." method="_on_BushGetter_area_entered"]
 [connection signal="area_exited" from="BushGetter" to="." method="_on_BushGetter_area_exited"]
