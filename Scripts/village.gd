@@ -19,8 +19,8 @@ func _ready():
 	pass # Replace with function body.
 
 func growpile():
-	var completion = (global.wheat/120)
-	target_size = min_pile + (max_pile-min_pile)*completion
+	var completion = (global.wheat/float(120))
+	target_size = min_pile + ((max_pile-min_pile)*completion)
 	growing = true
 	global.wheat = 0
 	

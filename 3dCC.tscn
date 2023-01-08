@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
@@ -18,8 +18,150 @@ height = 0.5
 
 [sub_resource type="Theme" id=5]
 
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Font/medieval_sharp/MedievalSharp.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 114
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 6 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Death"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arrow:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.428, -17.141 ), Vector3( 0, -0.996, -0.56 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HUD/ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Arrow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HUD/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HUD/Meter:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arrow:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.427512, -10.5192 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HUD/ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Arrow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HUD/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HUD/Meter:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.31452, 0.328562, 0.99339 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.380392, 0.266667, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.764706, 0.764706, 0.764706, 1 )
 
 [node name="3dCC" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -105,6 +247,25 @@ position = Vector2( 969, 617.006 )
 scale = Vector2( 0.27, 0.330012 )
 texture = ExtResource( 7 )
 
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 180.0
+margin_top = 913.0
+margin_right = 398.0
+margin_bottom = 1053.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+
+[node name="ColorRect2" type="ColorRect" parent="HUD"]
+visible = false
+margin_right = 1924.0
+margin_bottom = 1087.0
+color = Color( 0.278431, 0, 0, 0.364706 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+root_node = NodePath("../..")
+anims/Death = SubResource( 10 )
+anims/RESET = SubResource( 11 )
+
 [node name="BushGetter" type="Area" parent="." groups=["player"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="BushGetter"]
@@ -122,6 +283,29 @@ light_color = Color( 0.870588, 0.666667, 0.529412, 1 )
 light_energy = 0.6
 omni_range = 10.0
 omni_attenuation = 2.46229
+
+[node name="Arrow" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.427512, -10.5192 )
+visible = false
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Arrow"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.29598, 0 )
+radius = 0.0134815
+material = SubResource( 8 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Arrow/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611949, -2.67491e-08 )
+radius = 0.0335401
+height = 0.361132
+cone = true
+material = SubResource( 9 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Arrow"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.29737, -0.526745 )
+radius = 0.0626368
+height = 0.140206
+cone = true
+material = SubResource( 9 )
 
 [connection signal="area_entered" from="BushGetter" to="." method="_on_BushGetter_area_entered"]
 [connection signal="area_exited" from="BushGetter" to="." method="_on_BushGetter_area_exited"]

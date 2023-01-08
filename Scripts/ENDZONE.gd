@@ -40,6 +40,8 @@ func nextScene():
 		get_tree().change_scene("res://Scenes/Level4.tscn")
 	elif get_tree().get_current_scene().get_name() == "Level4":
 		get_tree().change_scene("res://Scenes/FinalScene.tscn")
+	elif get_tree().get_current_scene().get_name() == "Village0":
+		get_tree().change_scene("res://Scenes/Level1.tscn")
 
 func _on_ENDZONE_area_entered(area):
 	if area.is_in_group("player"):

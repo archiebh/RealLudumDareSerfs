@@ -8,10 +8,18 @@ onready var leafs = $Hidden
 onready var label = $RichTextLabel
 onready var rect = $ColorRect
 onready var meter = $Meter
+onready var wheatcounter = $Label
+onready var anim = $AnimationPlayer
+
+var deathplayed = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	wheatcounter.text = str(global.wheat)
 	if global.spotted == true:
 		global.bar = 1
+		if deathplayed == false:
+			deathplayed = true
+			anim.play("Death")
 	if global.bar >= 0:
 		if rect.rect_size.x <= 200:
 			meter.visible = true

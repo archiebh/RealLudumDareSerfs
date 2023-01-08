@@ -1,22 +1,23 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
 [ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=4]
 [ext_resource path="res://Working Textures/tree.png" type="Texture" id=5]
-[ext_resource path="res://Working Textures/fence.png" type="Texture" id=6]
-[ext_resource path="res://Working Textures/wheat.jpeg" type="Texture" id=7]
+[ext_resource path="res://Scenes/Man.gd" type="Script" id=6]
+[ext_resource path="res://Working Textures/peasna.jpeg" type="Texture" id=7]
 [ext_resource path="res://Working Textures/straw.jpg" type="Texture" id=8]
 [ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
+[ext_resource path="res://Working Textures/bed.png" type="Texture" id=10]
+[ext_resource path="res://Working Textures/peans.jpeg" type="Texture" id=11]
+[ext_resource path="res://Scenes/AnimationPlayer.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=13]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 7 )
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_world_triplanar = true
@@ -29,7 +30,69 @@ albedo_texture = ExtResource( 8 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
 
-[node name="Spatial" type="Spatial"]
+[sub_resource type="Animation" id=10]
+resource_name = "ManWalk"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Man:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 18, 28.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -8.5, 1.52, -1.328 ), Vector3( 2.78138, 1.52, -1.328 ), Vector3( 2.78138, 1.52, -1.328 ), Vector3( 22.4231, 1.52, -1.328 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Woan:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -19.7645, 1.52017, 4.33259 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Man:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -8.5, 1.52, -1.328 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Woman Walk"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Woan:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -19.7645, 1.52017, 4.33259 ), Vector3( -19.7645, 1.52017, -2.11772 ) ]
+}
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 10, 10, 4 )
+
+[node name="Village0" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203217, 3.8147e-06, 0.260124 )
@@ -40,7 +103,7 @@ depth = 50.0
 material = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.5723, 3.66422, 0 )
+transform = Transform( -0.99587, 0, -0.090789, 0, 1, 0, 0.090789, 0, -0.99587, -19.5723, 1.80981, -4.26426 )
 
 [node name="Bush" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74692, 0.140996, 4.25137 )
@@ -61,33 +124,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 
 visible = false
 use_collision = true
 height = 13.4869
-
-[node name="fence" type="Spatial" parent="."]
-
-[node name="Fence" type="Sprite3D" parent="fence"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.12874, 0.815202, 1.34353 )
-texture = ExtResource( 6 )
-
-[node name="Fence2" type="Sprite3D" parent="fence"]
-transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 4.11047, 0.815202, -0.615817 )
-texture = ExtResource( 6 )
-
-[node name="Fence3" type="Sprite3D" parent="fence"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.12874, 0.815202, -2.59022 )
-texture = ExtResource( 6 )
-
-[node name="CSGSphere" type="CSGSphere" parent="fence"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96096, 0, -0.585216 )
-radius = 2.01061
-material = SubResource( 4 )
-
-[node name="CSGBox" type="CSGBox" parent="fence"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12639, 1.3783, -0.758301 )
-visible = false
-use_collision = true
-width = 4.45233
-height = 2.45024
-depth = 4.60509
 
 [node name="House" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.244, 0, 0, 0, 1, 6.01443, 1.91775, -9.80812 )
@@ -169,3 +205,68 @@ material = SubResource( 6 )
 [node name="Sprite3D" type="Sprite3D" parent="House2"]
 transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
 texture = ExtResource( 9 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1307, 1.66451, 0 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 7.19343
+depth = 11.6711
+material = SubResource( 5 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.995024, 0 )
+operation = 2
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.20844
+height = 4.02148
+depth = 11.0522
+material = SubResource( 5 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21795, 0.457625, 0 )
+operation = 2
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.20844
+height = 2.93907
+depth = 2.27686
+material = SubResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.27577 )
+texture = ExtResource( 10 )
+
+[node name="Woan" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7645, 1.52017, 4.33259 )
+billboard = 2
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ManWalk = SubResource( 10 )
+anims/RESET = SubResource( 7 )
+"anims/Woman Walk" = SubResource( 8 )
+script = ExtResource( 12 )
+
+[node name="Man" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.52, -1.328 )
+billboard = 2
+texture = ExtResource( 7 )
+script = ExtResource( 6 )
+
+[node name="ENDZONE" type="Area" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -54, 3, -0.0637045 )
+collision_layer = 16
+collision_mask = 16
+script = ExtResource( 13 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ENDZONE"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -82 )
+shape = SubResource( 11 )
+
+[connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
