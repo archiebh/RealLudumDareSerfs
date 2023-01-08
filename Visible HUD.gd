@@ -61,5 +61,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		global.village_done = false
 		global.seenby = 0
 		queue_free()
-		get_tree().change_scene("res://Scenes/Level1.tscn")
+		get_tree().reload_current_scene()
 	pass # Replace with function body.
