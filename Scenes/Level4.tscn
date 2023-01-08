@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Working Textures/Level4.png" type="Texture" id=1]
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/StationaryGuard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Tower.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Real Textures/Real Night Sky Taler.png" type="Texture" id=11]
 
 [sub_resource type="Curve3D" id=4]
 _data = {
@@ -112,6 +113,22 @@ uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id=3]
 size = Vector2( 30, 30 )
+
+[sub_resource type="PanoramaSky" id=19]
+radiance_size = 1
+panorama = ExtResource( 11 )
+
+[sub_resource type="Environment" id=20]
+background_mode = 2
+background_sky = SubResource( 19 )
+background_color = Color( 0.760784, 0.760784, 0.760784, 1 )
+background_energy = 0.99
+ambient_light_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+ambient_light_energy = 1.44
+fog_color = Color( 0.188235, 0.129412, 0.309804, 1 )
+fog_sun_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 61.9
 
 [node name="Level4" type="Spatial"]
 
@@ -339,19 +356,19 @@ depth = 178.0
 material = SubResource( 1 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGBox2"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.0493, 0.218044, 11.8144 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.0493, 0.218044, 17.8144 )
 operation = 2
 radius = 2.0
 height = 30.0
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="CSGBox2"]
-transform = Transform( 1, 0, 0, 0, -0.15, 0.866025, 0, -0.259808, -0.5, 43.0493, 2.68672, 30.6895 )
+transform = Transform( 1, 0, 0, 0, -0.15, 0.866025, 0, -0.259808, -0.5, 43.0493, 2.68672, 36.6895 )
 operation = 2
 radius = 2.0
 height = 40.0
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="CSGBox2"]
-transform = Transform( 1, 0, 0, 0, 0.15, 0.866025, 0, -0.259808, 0.5, 43.0493, 1.72816, -5.22069 )
+transform = Transform( 1, 0, 0, 0, 0.15, 0.866025, 0, -0.259808, 0.5, 43.0493, 1.72816, 0.779312 )
 operation = 2
 radius = 2.0
 height = 32.0
@@ -1947,3 +1964,6 @@ operation = 2
 radius = 2.0
 height = 32.0
 sides = 15
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 20 )

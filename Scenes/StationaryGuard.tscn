@@ -57,11 +57,17 @@ depth = 20.0
 transform = Transform( -1, 2.49216e-08, -8.37953e-08, 0, 0.958507, 0.285069, 8.74228e-08, 0.285069, -0.958507, 0, 0.205, 0.565236 )
 light_color = Color( 0.843137, 0.721569, 0.298039, 1 )
 light_energy = 12.771
+light_indirect_energy = 5.0
 shadow_enabled = true
 spot_range = 27.139
 spot_attenuation = 3.73213
 spot_angle = 37.0
 spot_angle_attenuation = 3.13833
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.407357, 0.828065 )
+light_color = Color( 0.843137, 0.721569, 0.298039, 1 )
+shadow_enabled = true
 
 [connection signal="area_entered" from="Vision" to="." method="_on_Vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_Vision_area_exited"]
