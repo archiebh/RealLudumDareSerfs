@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/village.gd" type="Script" id=11]
+[ext_resource path="res://Real Textures/Real Day Sky.png" type="Texture" id=12]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -33,6 +34,15 @@ uv1_triplanar = true
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 10, 10, 4 )
+
+[sub_resource type="PanoramaSky" id=8]
+panorama = ExtResource( 12 )
+
+[sub_resource type="Environment" id=9]
+background_mode = 2
+background_sky = SubResource( 8 )
+background_sky_orientation = Basis( 1, 0, 0, 0, 0.955, 0, 0, 0, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
 
 [node name="Village3" type="Spatial"]
 
@@ -269,5 +279,8 @@ light_color = Color( 0.00784314, 1, 0, 1 )
 light_energy = 4.0
 omni_range = 2.001
 omni_attenuation = 0.297302
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 9 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
