@@ -27,3 +27,7 @@ func _on_New_Game_pressed():
 func _on_Continue_pressed():
 	if ResourceLoader.exists("user://serf_savegame.tres"):
 		get_tree().change_scene( "res://Scenes/"+str( ResourceLoader.load("user://serf_savegame.tres").lvl_name ) )
+
+
+func _on_Exit_pressed():
+	get_tree().quit()

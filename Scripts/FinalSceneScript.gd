@@ -15,3 +15,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "LastCutScene":
+		get_tree().change_scene("res://Scenes/Menu.tscn")
