@@ -160,9 +160,9 @@ script = ExtResource( 15 )
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.026, -2.34004, 5 )
 use_collision = true
-width = 1000.0
+width = 500.0
 height = 5.0
-depth = 1000.0
+depth = 500.0
 material = ExtResource( 3 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGBox"]

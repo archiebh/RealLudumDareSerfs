@@ -7,7 +7,7 @@
 [ext_resource path="res://Visible HUD.gd" type="Script" id=5]
 [ext_resource path="res://Real Textures/Wheat.png" type="Texture" id=6]
 [ext_resource path="res://Real Textures/meter.png" type="Texture" id=7]
-[ext_resource path="res://Working Textures/fakeloader.jpg" type="Texture" id=8]
+[ext_resource path="res://Real Textures/Animation/Splashscreen.png" type="Texture" id=8]
 [ext_resource path="res://Sounds/Death.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Sounds/Player Footstep.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Sounds/Leaf Rustle.mp3" type="AudioStream" id=11]
@@ -364,8 +364,8 @@ text = "The Gate Hath Opened"
 align = 1
 
 [node name="Splash" type="Sprite" parent="HUD"]
-position = Vector2( 959, 533 )
-scale = Vector2( 2.63462, 2.62439 )
+position = Vector2( 967, 538 )
+scale = Vector2( 1.01839, 1.01443 )
 texture = ExtResource( 8 )
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="HUD"]

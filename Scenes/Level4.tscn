@@ -434,9 +434,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.026, -2.34004, -44 )
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-width = 600.0
+width = 500.0
 height = 5.0
-depth = 1000.0
+depth = 500.0
 material = ExtResource( 24 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGBox2"]

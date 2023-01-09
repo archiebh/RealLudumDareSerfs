@@ -86,9 +86,9 @@ adjustment_saturation = 1.21
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203217, 3.8147e-06, 0.260124 )
 use_collision = true
-width = 1000.0
+width = 500.0
 height = 1.0
-depth = 1000.0
+depth = 500.0
 material = ExtResource( 30 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

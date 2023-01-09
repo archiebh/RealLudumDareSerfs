@@ -189,9 +189,9 @@ material = ExtResource( 21 )
 [node name="CSGBox2" type="CSGBox" parent="floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3043, -4.70152, 31.723 )
 use_collision = true
-width = 1000.0
+width = 500.0
 height = 9.22013
-depth = 1000.0
+depth = 500.0
 material = ExtResource( 21 )
 
 [node name="CSGBox3" type="CSGBox" parent="floor"]
