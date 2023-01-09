@@ -138,7 +138,7 @@ func _process_input(delta):
 		global.hidden = false
 	
 	# Jump
-	if Input.is_action_pressed("jump") && on_floor && state != State.FALL && (frames == 0 || frames > JUMP_FRAMES + 1):
+	if Input.is_action_just_pressed("jump") && on_floor && state != State.FALL && (frames == 0 || frames > JUMP_FRAMES + 1):
 		frames = 0
 		state = State.JUMP
 	
