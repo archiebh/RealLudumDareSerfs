@@ -5,7 +5,7 @@
 [ext_resource path="res://Materials/Grass.tres" type="Material" id=3]
 [ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Real Textures/Menu Image.png" type="Texture" id=5]
-[ext_resource path="res://Sounds/Birdsong.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/Music/Main Menu.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Real Textures/Tree 2.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=8]
 [ext_resource path="res://Real Textures/Poor Fence.png" type="Texture" id=9]
@@ -171,7 +171,7 @@ Button/styles/hover = SubResource( 41 )
 Button/styles/normal = SubResource( 37 )
 Button/styles/pressed = SubResource( 42 )
 
-[node name="Level1" type="Spatial"]
+[node name="Level1Menu" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.026, -2.34004, 5 )
@@ -2048,16 +2048,15 @@ max_db = 6.0
 autoplay = true
 max_distance = 14.0
 
-[node name="NightTimeSound" type="AudioStreamPlayer" parent="SOUNDS"]
-stream = ExtResource( 6 )
-volume_db = -18.353
-autoplay = true
-
 [node name="WheatSound" type="AudioStreamPlayer" parent="SOUNDS"]
 stream = ExtResource( 12 )
 
 [node name="GateSound" type="AudioStreamPlayer" parent="SOUNDS"]
 stream = ExtResource( 13 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SOUNDS"]
+stream = ExtResource( 6 )
+autoplay = true
 
 [node name="Spatial" parent="." instance=ExtResource( 21 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.2446, -0.0831445, -80.0591 )
