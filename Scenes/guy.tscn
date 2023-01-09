@@ -51,6 +51,30 @@ albedo_texture = ExtResource( 6 )
 
 [sub_resource type="Animation" id=25]
 resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("UpperLegRight:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.00733793, 0.337018, -0.0710521 ), Vector3( 0.00733793, 0.337018, -0.0710521 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UpperLegRight:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 8.32543, 0, 0 ), Vector3( 8.32543, 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "Walk"
@@ -253,11 +277,11 @@ transform = Transform( 0.0342375, -0.0014902, -0.0213319, 0.00708784, 0.190909, 
 material/0 = SubResource( 16 )
 
 [node name="UpperLegLeft" parent="." index="3"]
-transform = Transform( 0.0470083, 0, 0, 0, 0.162704, 0.00764319, 0, -0.027174, 0.0457636, 0.000319988, 0.332844, 0.0704211 )
+transform = Transform( 0.0470083, 0, 0, 0, 0.162704, 0.0076432, 0, -0.027174, 0.0457636, 0.000319988, 0.332844, 0.0704211 )
 material/0 = SubResource( 15 )
 
 [node name="UpperLegRight" parent="." index="4"]
-transform = Transform( 0.0470083, 0, 0, 0, 0.157588, -0.0137135, 0, 0.0487558, 0.0443246, -2.32831e-09, -1.35816, -0.521621 )
+transform = Transform( 0.0470083, 0, 0, 0, 0.157588, -0.0137135, 0, 0.0487557, 0.0443246, -2.32831e-09, -1.35816, -0.521621 )
 material/0 = SubResource( 17 )
 
 [node name="LowerArmLeft" parent="." index="5"]
@@ -269,7 +293,7 @@ transform = Transform( 0.0309945, -0.0329585, -0.016001, 0.00946423, 0.113376, -
 material/0 = SubResource( 20 )
 
 [node name="UpperArmRight" parent="." index="7"]
-transform = Transform( 0.0341644, -0.00243079, 0, 0.000684027, 0.121409, 0, 0, 0, 0.0313218, 0.00132984, 0.780652, -0.154216 )
+transform = Transform( 0.0341644, -0.0024308, 0, 0.000684026, 0.121409, 0, 0, 0, 0.0313218, 0.00132984, 0.780652, -0.154216 )
 material/0 = SubResource( 19 )
 
 [node name="UpperArmLeft" parent="." index="8"]
@@ -277,7 +301,7 @@ transform = Transform( 0.0268087, -0.0742695, -0.00319945, 0.0211889, 0.0939672,
 material/0 = SubResource( 21 )
 
 [node name="Body" parent="." index="9"]
-transform = Transform( 0.0745416, 0, 0, 0, 0.25009, -4.022e-09, 0, 7.45058e-09, 0.135004, 0.000319982, 0.672506, 0 )
+transform = Transform( 0.0745416, 0, 0, 0, 0.25009, -4.02198e-09, 0, 7.45057e-09, 0.135004, 0.000319982, 0.672506, 0 )
 material/0 = SubResource( 12 )
 
 [node name="Head" parent="." index="10"]

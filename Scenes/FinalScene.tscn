@@ -1,0 +1,3098 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Scripts/FinalSceneScript.gd" type="Script" id=1]
+[ext_resource path="res://Working Textures/bed.png" type="Texture" id=2]
+[ext_resource path="res://Real Textures/People/Man 1.png" type="Texture" id=3]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Materials/plank.tres" type="Material" id=5]
+[ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=6]
+[ext_resource path="res://Materials/Brick.tres" type="Material" id=7]
+[ext_resource path="res://Real Textures/Sun.png" type="Texture" id=8]
+[ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/Voice/Serf/41.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/Voice/Serf/42.mp3" type="AudioStream" id=17]
+[ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=18]
+[ext_resource path="res://Materials/Hedge.tres" type="Material" id=19]
+[ext_resource path="res://Materials/Path.tres" type="Material" id=20]
+[ext_resource path="res://Materials/Noble Cobble.tres" type="Material" id=21]
+[ext_resource path="res://Real Textures/Noble Cobble.png" type="Texture" id=22]
+[ext_resource path="res://Real Textures/Water.png" type="Texture" id=23]
+[ext_resource path="res://Materials/Grass.tres" type="Material" id=24]
+[ext_resource path="res://Real Textures/Tree 1.png" type="Texture" id=25]
+[ext_resource path="res://Real Textures/Pink Bush.png" type="Texture" id=26]
+
+[sub_resource type="ProceduralSky" id=15]
+sky_horizon_color = Color( 1, 1, 1, 1 )
+ground_bottom_color = Color( 0.592157, 0.666667, 0.498039, 1 )
+ground_horizon_color = Color( 0.341176, 0.47451, 0.219608, 1 )
+sun_color = Color( 0.647059, 0.839216, 0.945098, 1 )
+
+[sub_resource type="Environment" id=28]
+background_mode = 2
+background_sky = SubResource( 15 )
+ambient_light_color = Color( 0.882353, 0.858824, 0.827451, 1 )
+ambient_light_sky_contribution = 0.0
+dof_blur_far_distance = 429.76
+dof_blur_far_transition = 0.71
+dof_blur_far_amount = 0.08
+glow_intensity = 2.55
+adjustment_brightness = 1.43
+adjustment_saturation = 1.21
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 6 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 23 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 10, 10, 4 )
+
+[sub_resource type="BoxShape" id=22]
+
+[sub_resource type="Animation" id=29]
+resource_name = "LastCutScene"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.9, 8, 13, 13.1, 17.9, 18, 27, 27.1, 33 ),
+"transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -22.1945, 54.7689, -110.629 ), Vector3( -22.1945, 54.7689, -76.7259 ), Vector3( -121.212, 2.11993, -9.44577 ), Vector3( -113.496, 2.11993, -9.44577 ), Vector3( -59.5074, 4.1536, -12.84 ), Vector3( -51.5272, 4.1536, -12.84 ), Vector3( -21.7695, 4.1536, -39.8296 ), Vector3( -21.7695, 4.1536, -76.8163 ), Vector3( -75.6484, 43.0574, -123.675 ), Vector3( -75.6484, 43.0574, -123.675 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.9, 8, 17.9, 18, 27, 27.1, 33, 37 ),
+"transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, -180, 0 ), Vector3( 0, -180, 0 ), Vector3( -30, -165, -6.06587e-06 ), Vector3( -30, -93.849, -6.06587e-06 ), Vector3( 81.0398, -111.917, -23.6007 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flagpole/Flag:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 4.38654, -5.80134, 0 ), Vector3( 4.38654, 6.65171, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Serfs/FirstMaze/Serf:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 8, 11.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -130.838, 1.71974, -8.48932 ), Vector3( -110.872, 1.71974, -8.48932 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Serfs/FirstMaze/Serf2:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 8, 11.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -125.176, 1.71974, -10.9481 ), Vector3( -111.546, 1.71974, -10.9481 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Serfs/FirstMaze/Serf3:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 8, 11.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -143.523, 1.71974, -10.9481 ), Vector3( -111.666, 1.71974, -10.9481 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Serfs/FirstMaze/Serf4:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 9.4, 12.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -142.469, 1.71974, -7.51081 ), Vector3( -110.439, 1.71974, -7.51081 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Serfs/SecondMaze/Serf:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 13.1, 17.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -71.8649, 1.71974, -12.9841 ), Vector3( -53.3956, 1.71974, -3.66449 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Serfs/SecondMaze/Serf2:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 13.1, 17.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -74.436, 1.71974, -14.7262 ), Vector3( -49.2717, 1.71974, -14.7262 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Serfs/SecondMaze/Serf3:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 15.3, 15.8, 17.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -73.8596, 1.71974, -9.53206 ), Vector3( -73.8596, 1.71974, -13.3113 ), Vector3( -53.0988, 1.71974, -10.0314 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Serfs/SecondMaze/Serf4:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 13.1, 17.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -73.1692, 1.71974, -13.83 ), Vector3( -62.274, 1.71974, -19.903 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Serfs/OutGarden/Group1:translation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 17.9, 27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -18.1987, 0, -17.3501 ), Vector3( -6.74312, 0, -74.9765 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Serfs/OutGarden/Group2:translation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 17.9, 27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -23.4766, 0, -11.564 ), Vector3( -30.977, 0, -56.6426 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Serfs/OutGarden/Group3:translation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 17.9, 26.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -17.4703, 0, -6.55537 ), Vector3( -17.4703, 0, -48.1889 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Serfs/FinalPush/Group1:translation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 27.1, 33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -10.5786, 0, -37.999 ), Vector3( -38.9888, 0, -115.999 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Serfs/FinalPush/Group2:translation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 27.1, 33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -58.8576, 0, -37.999 ), Vector3( -58.8576, 0, -87.2035 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Serfs/FinalPush/Group3:translation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 27.1, 29.6, 33 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 6.68013, 0, -53.5732 ), Vector3( -18.4818, 0, -53.5732 ), Vector3( 10.9393, 0, -86.3908 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Serfs/FinalPush/Group4:translation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 27.1, 33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -21.8374, 0, -9.08765 ), Vector3( -21.8374, 0, -128.684 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -115.95, 32.4408, -11.5926 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flagpole/Flag:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.38654, -5.80134, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Serfs/FirstMaze/Serf:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -130.838, 1.71974, -8.48932 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Serfs/FirstMaze/Serf2:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -125.176, 1.71974, -10.9481 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Serfs/FirstMaze/Serf3:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -143.523, 1.71974, -10.9481 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Serfs/FirstMaze/Serf4:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -142.469, 1.71974, -7.51081 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Serfs/SecondMaze/Serf:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -71.8649, 1.71974, -12.9841 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Serfs/SecondMaze/Serf2:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -74.436, 1.71974, -14.7262 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Serfs/SecondMaze/Serf3:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -73.8596, 1.71974, -9.53206 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Serfs/SecondMaze/Serf4:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -73.1692, 1.71974, -13.83 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Serfs/OutGarden/Group1:translation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -18.1987, 0, -31.7412 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Serfs/OutGarden/Group2:translation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -23.4766, 0, -11.564 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Serfs/OutGarden/Group3:translation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -17.4703, 0, -6.55537 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Serfs/FinalPush/Group1:translation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -10.5786, 0, -37.999 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Serfs/FinalPush/Group2:translation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -58.8576, 0, -37.999 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Serfs/FinalPush/Group3:translation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 6.68013, 0, -53.5732 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Serfs/FinalPush/Group4:translation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -21.8374, 0, -6.92118 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=31]
+material = SubResource( 32 )
+size = Vector2( 9, 6 )
+
+[node name="FinalScene" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 28 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -115.95, 32.4408, -11.5926 )
+current = true
+far = 2462.6
+
+[node name="WorldThing" type="Spatial" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing"]
+transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 0.770863, -101.026, -2.34004, -11.1734 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 150.0
+height = 5.0
+depth = 60.0
+material = ExtResource( 24 )
+
+[node name="CSGBox2" type="CSGBox" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.026, -2.34004, -44 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 600.0
+height = 5.0
+depth = 1000.0
+material = ExtResource( 24 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="WorldThing/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.0493, 0.218044, 17.8144 )
+operation = 2
+radius = 2.0
+height = 30.0
+material = ExtResource( 20 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="WorldThing/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, -0.15, 0.866025, 0, -0.259808, -0.5, 43.0493, 2.68672, 36.6895 )
+operation = 2
+radius = 2.0
+height = 40.0
+material = ExtResource( 20 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="WorldThing/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 0.15, 0.866025, 0, -0.259808, 0.5, 43.0493, 1.72816, 0.779312 )
+operation = 2
+radius = 2.0
+height = 32.0
+sides = 15
+material = ExtResource( 20 )
+
+[node name="CSGBox4" type="CSGBox" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6659, -2.34004, -160.832 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 6.75945
+height = 5.0
+depth = 60.0
+material = ExtResource( 24 )
+
+[node name="Maze" type="Spatial" parent="WorldThing"]
+
+[node name="Hedge" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 5, -22.683 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 22.0
+material = ExtResource( 19 )
+
+[node name="Blocc" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.5, 5, -22.4082 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Hedge3" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95, 5, -33.683 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 45.0
+material = ExtResource( 19 )
+
+[node name="Hedge4" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 5, 2.48623 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.0
+material = ExtResource( 19 )
+
+[node name="Hedge5" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95, 5, 11.317 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 45.0
+material = ExtResource( 19 )
+
+[node name="Hedge6" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 5, 0.316954 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 23.0
+material = ExtResource( 19 )
+
+[node name="Hedge7" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 5, -25.0595 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.5
+material = ExtResource( 19 )
+
+[node name="Blocc3" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -114.545, 5, -15.683 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 4.0
+material = ExtResource( 19 )
+
+[node name="Blocc4" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -110.493, 5, -20.2103 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc2" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.5, 5, -27.0779 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc5" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.232, 5, -27.0009 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc6" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -106.144, 5, -24.8837 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc7" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.653, 5, -27.0009 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc8" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.603, 5, -22.3129 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc9" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.3263, 5, -31.4956 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc10" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -101.297, 5, -20.3135 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc11" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -105.74, 5, -15.7769 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc12" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.59, 5, -17.7559 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc13" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -96.7728, 5, -24.7987 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc14" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.5529, 5, -26.8073 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc15" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -85.8311, 5, -29.4013 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.5
+material = ExtResource( 19 )
+
+[node name="Blocc16" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.6123, 5, -27.2262 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc17" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -107.988, 5, -6.96103 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.5
+material = ExtResource( 19 )
+
+[node name="Blocc18" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -90.1594, 5, -15.7904 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.5
+material = ExtResource( 19 )
+
+[node name="Blocc19" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -85.712, 5, -7.04121 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 27.0
+material = ExtResource( 19 )
+
+[node name="Blocc20" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -99.2103, 5, 6.64124 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 28.0
+material = ExtResource( 19 )
+
+[node name="Blocc21" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.091, 5, 8.64058 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc22" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -103.646, 5, -6.79037 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 18.5
+material = ExtResource( 19 )
+
+[node name="Blocc23" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.69, 5, -8.82243 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc24" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.59, 5, -13.4107 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc25" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.1258, 5, -13.4107 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc26" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -97.0579, 5, -15.8815 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc27" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -92.4015, 5, -11.271 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc28" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -92.2248, 5, -20.2904 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc29" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -114.554, 5, -2.34347 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 4.0
+material = ExtResource( 19 )
+
+[node name="Blocc30" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -108.154, 5, 2.1276 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc31" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -101.503, 5, -2.22147 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc32" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -99.3073, 5, -0.119016 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc33" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -94.9527, 5, 2.1276 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc34" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -90.2411, 5, -0.0132289 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc35" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -94.593, 5, -4.57992 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc36" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -83.4918, 5, -11.2996 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc37" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -85.6429, 5, -24.8549 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc38" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.1181, 5, -20.5448 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc39" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -76.6766, 5, -15.841 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc40" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -73.9352, 5, -15.9536 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc41" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -76.6766, 5, -6.88671 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc42" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.0794, 5, -4.71341 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc43" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -74.5281, 5, -2.37506 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc44" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -81.1794, 5, 2.21688 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 9.6
+material = ExtResource( 19 )
+
+[node name="Blocc45" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.1154, 5, 4.53155 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Blocc46" type="CSGBox" parent="WorldThing/Maze"]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -74.4607, 5, 6.69578 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 1.0
+height = 11.076
+depth = 5.0
+material = ExtResource( 19 )
+
+[node name="Bushes2" type="Spatial" parent="WorldThing"]
+
+[node name="Patch" type="Spatial" parent="WorldThing/Bushes2"]
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.616, 3.8147e-06, -23.6803 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -24.6885 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -25.8861 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9646, 3.8147e-06, -23.6803 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -24.6885 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -25.8861 )
+
+[node name="Bush7" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2492, 3.8147e-06, -23.6803 )
+
+[node name="Bush8" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -24.6885 )
+
+[node name="Bush9" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -25.8861 )
+
+[node name="Bush10" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5978, 3.8147e-06, -23.6803 )
+
+[node name="Bush11" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -24.6885 )
+
+[node name="Bush12" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -25.8861 )
+
+[node name="Bush13" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6854, 3.8147e-06, -23.6803 )
+
+[node name="Bush14" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -24.6885 )
+
+[node name="Bush15" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -25.8861 )
+
+[node name="Bush16" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.034, 3.8147e-06, -23.6803 )
+
+[node name="Bush17" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -24.6885 )
+
+[node name="Bush18" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -25.8861 )
+
+[node name="Bush19" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3186, 3.8147e-06, -23.6803 )
+
+[node name="Bush20" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -24.6885 )
+
+[node name="Bush21" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -25.8861 )
+
+[node name="Bush22" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6672, 3.8147e-06, -23.6803 )
+
+[node name="Bush23" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -24.6885 )
+
+[node name="Bush24" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -25.8861 )
+
+[node name="Bush25" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.616, 3.8147e-06, -20.3945 )
+
+[node name="Bush26" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -21.4027 )
+
+[node name="Bush27" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -22.6002 )
+
+[node name="Bush28" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9646, 3.8147e-06, -20.3945 )
+
+[node name="Bush29" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -21.4027 )
+
+[node name="Bush30" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -22.6002 )
+
+[node name="Bush31" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2492, 3.8147e-06, -20.3945 )
+
+[node name="Bush32" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -21.4027 )
+
+[node name="Bush33" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -22.6002 )
+
+[node name="Bush34" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5978, 3.8147e-06, -20.3945 )
+
+[node name="Bush35" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -21.4027 )
+
+[node name="Bush36" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -22.6002 )
+
+[node name="Bush37" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6854, 3.8147e-06, -20.3945 )
+
+[node name="Bush38" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -21.4027 )
+
+[node name="Bush39" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -22.6002 )
+
+[node name="Bush40" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.034, 3.8147e-06, -20.3945 )
+
+[node name="Bush41" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -21.4027 )
+
+[node name="Bush42" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -22.6002 )
+
+[node name="Bush43" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3186, 3.8147e-06, -20.3945 )
+
+[node name="Bush44" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -21.4027 )
+
+[node name="Bush45" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -22.6002 )
+
+[node name="Bush46" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6672, 3.8147e-06, -20.3945 )
+
+[node name="Bush47" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -21.4027 )
+
+[node name="Bush48" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -22.6002 )
+
+[node name="Bush49" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4305, 3.8147e-06, -17.0943 )
+
+[node name="Bush50" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7455, -0.0938583, -18.1025 )
+
+[node name="Bush51" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7455, -0.0938583, -19.3 )
+
+[node name="Bush52" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.7792, 3.8147e-06, -17.0943 )
+
+[node name="Bush53" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.0942, -0.0938583, -18.1025 )
+
+[node name="Bush54" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.0942, -0.0938583, -19.3 )
+
+[node name="Bush55" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.0637, 3.8147e-06, -17.0943 )
+
+[node name="Bush56" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.3787, -0.0938583, -18.1025 )
+
+[node name="Bush57" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.3787, -0.0938583, -19.3 )
+
+[node name="Bush58" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4124, 3.8147e-06, -17.0943 )
+
+[node name="Bush59" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7274, -0.0938583, -18.1025 )
+
+[node name="Bush60" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7274, -0.0938583, -19.3 )
+
+[node name="Bush61" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.4999, 3.8147e-06, -17.0943 )
+
+[node name="Bush62" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8149, -0.0938583, -18.1025 )
+
+[node name="Bush63" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8149, -0.0938583, -19.3 )
+
+[node name="Bush64" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8486, 3.8147e-06, -17.0943 )
+
+[node name="Bush65" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.1636, -0.0938583, -18.1025 )
+
+[node name="Bush66" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.1636, -0.0938583, -19.3 )
+
+[node name="Bush67" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1331, 3.8147e-06, -17.0943 )
+
+[node name="Bush68" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4481, -0.0938583, -18.1025 )
+
+[node name="Bush69" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4481, -0.0938583, -19.3 )
+
+[node name="Bush70" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4818, 3.8147e-06, -17.0943 )
+
+[node name="Bush71" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7968, -0.0938583, -18.1025 )
+
+[node name="Bush72" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7968, -0.0938583, -19.3 )
+
+[node name="Bush73" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.616, 3.8147e-06, -14.0111 )
+
+[node name="Bush74" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -15.0193 )
+
+[node name="Bush75" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.931, -0.0938583, -16.2168 )
+
+[node name="Bush76" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9646, 3.8147e-06, -14.0111 )
+
+[node name="Bush77" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -15.0193 )
+
+[node name="Bush78" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2796, -0.0938583, -16.2168 )
+
+[node name="Bush79" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2492, 3.8147e-06, -14.0111 )
+
+[node name="Bush80" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -15.0193 )
+
+[node name="Bush81" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5642, -0.0938583, -16.2168 )
+
+[node name="Bush82" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5978, 3.8147e-06, -14.0111 )
+
+[node name="Bush83" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -15.0193 )
+
+[node name="Bush84" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9128, -0.0938583, -16.2168 )
+
+[node name="Bush85" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6854, 3.8147e-06, -14.0111 )
+
+[node name="Bush86" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -15.0193 )
+
+[node name="Bush87" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0004, -0.0938583, -16.2168 )
+
+[node name="Bush88" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.034, 3.8147e-06, -14.0111 )
+
+[node name="Bush89" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -15.0193 )
+
+[node name="Bush90" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.349, -0.0938583, -16.2168 )
+
+[node name="Bush91" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3186, 3.8147e-06, -14.0111 )
+
+[node name="Bush92" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -15.0193 )
+
+[node name="Bush93" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6336, -0.0938583, -16.2168 )
+
+[node name="Bush94" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6672, 3.8147e-06, -14.0111 )
+
+[node name="Bush95" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -15.0193 )
+
+[node name="Bush96" parent="WorldThing/Bushes2/Patch" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9822, -0.0938583, -16.2168 )
+
+[node name="Patch2" type="Spatial" parent="WorldThing/Bushes2"]
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch3" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 18.8322 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch4" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30767, 0, 19.5103 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch5" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4574, 0, 35.7546 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch6" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1451, 0, 40.7651 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch6" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch7" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.314, 0, 46.7535 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch8" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5269, 0, 34.6937 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch9" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2184, 0, 35.1866 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch10" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3451, 0, 15.4867 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch11" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.6895, 0, 1.47031 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch12" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4119, 0, -6.83567 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch13" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4119, 0, 23.5411 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch14" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2477, 0, 24.0561 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch15" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.918, 0, -6.83567 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch18" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2477, 0, -54.9439 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch18" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch18" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.931, -0.0938583, 6.31145 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch18" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch19" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.918, 0, -85.8357 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.616, 3.8147e-06, 12.3196 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch19" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch20" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.588058, 0, -61.8357 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch20" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch21" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4119, 0, -39.4589 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch22" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.2477, 0, -38.9439 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch22" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch23" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.918, 0, -69.8357 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch23" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch23" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch23" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch23" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Patch28" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4119, 0, -102.836 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch28" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch28" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch28" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch28" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch30" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2477, 0, -71.9439 )
+
+[node name="Bush" parent="WorldThing/Bushes2/Patch30" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
+
+[node name="Bush2" parent="WorldThing/Bushes2/Patch30" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch30" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -16.886 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch30" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2796, -0.0938583, -20.6886 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch30" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Patch31" type="Spatial" parent="WorldThing/Bushes2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.918, 0, -102.836 )
+
+[node name="Bush3" parent="WorldThing/Bushes2/Patch31" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
+
+[node name="Bush4" parent="WorldThing/Bushes2/Patch31" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9646, 3.8147e-06, -2.68035 )
+
+[node name="Bush5" parent="WorldThing/Bushes2/Patch31" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
+
+[node name="Bush6" parent="WorldThing/Bushes2/Patch31" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
+
+[node name="Hedges" type="Spatial" parent="WorldThing"]
+
+[node name="Hedge7" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, -44.79, 2.5, -24.4003 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.0
+material = ExtResource( 19 )
+
+[node name="Corner" type="Spatial" parent="WorldThing/Hedges"]
+
+[node name="Hedge8" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -36.7969, 2.5, -15.9901 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge9" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( -1, 0, 9.61651e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -41.9013, 2.5, -10.8765 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge10" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( -1, 0, 9.61651e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -0.7923, 2.5, -9.88106 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge11" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -5.90588, 2.5, -14.9855 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge12" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( -4.37114e-08, 0, 1.1, 0, 1, 0, -1, 0, -4.80825e-08, -5.89677, 2.5, 24.1189 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge13" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, -0.792301, 2.5, 19.0054 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge14" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, -41.9013, 2.5, 18.0099 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge15" type="CSGBox" parent="WorldThing/Hedges/Corner"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -36.7877, 2.5, 23.1144 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 12.0
+material = ExtResource( 19 )
+
+[node name="Hedge8" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 15.5506, 2.5, -14.9688 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 28.0
+material = ExtResource( 19 )
+
+[node name="Hedge9" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 14.4766, 2.5, 24.0853 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 30.0
+material = ExtResource( 19 )
+
+[node name="Hedge10" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -58.0551, 2.5, -32.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 25.0
+material = ExtResource( 19 )
+
+[node name="Hedge11" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, 1.83871, 2.5, -24.4003 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.0
+material = ExtResource( 19 )
+
+[node name="Hedge12" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 16.7276, 2.5, -32.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 26.0
+material = ExtResource( 19 )
+
+[node name="Hedge13" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -23.0551, 2.5, -116.717 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 16.0
+material = ExtResource( 19 )
+
+[node name="Hedge14" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -73.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 10.0
+material = ExtResource( 19 )
+
+[node name="Hedge15" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 1.24216, 2.5, -85.1418 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+material = ExtResource( 19 )
+
+[node name="Hedge16" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -58.7578, 2.5, -99.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 25.0
+material = ExtResource( 19 )
+
+[node name="Hedge17" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -55.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+material = ExtResource( 19 )
+
+[node name="Hedge18" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 22.2422, 2.5, -77.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+material = ExtResource( 19 )
+
+[node name="Hedge19" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -72.6432, 2.5, -113.886 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 145.612
+material = ExtResource( 19 )
+
+[node name="Hedge20" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -21.0938, 2.5, -192.078 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 96.5368
+material = ExtResource( 19 )
+
+[node name="Hedge21" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, 25.8168, 2.5, -72.1487 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 219.339
+material = ExtResource( 19 )
+
+[node name="Hedge22" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -25.7984, 2.5, 49.233 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 96.5368
+material = ExtResource( 19 )
+
+[node name="Hedge23" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1, 0, -1.9233e-07, 0, 1, 0, 1.74846e-07, 0, 1.1, -73.0281, 2.5, 29.7158 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 33.5093
+material = ExtResource( 19 )
+
+[node name="Hedge24" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -126.293, 2.5, -35.5617 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.9321
+material = ExtResource( 19 )
+
+[node name="Hedge25" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1, 0, -1.9233e-07, 0, 1, 0, 1.74846e-07, 0, 1.1, -135.243, 2.5, -11.1269 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 42.0412
+material = ExtResource( 19 )
+
+[node name="Hedge26" type="CSGBox" parent="WorldThing/Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -126.293, 2.5, 13.1504 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.9321
+material = ExtResource( 19 )
+
+[node name="Trees" type="Spatial" parent="WorldThing"]
+
+[node name="tower" type="CSGCylinder" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3107, 2, 5.23025 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+radius = 8.09664
+height = 37.8515
+cone = true
+material = SubResource( 2 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="WorldThing/tower"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.7641, 0 )
+operation = 2
+radius = 1.57116
+height = 7.70144
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="WorldThing/tower"]
+transform = Transform( -1.26238e-07, -0.895, 0, 2.888, -3.91217e-08, 0, 0, 0, 0.965, -0.232098, 0.639831, 0 )
+operation = 2
+radius = 2.06418
+height = 11.9639
+material = ExtResource( 7 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="WorldThing/tower"]
+transform = Transform( 1.35198e-08, 0.0958518, 0.95945, 2.888, -3.91217e-08, 0, 1.25512e-07, 0.889852, -0.103349, -0.232098, 0.639831, 4.76837e-07 )
+operation = 2
+radius = 1.76028
+height = 11.9639
+material = ExtResource( 7 )
+
+[node name="Fountain" type="Spatial" parent="WorldThing"]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="WorldThing/Fountain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4619, 0, 4.87003 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+radius = 9.545
+height = 2.353
+sides = 60
+material = SubResource( 24 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="WorldThing/Fountain/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511519, 0 )
+operation = 2
+radius = 7.969
+height = 5.538
+sides = 60
+material = SubResource( 25 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="WorldThing/Fountain/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0 )
+height = 8.0
+cone = true
+material = SubResource( 26 )
+
+[node name="CSGTorus" type="CSGTorus" parent="WorldThing/Fountain/CSGCylinder"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 5, 0 )
+material = ExtResource( 21 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="WorldThing/Fountain/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130456, 0 )
+radius = 7.969
+height = 0.973944
+sides = 60
+material = SubResource( 27 )
+
+[node name="Flowerbeds" type="Spatial" parent="WorldThing"]
+
+[node name="CSGBox4" type="CSGBox" parent="WorldThing/Flowerbeds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -28 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 14.144
+material = ExtResource( 20 )
+
+[node name="CSGBox5" type="CSGBox" parent="WorldThing/Flowerbeds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -24 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 14.144
+material = ExtResource( 20 )
+
+[node name="CSGBox6" type="CSGBox" parent="WorldThing/Flowerbeds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4474, 0, -28 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 14.144
+material = ExtResource( 20 )
+
+[node name="CSGBox7" type="CSGBox" parent="WorldThing/Flowerbeds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4474, 0, -24 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 14.144
+material = ExtResource( 20 )
+
+[node name="Castle" type="CSGBox" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7429, 20, -161.928 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 90.0
+height = 50.0
+depth = 58.0
+material = ExtResource( 7 )
+
+[node name="Ladder" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3389, 0, -17 )
+height = 50.0
+material = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox2" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox3" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox4" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox5" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox6" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox7" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox9" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, 28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox8" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox10" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox11" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox12" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox13" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox14" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox15" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox16" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, -28 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox20" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 21.8 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox21" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 10.2 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox22" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -1 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox23" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -26 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox24" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -13.5 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox25" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 21.8 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox26" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 10.2 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox27" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -1 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox28" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -26 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGBox29" type="CSGBox" parent="WorldThing/Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -13.5 )
+width = 6.0
+height = 8.0
+material = ExtResource( 7 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="WorldThing/Castle"]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -2, 0, 1.5, -8.74228e-08, 0, -19, 29.1981 )
+operation = 2
+radius = 9.0
+height = 3.89574
+sides = 10
+material = ExtResource( 7 )
+
+[node name="SOUNDS" type="Spatial" parent="WorldThing"]
+
+[node name="WheatSound" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
+stream = ExtResource( 12 )
+
+[node name="GateSound" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
+stream = ExtResource( 13 )
+
+[node name="NightTimeSound" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
+stream = ExtResource( 14 )
+autoplay = true
+
+[node name="StartVoice" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
+stream = ExtResource( 16 )
+volume_db = -3.0
+
+[node name="MidVoice" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
+stream = ExtResource( 17 )
+volume_db = -3.0
+
+[node name="ENDZONE" type="Area" parent="WorldThing"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -151, 3, -186.4 )
+collision_layer = 16
+collision_mask = 16
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="WorldThing/ENDZONE"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -82 )
+shape = SubResource( 21 )
+
+[node name="TriggerSpeech" type="Area" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.7356, 2, -140 )
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="WorldThing/TriggerSpeech"]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+shape = SubResource( 22 )
+
+[node name="CSGBox7" type="CSGBox" parent="WorldThing"]
+transform = Transform( 0, 0, -1.5, 0, 1.3, 0, 1.43, 0, 0, -58.0041, 6.38123, 37.676 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 10.0
+depth = 10.0
+material = ExtResource( 7 )
+
+[node name="CSGBox3" type="CSGBox" parent="WorldThing/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -3.00586, 0 )
+operation = 2
+width = 6.0
+height = 8.79256
+depth = 10.0
+material = ExtResource( 7 )
+
+[node name="CSGBox4" type="CSGBox" parent="WorldThing/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 5.55789
+depth = 10.0
+material = ExtResource( 7 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, -2.12132, 0, 1.41421, 2.12132, 0, 6.46758, 5 )
+operation = 2
+width = 11.3291
+height = 3.3
+depth = 2.5433
+material = ExtResource( 7 )
+
+[node name="CSGBox2" type="CSGBox" parent="WorldThing/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, 2.12132, 0, -1.41421, 2.12132, 0, 6.468, -5 )
+operation = 2
+width = 11.3291
+height = 3.3
+depth = 2.75392
+material = ExtResource( 7 )
+
+[node name="Tree2" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.359, 7.21664, 5.32918 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree3" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.359, 7.21664, -28.4804 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree4" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9527, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree5" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00481, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree6" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80476, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree7" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0552, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree8" type="Sprite3D" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0041, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="WorldThing/Tree8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Flowers" type="Spatial" parent="WorldThing"]
+
+[node name="Flower" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -36.4081, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower2" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -33.2317, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower3" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -28.2122, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower4" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -25.5456, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower5" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -30.9602, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower6" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -36.4081, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower7" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -33.2317, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower8" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -28.2122, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower9" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -25.5456, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower10" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -30.9602, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower11" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -17.8016, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower12" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -14.6252, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower13" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.6057, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower14" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.93909, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower15" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -12.3537, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower16" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -17.7394, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower17" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -14.563, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower18" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.54348, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower19" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.87687, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower20" type="Sprite3D" parent="WorldThing/Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -12.2915, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="OmniLight" type="OmniLight" parent="WorldThing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8764, 6.84179, -130.044 )
+light_color = Color( 0.780392, 0.611765, 0.368627, 1 )
+light_energy = 2.468
+omni_range = 9.207
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/LastCutScene = SubResource( 29 )
+anims/RESET = SubResource( 30 )
+
+[node name="Serfs" type="Spatial" parent="."]
+
+[node name="FirstMaze" type="Spatial" parent="Serfs"]
+
+[node name="Serf" type="Sprite3D" parent="Serfs/FirstMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -130.838, 1.71974, -8.48932 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/FirstMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -125.176, 1.71974, -10.9481 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/FirstMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -143.523, 1.71974, -10.9481 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/FirstMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -142.469, 1.71974, -7.51081 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="SecondMaze" type="Spatial" parent="Serfs"]
+
+[node name="Serf" type="Sprite3D" parent="Serfs/SecondMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -71.8649, 1.71974, -12.9841 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/SecondMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -74.436, 1.71974, -14.7262 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/SecondMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -73.8596, 1.71974, -9.53206 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/SecondMaze"]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -73.1692, 1.71974, -13.83 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="OutGarden" type="Spatial" parent="Serfs"]
+
+[node name="Group1" type="Spatial" parent="Serfs/OutGarden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1987, 0, -31.7412 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/OutGarden/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/OutGarden/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/OutGarden/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/OutGarden/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Group2" type="Spatial" parent="Serfs/OutGarden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4766, 0, -11.564 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/OutGarden/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/OutGarden/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/OutGarden/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/OutGarden/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Group3" type="Spatial" parent="Serfs/OutGarden"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4703, 0, -6.55537 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/OutGarden/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/OutGarden/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/OutGarden/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/OutGarden/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="FinalPush" type="Spatial" parent="Serfs"]
+
+[node name="Group1" type="Spatial" parent="Serfs/FinalPush"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5786, 0, -37.999 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf5" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.65778, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf6" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 1.16812, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf7" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.36834, 1.71974, -2.6484 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf8" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -6.26787, 1.71974, -0.230812 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf9" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 6.7674, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf10" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 10.5933, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf11" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 7.05683, 1.71974, -6.29234 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf12" type="Sprite3D" parent="Serfs/FinalPush/Group1"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.15731, 1.71974, -3.87475 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Group2" type="Spatial" parent="Serfs/FinalPush"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.8576, 0, -37.999 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf5" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.65778, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf6" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 1.16812, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf7" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.36834, 1.71974, -2.6484 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf8" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -6.26787, 1.71974, -0.230812 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf9" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 6.7674, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf10" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 10.5933, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf11" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 7.05683, 1.71974, -6.29234 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf12" type="Sprite3D" parent="Serfs/FinalPush/Group2"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.15731, 1.71974, -3.87475 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Group3" type="Spatial" parent="Serfs/FinalPush"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68013, 0, -53.5732 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf5" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.65778, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf6" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 1.16812, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf7" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.36834, 1.71974, -2.6484 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf8" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -6.26787, 1.71974, -0.230812 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf9" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 6.7674, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf10" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 10.5933, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf11" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 7.05683, 1.71974, -6.29234 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf12" type="Sprite3D" parent="Serfs/FinalPush/Group3"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.15731, 1.71974, -3.87475 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Group4" type="Spatial" parent="Serfs/FinalPush"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8374, 0, -6.92118 )
+
+[node name="Serf" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.499561, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf2" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.32634, 1.71974, -1.32491 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf3" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.210127, 1.71974, -5.83685 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf4" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -4.10965, 1.71974, -3.41927 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf5" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.65778, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf6" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 1.16812, 1.71974, 1.86354 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf7" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.36834, 1.71974, -2.6484 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf8" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -6.26787, 1.71974, -0.230812 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf9" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 6.7674, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf10" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 10.5933, 1.71974, -1.7804 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf11" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 7.05683, 1.71974, -6.29234 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Serf12" type="Sprite3D" parent="Serfs/FinalPush/Group4"]
+transform = Transform( -0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 3.15731, 1.71974, -3.87475 )
+shaded = true
+texture = ExtResource( 3 )
+
+[node name="Flagpole" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8748, 54.5727, -156.204 )
+radius = 0.4
+height = 20.0
+
+[node name="Flag" type="CSGMesh" parent="Flagpole"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.38654, -5.80134, 0 )
+mesh = SubResource( 31 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -63.5485, 116.562, -119.829 )
+billboard = 1
+shaded = true
+texture = ExtResource( 8 )
+
+[connection signal="area_entered" from="WorldThing/ENDZONE" to="WorldThing/ENDZONE" method="_on_ENDZONE_area_entered"]
+[connection signal="area_entered" from="WorldThing/TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]

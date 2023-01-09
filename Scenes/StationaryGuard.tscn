@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/stationaryguard.gd" type="Script" id=1]
-
-[sub_resource type="CubeMesh" id=6]
-size = Vector3( 1, 2, 1 )
+[ext_resource path="res://Scenes/guy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/guy_stationary_animate.gd" type="Script" id=3]
 
 [sub_resource type="Curve3D" id=1]
 _data = {
@@ -15,7 +14,6 @@ _data = {
 points = PoolVector3Array( 0, 0, 0, 4, 5, -4, 4, 5, 4, 4, -5, -4, 4, -5, 4, 17, 17, -5, 17, -17, -5, 17, 17, 5, 17, -17, 5, 25, 10, -5, 25, -10, -5, 25, 10, 5, 25, -10, 5 )
 
 [node name="Man" type="MeshInstance"]
-mesh = SubResource( 6 )
 skeleton = NodePath("../..")
 script = ExtResource( 1 )
 
@@ -75,6 +73,10 @@ unit_size = 12.0
 max_distance = 25.0
 attenuation_filter_cutoff_hz = 14000.0
 attenuation_filter_db = -6.0
+
+[node name="guy" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.208467, 0, -1.98911, 0, 2, 0, 1.98911, 0, 0.208467, 0, -0.723723, 0 )
+script = ExtResource( 3 )
 
 [connection signal="area_entered" from="Vision" to="." method="_on_Vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_Vision_area_exited"]
