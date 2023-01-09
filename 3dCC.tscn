@@ -101,7 +101,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=14]
 resource_name = "Opened"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("HUD/Label2:modulate")
 tracks/0/interp = 1
@@ -109,7 +109,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
