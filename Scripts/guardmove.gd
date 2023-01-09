@@ -19,6 +19,7 @@ onready var head = $Head
 onready var aggrostream = $AggroPlayer
 onready var ambientstream = $AmbientPlayer
 onready var footstep = $Footstep
+onready var guy = $guy
 
 var playerbox = 0
 var c = 0
@@ -77,6 +78,7 @@ func _process(delta):
 		ambientstream.stream = ambient_vox[rng.randi_range(0, 15)]
 		ambientstream.play()
 	if global.spotted == true:
+		guy.current_anim = "Idle"
 		look_at(global.catch_pos, Vector3.UP)
 		rotation.y += deg2rad(180)
 		return;
@@ -88,11 +90,13 @@ func _process(delta):
 		
 	if (follownode.unit_offset >= stops[c] and c != 0) or (follownode.unit_offset >= stops[c] and c == 0 and follownode.unit_offset < stops[-1]):
 		timer += delta
+		guy.current_anim = "Idle"
 		if timer >= times[c]:
 			c += 1
 			c %= stopcount
 			timer = 0
 	else:
+		guy.current_anim = "Walk"
 		follownode.unit_offset += speed*delta*0.05
 		follownode.unit_offset = fmod(follownode.unit_offset, 1.0)
 		step_elapsed+=delta

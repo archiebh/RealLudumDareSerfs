@@ -33,7 +33,7 @@ font_data = SubResource( 6 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Death"
-length = 6.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Arrow:translation")
 tracks/0/interp = 1
@@ -101,7 +101,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 4.5, 5.8 ),
+"times": PoolRealArray( 2.3, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -192,6 +192,18 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HUD/Label2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -360,7 +372,6 @@ text = "The Gate Hath Opened"
 align = 1
 
 [node name="Splash" type="Sprite" parent="HUD"]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 959, 533 )
 scale = Vector2( 2.63462, 2.62439 )
 texture = ExtResource( 8 )
