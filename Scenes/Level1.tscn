@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scripts/Voicelines.gd" type="Script" id=15]
 [ext_resource path="res://Sounds/Voice/Serf/11.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Materials/Path.tres" type="Material" id=17]
+[ext_resource path="res://Water.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -132,6 +133,8 @@ operation = 2
 radius = 3.395
 height = 30.671
 sides = 10
+
+[node name="Water" parent="CSGBox" instance=ExtResource( 18 )]
 
 [node name="Pathhandler" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.826, 0 )
