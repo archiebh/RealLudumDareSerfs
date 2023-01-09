@@ -6,6 +6,7 @@ extends Control
 # var b = "text"
 onready var leafs = $Hidden
 onready var label = $RichTextLabel
+onready var lowtext = $Label2
 onready var rect = $ColorRect
 onready var meter = $Meter
 onready var wheatcounter = $Label
@@ -18,13 +19,28 @@ var deathplayed = false
 
 var is_village = true
 
+
+var ticker = 0
+var dun = false
+
 func _ready():
 	if "Level" in get_tree().get_current_scene().get_name():
 		is_village = false
+	if get_tree().get_current_scene().get_name() == "Level4":
+		lowtext.text = "Get To The Ladder..."
+		lowtext.visible=true
+		wheatcounter.visible = false
+		get_node("Sprite").visible = false
+		
 	global.seenby=0
 	anim.play("lvlstart")
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	if get_tree().get_current_scene().get_name() == "Level4" and !dun:
+		ticker+=delta
+		if ticker > 5:
+			dun = true
+			anim.play("Opened")
 	if global.wheat >= 100 and !open_played and !is_village:
 		anim.play("Opened")
 		open_played=true

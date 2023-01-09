@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/FinalSceneScript.gd" type="Script" id=1]
 [ext_resource path="res://Working Textures/bed.png" type="Texture" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://Real Textures/Sky Objects/Hill House.png" type="Texture" id=11]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=13]
-[ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/Birdsong.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Real Textures/Sky Objects/Forest 1.png" type="Texture" id=15]
 [ext_resource path="res://Sounds/Voice/Serf/41.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/Voice/Serf/42.mp3" type="AudioStream" id=17]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Real Textures/Sky Objects/Mountain 2.png" type="Texture" id=28]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 1.png" type="Texture" id=29]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 2.png" type="Texture" id=30]
+[ext_resource path="res://Sounds/Music/FinalPush.mp3" type="AudioStream" id=31]
 
 [sub_resource type="ProceduralSky" id=15]
 sky_horizon_color = Color( 1, 1, 1, 1 )
@@ -2439,6 +2440,7 @@ stream = ExtResource( 13 )
 
 [node name="NightTimeSound" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
 stream = ExtResource( 14 )
+volume_db = -15.0
 autoplay = true
 
 [node name="StartVoice" type="AudioStreamPlayer" parent="WorldThing/SOUNDS"]
@@ -3192,6 +3194,10 @@ texture = ExtResource( 29 )
 transform = Transform( -0.640622, 0, -9.97946, 0, 10, 0, 9.97946, 0, -0.640622, 235.071, 96.1113, 14.1107 )
 shaded = true
 texture = ExtResource( 28 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+autoplay = true
 
 [connection signal="area_entered" from="WorldThing/ENDZONE" to="WorldThing/ENDZONE" method="_on_ENDZONE_area_entered"]
 [connection signal="area_entered" from="WorldThing/TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]
