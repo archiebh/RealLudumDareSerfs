@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Sounds/Voice/Serf/12.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Scripts/Voicelines.gd" type="Script" id=15]
 [ext_resource path="res://Sounds/Voice/Serf/11.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Materials/Path.tres" type="Material" id=17]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -131,6 +132,259 @@ operation = 2
 radius = 3.395
 height = 30.671
 sides = 10
+
+[node name="Pathhandler" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.826, 0 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Pathhandler"]
+
+[node name="CSGBox" type="CSGBox" parent="Pathhandler/CSGCombiner"]
+transform = Transform( 0.998464, 0, -0.0554033, 0, 1, 0, 0.0554033, 0, 0.998464, -98.0377, 0, -10.3317 )
+width = 29.0359
+depth = 3.52327
+material = ExtResource( 17 )
+
+[node name="CSGBox2" type="CSGBox" parent="Pathhandler/CSGCombiner"]
+transform = Transform( -0.52406, 0, -0.851681, 0, 1, 0, 0.851681, 0, -0.52406, -90.4876, 0, 3.32142 )
+width = 32.0939
+depth = 3.52327
+material = ExtResource( 17 )
+
+[node name="CSGBox3" type="CSGBox" parent="Pathhandler/CSGCombiner"]
+transform = Transform( 0.25391, 0, -0.967228, 0, 1, 0, 0.967228, 0, 0.25391, -109.935, 0, 2.51416 )
+width = 31.0092
+depth = 3.52327
+material = ExtResource( 17 )
+
+[node name="CSGBox4" type="CSGBox" parent="Pathhandler/CSGCombiner"]
+transform = Transform( 0.999994, 0, -0.00352555, 0, 1, 0, 0.00352555, 0, 0.999994, -102.514, 0, 16.2344 )
+width = 10.5733
+depth = 3.52327
+material = ExtResource( 17 )
+
+[node name="CSGBox5" type="CSGBox" parent="Pathhandler/CSGCombiner"]
+transform = Transform( -0.651052, 0, -0.759033, 0, 1, 0, 0.759033, 0, -0.651052, -77.0951, 0, -16.709 )
+width = 18.5803
+depth = 2.63679
+material = ExtResource( 17 )
+
+[node name="CSGCombiner2" type="CSGCombiner" parent="Pathhandler"]
+
+[node name="CSGBox" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 1, 0, 0.000942487, 0, 1, 0, -0.000942487, 0, 1, -35.3221, 0, -27.4907 )
+width = 31.7776
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox2" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 1, 0, 0.000942487, 0, 1, 0, -0.000942487, 0, 1, -36.5697, 0, -23.7479 )
+width = 33.9802
+depth = 2.34873
+material = ExtResource( 17 )
+
+[node name="CSGBox3" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 0.000942444, 0, -1, 0, 1, 0, 0.169637, 0, 0.000159873, -18.6332, 0, -25.6215 )
+width = 35.4731
+depth = 2.34873
+material = ExtResource( 17 )
+
+[node name="CSGBox4" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 0.000942444, 0, -1, 0, 1, 0, 0.169637, 0, 0.000159873, -71.5452, 0, -25.6215 )
+width = 35.4731
+depth = 2.34873
+material = ExtResource( 17 )
+
+[node name="CSGBox5" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 1, 0, 0.000942487, 0, 1, 0, -0.000942487, 0, 1, -64.8237, 0, -27.4907 )
+width = 13.3946
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox6" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 1, 0, 0.000942487, 0, 1, 0, -0.000942487, 0, 1, -65.5576, 0, -23.6745 )
+width = 11.7794
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox7" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( 0.0184102, 0, -0.994664, 0, 1, 0, 0.168638, 0, 0.10316, -18.5476, 0, -19.0482 )
+width = 50.2397
+depth = 2.34873
+material = ExtResource( 17 )
+
+[node name="CSGBox8" type="CSGBox" parent="Pathhandler/CSGCombiner2"]
+transform = Transform( -0.103846, 0, -0.787421, 0, 1, 0, 0.13414, 0, -0.616415, -12.7067, 0, -34.9408 )
+width = 114.251
+depth = 2.34873
+material = ExtResource( 17 )
+
+[node name="CSGCombiner3" type="CSGCombiner" parent="Pathhandler"]
+
+[node name="CSGBox" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.586005, 0, -0.810308, 0, 1, 0, 0.810308, 0, -0.586005, -28.8006, 0, -6.29566 )
+width = 18.4731
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox2" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.494549, 0, -0.86915, 0, 1, 0, 0.86915, 0, -0.494549, -34.1575, 0, 13.6183 )
+width = 23.8261
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox3" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.39734, 0, 0.917671, 0, 1, 0, -0.917671, 0, -0.39734, -14.8258, 0, -8.04249 )
+width = 16.272
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox4" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.527831, 0, 0.849349, 0, 1, 0, -0.849349, 0, -0.527831, -46.5019, 0, 12.2209 )
+width = 24.8183
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox5" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( 0.999999, 0, 0.00164063, 0, 1, 0, -0.00164063, 0, 0.999999, -39.5145, 0, 1.04109 )
+width = 12.8651
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox6" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( 0.957918, 0, -0.287043, 0, 1, 0, 0.287043, 0, 0.957918, -48.7634, 0, 0.160242 )
+width = 6.93095
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox7" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.475517, 0, -0.879707, 0, 1, 0, 0.879707, 0, -0.475517, -52.3775, 0, 0.483889 )
+width = 4.96067
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox8" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.946852, 0, -0.321671, 0, 1, 0, 0.321671, 0, -0.946852, -20.3807, 0, -14.4871 )
+width = 7.29719
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox9" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.829428, 0, -0.558614, 0, 1, 0, 0.558614, 0, -0.829428, -14.2162, 0, 1.43792 )
+width = 9.06998
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox10" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.494716, 0, -0.869055, 0, 1, 0, 0.869055, 0, -0.494716, -18.7758, 0, 5.68034 )
+width = 4.91557
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox11" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.699139, 0, 0.714985, 0, 1, 0, -0.714985, 0, -0.699139, -21.7891, 0, 5.40279 )
+width = 8.47005
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox12" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( -0.976156, 0, -0.21707, 0, 1, 0, 0.21707, 0, -0.976156, -26.3487, 0, 3.22212 )
+width = 5.66289
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGBox13" type="CSGBox" parent="Pathhandler/CSGCombiner3"]
+transform = Transform( 0.0288638, 0, 0.999583, 0, 1, 0, -0.999583, 0, 0.0288638, -39.7786, 0, 25.2383 )
+width = 5.66289
+depth = 2.34845
+material = ExtResource( 17 )
+
+[node name="CSGCombiner4" type="CSGCombiner" parent="Pathhandler"]
+
+[node name="CSGBox" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.999913, 0, 0.0131942, 0, 1, 0, -0.0131942, 0, -0.999913, -48.6863, 0, 43.3463 )
+width = 30.249
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox2" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( 0.0743173, 0, 0.997235, 0, 1, 0, -0.997235, 0, 0.0743173, -63.8775, 0, 35.3471 )
+width = 18.3205
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox3" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.00102979, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00102979, -32.7613, 0, 35.8608 )
+width = 18.3205
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox4" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.999913, 0, 0.0131942, 0, 1, 0, -0.0131942, 0, -0.999913, -57.0525, 0, 27.4946 )
+width = 15.2847
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox5" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.999913, 0, 0.0131942, 0, 1, 0, -0.0131942, 0, -0.999913, -38.8525, 0, 28.0817 )
+width = 15.2847
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox6" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.00102979, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00102979, -46.3379, 0, 35.0535 )
+width = 16.8994
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGBox7" type="CSGBox" parent="Pathhandler/CSGCombiner4"]
+transform = Transform( -0.00102979, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00102979, -50.3742, 0, 34.6866 )
+width = 16.8994
+depth = 2.96429
+material = ExtResource( 17 )
+
+[node name="CSGCombiner5" type="CSGCombiner" parent="Pathhandler"]
+
+[node name="CSGBox" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( 1, 0, 0.000942487, 0, 1, 0, -0.000942487, 0, 1, 7.94645, 0, -37.5782 )
+width = 18.3159
+depth = 2.74531
+material = ExtResource( 17 )
+
+[node name="CSGBox2" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( 0.999329, 0, -0.0366262, 0, 1, 0, 0.0366262, 0, 0.999329, 5.54511, 0, -41.5734 )
+width = 22.4969
+depth = 2.11639
+material = ExtResource( 17 )
+
+[node name="CSGBox3" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( -0.13964, 0, -0.990202, 0, 1, 0, 0.990202, 0, -0.13964, -5.26324, 0, -52.6959 )
+width = 23.313
+depth = 2.74531
+material = ExtResource( 17 )
+
+[node name="CSGBox4" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( -0.0262642, 0, -0.999655, 0, 1, 0, 0.999655, 0, -0.0262642, -0.692795, 0, -50.0863 )
+width = 27.5401
+depth = 2.11639
+material = ExtResource( 17 )
+
+[node name="CSGBox5" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( -0.978999, 0, 0.203864, 0, 1, 0, -0.203864, 0, -0.978999, -2.00073, 0, -64.429 )
+width = 5.71862
+depth = 2.11639
+material = ExtResource( 17 )
+
+[node name="CSGBox6" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( 0.0060388, 0, 0.999982, 0, 1, 0, -0.999982, 0, 0.0060388, 16.2152, 0, -39.2866 )
+width = 6.13744
+depth = 2.11639
+material = ExtResource( 17 )
+
+[node name="CSGBox7" type="CSGBox" parent="Pathhandler/CSGCombiner5"]
+transform = Transform( 0.00424114, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.00424114, -1.34831, 0, -72.2748 )
+width = 15.4573
+depth = 2.11639
+material = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.671, 3.66422, 0 )
