@@ -192,9 +192,9 @@ material = SubResource( 3 )
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0257, -4.70152, 0.260124 )
 use_collision = true
-width = 150.0
+width = 1000.0
 height = 9.22013
-depth = 100.0
+depth = 1000.0
 material = SubResource( 23 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGBox"]
