@@ -1,10 +1,10 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Working Textures/Level4.png" type="Texture" id=1]
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Working Textures/tree.png" type="Texture" id=5]
+[ext_resource path="res://Materials/plank.tres" type="Material" id=5]
 [ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=6]
 [ext_resource path="res://Materials/Brick.tres" type="Material" id=7]
 [ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=8]
@@ -18,6 +18,14 @@
 [ext_resource path="res://Sounds/Voice/Serf/41.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/Voice/Serf/42.mp3" type="AudioStream" id=17]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=18]
+[ext_resource path="res://Materials/Hedge.tres" type="Material" id=19]
+[ext_resource path="res://Materials/Path.tres" type="Material" id=20]
+[ext_resource path="res://Materials/Noble Cobble.tres" type="Material" id=21]
+[ext_resource path="res://Real Textures/Noble Cobble.png" type="Texture" id=22]
+[ext_resource path="res://Real Textures/Water.png" type="Texture" id=23]
+[ext_resource path="res://Materials/Grass.tres" type="Material" id=24]
+[ext_resource path="res://Real Textures/Tree 1.png" type="Texture" id=25]
+[ext_resource path="res://Real Textures/Pink Bush.png" type="Texture" id=26]
 
 [sub_resource type="Curve3D" id=4]
 _data = {
@@ -81,13 +89,13 @@ _data = {
 
 [sub_resource type="Curve3D" id=14]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -68, 0, -122, 0, 0, 0, 0, 0, 0, 25, 0, -122, 0, 0, 0, 0, 0, 0, -68, 0, -77, 0, 0, 0, 0, 0, 0, 26, 0, -79, 0, 0, 0, 0, 0, 0, -69, 0, -40, 0, 0, 0, 0, 0, 0, 26, 0, -42, 0, 0, 0, 0, 0, 0, -68, 0, -122 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -68, 0, -122, 0, 0, 0, 0, 0, 0, 19.8664, 0, -122.241, 0, 0, 0, 0, 0, 0, -68, 0, -77, 0, 0, 0, 0, 0, 0, 19.4353, 0, -78.915, 0, 0, 0, 0, 0, 0, -69, 0, -40, 0, 0, 0, 0, 0, 0, 20.5131, 0, -41.84, 0, 0, 0, 0, 0, 0, -68, 0, -122 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="Curve3D" id=15]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999, 0, 0, 0, 0, 0, 0, -24, 0, -126, 0, 0, 0, 0, 0, 0, 26, 0, -100, 0, 0, 0, 0, 0, 0, -67, 0, -55, 0, 0, 0, 0, 0, 0, -68, 0, -103, 0, 0, 0, 0, 0, 0, 27, 0, -63, 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999, 0, 0, 0, 0, 0, 0, -24, 0, -126, 0, 0, 0, 0, 0, 0, 20.7287, 0, -101.117, 0, 0, 0, 0, 0, 0, -67, 0, -55, 0, 0, 0, 0, 0, 0, -68, 0, -103, 0, 0, 0, 0, 0, 0, 21.3753, 0, -62.3175, 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
@@ -116,6 +124,19 @@ uv1_triplanar = true
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 6 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 23 )
 uv1_triplanar = true
 
 [sub_resource type="PanoramaSky" id=23]
@@ -290,7 +311,7 @@ times = [ 0.0, 0.0 ]
 
 [node name="Spatial" parent="Guards/Field" instance=ExtResource( 10 )]
 curv = SubResource( 14 )
-speed = 2.0
+speed = 1.0
 y_offset = 1.0
 stopcount = 2
 stops = [ 0.1, 0.2 ]
@@ -298,7 +319,7 @@ times = [ 0.0, 0.0 ]
 
 [node name="Spatial2" parent="Guards/Field" instance=ExtResource( 10 )]
 curv = SubResource( 15 )
-speed = 2.0
+speed = 1.0
 y_offset = 1.0
 stopcount = 2
 stops = [ 0.1, 0.2 ]
@@ -396,29 +417,31 @@ collision_mask = 9
 width = 150.0
 height = 5.0
 depth = 60.0
-material = SubResource( 1 )
+material = ExtResource( 24 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.026, -2.34004, -44 )
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-width = 102.0
+width = 600.0
 height = 5.0
-depth = 178.0
-material = SubResource( 1 )
+depth = 1000.0
+material = ExtResource( 24 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.0493, 0.218044, 17.8144 )
 operation = 2
 radius = 2.0
 height = 30.0
+material = ExtResource( 20 )
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, -0.15, 0.866025, 0, -0.259808, -0.5, 43.0493, 2.68672, 36.6895 )
 operation = 2
 radius = 2.0
 height = 40.0
+material = ExtResource( 20 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, 0.15, 0.866025, 0, -0.259808, 0.5, 43.0493, 1.72816, 0.779312 )
@@ -426,6 +449,7 @@ operation = 2
 radius = 2.0
 height = 32.0
 sides = 15
+material = ExtResource( 20 )
 
 [node name="CSGBox4" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6659, -2.34004, -160.832 )
@@ -435,7 +459,7 @@ collision_mask = 9
 width = 6.75945
 height = 5.0
 depth = 60.0
-material = SubResource( 1 )
+material = ExtResource( 24 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, -26, 0.17, 7 )
@@ -456,6 +480,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 22.0
+material = ExtResource( 19 )
 
 [node name="Blocc" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.5, 5, -22.4082 )
@@ -465,6 +490,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Hedge3" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95, 5, -33.683 )
@@ -474,6 +500,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 45.0
+material = ExtResource( 19 )
 
 [node name="Hedge4" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 5, 2.48623 )
@@ -483,6 +510,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.0
+material = ExtResource( 19 )
 
 [node name="Hedge5" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95, 5, 11.317 )
@@ -492,6 +520,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 45.0
+material = ExtResource( 19 )
 
 [node name="Hedge6" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 5, 0.316954 )
@@ -501,6 +530,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 23.0
+material = ExtResource( 19 )
 
 [node name="Hedge7" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 5, -25.0595 )
@@ -510,6 +540,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.5
+material = ExtResource( 19 )
 
 [node name="Blocc3" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -114.545, 5, -15.683 )
@@ -519,6 +550,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 4.0
+material = ExtResource( 19 )
 
 [node name="Blocc4" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -110.493, 5, -20.2103 )
@@ -528,6 +560,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc2" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.5, 5, -27.0779 )
@@ -537,6 +570,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc5" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.232, 5, -27.0009 )
@@ -546,6 +580,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc6" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -106.144, 5, -24.8837 )
@@ -555,6 +590,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc7" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.653, 5, -27.0009 )
@@ -564,6 +600,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc8" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.603, 5, -22.3129 )
@@ -573,6 +610,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc9" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.3263, 5, -31.4956 )
@@ -582,6 +620,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc10" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -101.297, 5, -20.3135 )
@@ -591,6 +630,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc11" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -105.74, 5, -15.7769 )
@@ -600,6 +640,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc12" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.59, 5, -17.7559 )
@@ -609,6 +650,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc13" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -96.7728, 5, -24.7987 )
@@ -618,6 +660,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc14" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.5529, 5, -26.8073 )
@@ -627,6 +670,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc15" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -85.8311, 5, -29.4013 )
@@ -636,6 +680,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.5
+material = ExtResource( 19 )
 
 [node name="Blocc16" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.6123, 5, -27.2262 )
@@ -645,6 +690,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc17" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -107.988, 5, -6.96103 )
@@ -654,6 +700,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.5
+material = ExtResource( 19 )
 
 [node name="Blocc18" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -90.1594, 5, -15.7904 )
@@ -663,6 +710,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.5
+material = ExtResource( 19 )
 
 [node name="Blocc19" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -85.712, 5, -7.04121 )
@@ -672,6 +720,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 27.0
+material = ExtResource( 19 )
 
 [node name="Blocc20" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -99.2103, 5, 6.64124 )
@@ -681,6 +730,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 28.0
+material = ExtResource( 19 )
 
 [node name="Blocc21" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.091, 5, 8.64058 )
@@ -690,6 +740,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc22" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -103.646, 5, -6.79037 )
@@ -699,6 +750,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 18.5
+material = ExtResource( 19 )
 
 [node name="Blocc23" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.69, 5, -8.82243 )
@@ -708,6 +760,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc24" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.59, 5, -13.4107 )
@@ -717,6 +770,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc25" type="CSGBox" parent="Maze"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.1258, 5, -13.4107 )
@@ -726,6 +780,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc26" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -97.0579, 5, -15.8815 )
@@ -735,6 +790,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc27" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -92.4015, 5, -11.271 )
@@ -744,6 +800,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc28" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -92.2248, 5, -20.2904 )
@@ -753,6 +810,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc29" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -114.554, 5, -2.34347 )
@@ -762,6 +820,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 4.0
+material = ExtResource( 19 )
 
 [node name="Blocc30" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -108.154, 5, 2.1276 )
@@ -771,6 +830,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc31" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -101.503, 5, -2.22147 )
@@ -780,6 +840,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc32" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -99.3073, 5, -0.119016 )
@@ -789,6 +850,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc33" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -94.9527, 5, 2.1276 )
@@ -798,6 +860,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc34" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -90.2411, 5, -0.0132289 )
@@ -807,6 +870,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc35" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -94.593, 5, -4.57992 )
@@ -816,6 +880,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc36" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -83.4918, 5, -11.2996 )
@@ -825,6 +890,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc37" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -85.6429, 5, -24.8549 )
@@ -834,6 +900,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc38" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.1181, 5, -20.5448 )
@@ -843,6 +910,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc39" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -76.6766, 5, -15.841 )
@@ -852,6 +920,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc40" type="CSGBox" parent="Maze"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -73.9352, 5, -15.9536 )
@@ -861,6 +930,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc41" type="CSGBox" parent="Maze"]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -76.6766, 5, -6.88671 )
@@ -870,6 +940,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc42" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.0794, 5, -4.71341 )
@@ -879,6 +950,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc43" type="CSGBox" parent="Maze"]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -74.5281, 5, -2.37506 )
@@ -888,6 +960,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc44" type="CSGBox" parent="Maze"]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -81.1794, 5, 2.21688 )
@@ -897,6 +970,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 9.6
+material = ExtResource( 19 )
 
 [node name="Blocc45" type="CSGBox" parent="Maze"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -81.1154, 5, 4.53155 )
@@ -906,6 +980,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Blocc46" type="CSGBox" parent="Maze"]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -74.4607, 5, 6.69578 )
@@ -915,6 +990,7 @@ collision_mask = 9
 width = 1.0
 height = 11.076
 depth = 5.0
+material = ExtResource( 19 )
 
 [node name="Bushes2" type="Spatial" parent="."]
 
@@ -1501,45 +1577,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855
 [node name="Bush6" parent="Bushes2/Patch15" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
 
-[node name="Patch16" type="Spatial" parent="Bushes2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41194, 0, -85.8357 )
-
-[node name="Bush" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
-
-[node name="Bush2" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
-
-[node name="Bush3" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
-
-[node name="Bush4" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9646, 3.8147e-06, -13.6804 )
-
-[node name="Bush5" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -3.68855 )
-
-[node name="Bush6" parent="Bushes2/Patch16" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
-
-[node name="Patch17" type="Spatial" parent="Bushes2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4119, 0, -55.4589 )
-
-[node name="Bush" parent="Bushes2/Patch17" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.616, 3.8147e-06, -2.68035 )
-
-[node name="Bush2" parent="Bushes2/Patch17" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -3.68855 )
-
-[node name="Bush3" parent="Bushes2/Patch17" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.931, -0.0938583, -4.88605 )
-
-[node name="Bush5" parent="Bushes2/Patch17" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2796, -0.0938583, 5.31145 )
-
-[node name="Bush6" parent="Bushes2/Patch17" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2796, -0.0938583, -4.88605 )
-
 [node name="Patch18" type="Spatial" parent="Bushes2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2477, 0, -54.9439 )
 
@@ -1700,6 +1737,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 18.0
+material = ExtResource( 19 )
 
 [node name="Corner" type="Spatial" parent="Hedges"]
 
@@ -1711,6 +1749,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge9" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( -1, 0, 9.61651e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -41.9013, 2.5, -10.8765 )
@@ -1720,6 +1759,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge10" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( -1, 0, 9.61651e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -0.7923, 2.5, -9.88106 )
@@ -1729,6 +1769,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge11" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -5.90588, 2.5, -14.9855 )
@@ -1738,6 +1779,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge12" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( -4.37114e-08, 0, 1.1, 0, 1, 0, -1, 0, -4.80825e-08, -5.89677, 2.5, 24.1189 )
@@ -1747,6 +1789,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge13" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, -0.792301, 2.5, 19.0054 )
@@ -1756,6 +1799,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge14" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, -41.9013, 2.5, 18.0099 )
@@ -1765,6 +1809,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge15" type="CSGBox" parent="Hedges/Corner"]
 transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -36.7877, 2.5, 23.1144 )
@@ -1774,6 +1819,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 12.0
+material = ExtResource( 19 )
 
 [node name="Hedge8" type="CSGBox" parent="Hedges"]
 transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 15.5506, 2.5, -14.9688 )
@@ -1783,6 +1829,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 28.0
+material = ExtResource( 19 )
 
 [node name="Hedge9" type="CSGBox" parent="Hedges"]
 transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 14.4766, 2.5, 24.0853 )
@@ -1792,6 +1839,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 30.0
+material = ExtResource( 19 )
 
 [node name="Hedge10" type="CSGBox" parent="Hedges"]
 transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, -58.0551, 2.5, -32.7646 )
@@ -1801,6 +1849,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 25.0
+material = ExtResource( 19 )
 
 [node name="Hedge11" type="CSGBox" parent="Hedges"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, 1.83871, 2.5, -24.4003 )
@@ -1810,6 +1859,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 18.0
+material = ExtResource( 19 )
 
 [node name="Hedge12" type="CSGBox" parent="Hedges"]
 transform = Transform( -4.37114e-08, 0, -1.1, 0, 1, 0, 1, 0, -4.80825e-08, 16.7276, 2.5, -32.7646 )
@@ -1819,6 +1869,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 26.0
+material = ExtResource( 19 )
 
 [node name="Hedge13" type="CSGBox" parent="Hedges"]
 transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -23.0551, 2.5, -116.717 )
@@ -1828,6 +1879,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 16.0
+material = ExtResource( 19 )
 
 [node name="Hedge14" type="CSGBox" parent="Hedges"]
 transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -73.7646 )
@@ -1837,15 +1889,17 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 10.0
+material = ExtResource( 19 )
 
 [node name="Hedge15" type="CSGBox" parent="Hedges"]
-transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 1.24216, 2.5, -81.7646 )
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 1.24216, 2.5, -85.1418 )
 use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 14.0
+material = ExtResource( 19 )
 
 [node name="Hedge16" type="CSGBox" parent="Hedges"]
 transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -58.7578, 2.5, -99.7646 )
@@ -1855,6 +1909,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 25.0
+material = ExtResource( 19 )
 
 [node name="Hedge17" type="CSGBox" parent="Hedges"]
 transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -55.7646 )
@@ -1864,6 +1919,7 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 14.0
+material = ExtResource( 19 )
 
 [node name="Hedge18" type="CSGBox" parent="Hedges"]
 transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 22.2422, 2.5, -77.7646 )
@@ -1873,68 +1929,89 @@ collision_mask = 9
 width = 3.0
 height = 5.0
 depth = 14.0
+material = ExtResource( 19 )
+
+[node name="Hedge19" type="CSGBox" parent="Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -72.6432, 2.5, -113.886 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 145.612
+material = ExtResource( 19 )
+
+[node name="Hedge20" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -21.0938, 2.5, -192.078 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 96.5368
+material = ExtResource( 19 )
+
+[node name="Hedge21" type="CSGBox" parent="Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, 25.8168, 2.5, -72.1487 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 219.339
+material = ExtResource( 19 )
+
+[node name="Hedge22" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -25.7984, 2.5, 49.233 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 96.5368
+material = ExtResource( 19 )
+
+[node name="Hedge23" type="CSGBox" parent="Hedges"]
+transform = Transform( 1, 0, -1.9233e-07, 0, 1, 0, 1.74846e-07, 0, 1.1, -73.0281, 2.5, 29.7158 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 33.5093
+material = ExtResource( 19 )
+
+[node name="Hedge24" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -126.293, 2.5, -35.5617 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.9321
+material = ExtResource( 19 )
+
+[node name="Hedge25" type="CSGBox" parent="Hedges"]
+transform = Transform( 1, 0, -1.9233e-07, 0, 1, 0, 1.74846e-07, 0, 1.1, -135.243, 2.5, -11.1269 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 42.0412
+material = ExtResource( 19 )
+
+[node name="Hedge26" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -126.293, 2.5, 13.1504 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 18.9321
+material = ExtResource( 19 )
 
 [node name="Trees" type="Spatial" parent="."]
-
-[node name="Tree3" type="Sprite3D" parent="Trees"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -34.983, 7.21664, 39.0446 )
-billboard = 2
-shaded = true
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Trees/Tree3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree4" type="Sprite3D" parent="Trees"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -21.983, 7.21664, 39.0446 )
-billboard = 2
-shaded = true
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Trees/Tree4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree5" type="Sprite3D" parent="Trees"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.983, 7.21664, 39.0446 )
-billboard = 2
-shaded = true
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Trees/Tree5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree6" type="Sprite3D" parent="Trees"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.017, 7.21664, 39.0446 )
-billboard = 2
-shaded = true
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Trees/Tree6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree7" type="Sprite3D" parent="Trees"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22.017, 7.21664, 39.0446 )
-billboard = 2
-shaded = true
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Trees/Tree7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
 
 [node name="tower" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3107, 2, 5.23025 )
@@ -1976,6 +2053,7 @@ collision_mask = 9
 radius = 9.545
 height = 2.353
 sides = 60
+material = SubResource( 24 )
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="Fountain/CSGCylinder"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511519, 0 )
@@ -1983,14 +2061,24 @@ operation = 2
 radius = 7.969
 height = 5.538
 sides = 60
+material = SubResource( 25 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Fountain/CSGCylinder"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0 )
 height = 8.0
 cone = true
+material = SubResource( 26 )
 
 [node name="CSGTorus" type="CSGTorus" parent="Fountain/CSGCylinder"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 5, 0 )
+material = ExtResource( 21 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Fountain/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130456, 0 )
+radius = 7.969
+height = 0.973944
+sides = 60
+material = SubResource( 27 )
 
 [node name="Flowerbeds" type="Spatial" parent="."]
 
@@ -2000,6 +2088,7 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 14.144
+material = ExtResource( 20 )
 
 [node name="CSGBox5" type="CSGBox" parent="Flowerbeds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -24 )
@@ -2007,6 +2096,7 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 14.144
+material = ExtResource( 20 )
 
 [node name="CSGBox6" type="CSGBox" parent="Flowerbeds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4474, 0, -28 )
@@ -2014,6 +2104,7 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 14.144
+material = ExtResource( 20 )
 
 [node name="CSGBox7" type="CSGBox" parent="Flowerbeds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4474, 0, -24 )
@@ -2021,6 +2112,7 @@ use_collision = true
 collision_layer = 9
 collision_mask = 9
 width = 14.144
+material = ExtResource( 20 )
 
 [node name="Castle" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7429, 20, -161.928 )
@@ -2030,147 +2122,176 @@ collision_mask = 9
 width = 90.0
 height = 50.0
 depth = 58.0
+material = ExtResource( 7 )
 
 [node name="Ladder" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3389, 0, -17 )
 height = 50.0
+material = ExtResource( 5 )
 
 [node name="CSGBox" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox2" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox3" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox4" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox5" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox6" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox7" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox9" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, 28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox8" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox10" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox11" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox12" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox13" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox14" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox15" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox16" type="CSGBox" parent="Castle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, -28 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox20" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 21.8 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox21" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 10.2 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox22" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -1 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox23" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -26 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox24" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -13.5 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox25" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 21.8 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox26" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 10.2 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox27" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -1 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox28" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -26 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGBox29" type="CSGBox" parent="Castle"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -13.5 )
 width = 6.0
 height = 8.0
+material = ExtResource( 7 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Castle"]
-transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -2, 0, 1.5, -8.74228e-08, 0, -19, 17 )
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -2, 0, 1.5, -8.74228e-08, 0, -19, 29.1981 )
 operation = 2
 radius = 9.0
-height = 16.0
+height = 3.89574
 sides = 10
+material = ExtResource( 7 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 20 )
@@ -2222,6 +2343,7 @@ collision_mask = 9
 width = 10.0
 height = 10.0
 depth = 10.0
+material = ExtResource( 7 )
 
 [node name="CSGBox3" type="CSGBox" parent="CSGBox7"]
 transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -3.00586, 0 )
@@ -2229,6 +2351,7 @@ operation = 2
 width = 6.0
 height = 8.79256
 depth = 10.0
+material = ExtResource( 7 )
 
 [node name="CSGBox4" type="CSGBox" parent="CSGBox7"]
 transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
@@ -2236,6 +2359,7 @@ operation = 2
 width = 6.0
 height = 5.55789
 depth = 10.0
+material = ExtResource( 7 )
 
 [node name="CSGBox" type="CSGBox" parent="CSGBox7"]
 transform = Transform( 1, 0, 0, 0, 1.41421, -2.12132, 0, 1.41421, 2.12132, 0, 6.46758, 5 )
@@ -2243,6 +2367,7 @@ operation = 2
 width = 11.3291
 height = 3.3
 depth = 2.5433
+material = ExtResource( 7 )
 
 [node name="CSGBox2" type="CSGBox" parent="CSGBox7"]
 transform = Transform( 1, 0, 0, 0, 1.41421, 2.12132, 0, -1.41421, 2.12132, 0, 6.468, -5 )
@@ -2250,6 +2375,233 @@ operation = 2
 width = 11.3291
 height = 3.3
 depth = 2.75392
+material = ExtResource( 7 )
+
+[node name="Tree2" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.359, 7.21664, 5.32918 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree3" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.359, 7.21664, -28.4804 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree4" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9527, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree5" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00481, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree6" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80476, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree7" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0552, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Tree8" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0041, 7.21664, 39.0138 )
+billboard = 2
+shaded = true
+texture = ExtResource( 25 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+height = 13.4869
+
+[node name="Flowers" type="Spatial" parent="."]
+
+[node name="Flower" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -36.4081, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower2" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -33.2317, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower3" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -28.2122, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower4" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -25.5456, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower5" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -30.9602, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower6" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -36.4081, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower7" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -33.2317, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower8" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -28.2122, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower9" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -25.5456, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower10" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -30.9602, 1.43367, -24.053 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower11" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -17.8016, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower12" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -14.6252, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower13" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.6057, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower14" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.93909, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower15" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -12.3537, 1.43367, -27.9556 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower16" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -17.7394, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower17" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -14.563, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower18" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.54348, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower19" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.87687, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="Flower20" type="Sprite3D" parent="Flowers"]
+transform = Transform( 0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -12.2915, 1.43367, -24.0974 )
+billboard = 2
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8764, 6.84179, -130.044 )
+light_color = Color( 0.780392, 0.611765, 0.368627, 1 )
+light_energy = 2.468
+omni_range = 9.207
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
 [connection signal="area_entered" from="TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]
