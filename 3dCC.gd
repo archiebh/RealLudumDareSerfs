@@ -16,6 +16,8 @@ export var max_climb_angle = .6
 export var angle_of_freedom = 80
 export var boost_accumulation_speed = 1
 export var max_boost_multiplier = 2
+export var middle_text = "The Gate Hath Opened"
+export var middle_text_visible = false
 onready var BushGetter = $BushGetter
 onready var head = $UpperCollider
 onready var footstep = $Footstep
@@ -23,6 +25,7 @@ var inbush = false
 var bushcount = 0
 var walking = false
 onready var rustle = $Rustler
+onready var midtext = $HUD/Label2
 
 var rng = RandomNumberGenerator.new()
 
@@ -53,6 +56,15 @@ func _input(event):
 		$UpperCollider/Camera.rotation_degrees = camera_rot
 
 func _process(delta):
+	if "Level" in get_tree().get_current_scene().get_name():
+		midtext.visible = true
+	else:
+		midtext.text = middle_text
+		midtext.visible = middle_text_visible
+		if midtext.visible:
+			midtext.modulate = Color("ffffffff");
+		else:
+			midtext.modulate = Color("00ffffff");
 	if bushcount > 0 and rustle.playing == false:
 		rustle.play()
 	if bushcount == 0 or input_dir == Vector3.ZERO:

@@ -16,9 +16,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if playr.global_translation.x > -12 and !triggered:
+	if playr.global_translation.x > -16 and !triggered:
 		speak.play()
 		anime.play("ManWalk")
 		triggered = true
+	if global.wheat > 0:
 		global.village_done=true
 	

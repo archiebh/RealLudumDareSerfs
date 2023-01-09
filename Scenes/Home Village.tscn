@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -28,6 +28,8 @@
 [ext_resource path="res://Real Textures/Sky Objects/Hill House.png" type="Texture" id=26]
 [ext_resource path="res://Real Textures/Sky Objects/Mountain 2.png" type="Texture" id=27]
 [ext_resource path="res://Real Textures/Sun.png" type="Texture" id=28]
+[ext_resource path="res://Real Textures/indicator.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=30]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -59,10 +61,46 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10, 38.3, 44.4 ),
+"times": PoolRealArray( 1.9, 10, 38.3, 44.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( -8.5, 1.52, -1.328 ), Vector3( 2.78138, 1.52, -1.328 ), Vector3( 2.78138, 1.52, -1.328 ), Vector3( 22.4231, 1.52, -1.328 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Indicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 29, 38.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:middle_text_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 29, 38.3, 44.4, 49 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:middle_text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 38.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Shift to hide", "Right Click To Harvest" ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -90,6 +128,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( -8.5, 1.52, -1.328 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Indicator:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:middle_text_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player:middle_text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "\"[Shift] to hide\"" ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -141,6 +215,7 @@ material = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.99587, 0, -0.090789, 0, 1, 0, 0.090789, 0, -0.99587, -19.5723, 1.80981, -4.26426 )
+middle_text = "\"[Shift] to hide\""
 
 [node name="Bush" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74692, 0.140996, 4.25137 )
@@ -308,7 +383,7 @@ script = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230263, 0.199073, 0.0376334 )
 stream = ExtResource( 18 )
 unit_db = 2.0
-unit_size = 2.0
+unit_size = 8.0
 attenuation_filter_cutoff_hz = 14000.0
 attenuation_filter_db = 0.0
 
@@ -410,5 +485,15 @@ width = 70.0
 height = 82.0
 depth = 56.8
 material = SubResource( 3 )
+
+[node name="Indicator" type="Sprite3D" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.7199, 1.02026, 4.26351 )
+visible = false
+billboard = 1
+no_depth_test = true
+texture = ExtResource( 29 )
+
+[node name="Wheat" parent="." instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9332, 0.781646, -3.25791 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
