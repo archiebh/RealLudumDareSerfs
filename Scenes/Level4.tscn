@@ -444,7 +444,7 @@ opacity = 0.44
 texture = ExtResource( 1 )
 
 [node name="3dCC" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 4, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 7, -8 )
 
 [node name="Maze" type="Spatial" parent="."]
 
@@ -1820,6 +1820,60 @@ width = 3.0
 height = 5.0
 depth = 26.0
 
+[node name="Hedge13" type="CSGBox" parent="Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -23.0551, 2.5, -116.717 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 16.0
+
+[node name="Hedge14" type="CSGBox" parent="Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -73.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 10.0
+
+[node name="Hedge15" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 1.24216, 2.5, -81.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+
+[node name="Hedge16" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, -58.7578, 2.5, -99.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 25.0
+
+[node name="Hedge17" type="CSGBox" parent="Hedges"]
+transform = Transform( -1, 0, 9.6165e-08, 0, 1, 0, -8.74228e-08, 0, -1.1, -38.0551, 2.5, -55.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+
+[node name="Hedge18" type="CSGBox" parent="Hedges"]
+transform = Transform( 1.31134e-07, 0, 1.1, 0, 1, 0, -1, 0, 1.44248e-07, 22.2422, 2.5, -77.7646 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 3.0
+height = 5.0
+depth = 14.0
+
 [node name="Trees" type="Spatial" parent="."]
 
 [node name="Tree3" type="Sprite3D" parent="Trees"]
@@ -1930,28 +1984,13 @@ radius = 7.969
 height = 5.538
 sides = 60
 
-[node name="CSGBox3" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 7, 38 )
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 14.0
-height = 14.0
-depth = 14.0
+[node name="CSGCylinder" type="CSGCylinder" parent="Fountain/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0 )
+height = 8.0
+cone = true
 
-[node name="CSGBox4" type="CSGBox" parent="CSGBox3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-operation = 2
-width = 12.0
-height = 12.0
-depth = 12.0
-
-[node name="CSGBox5" type="CSGBox" parent="CSGBox3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -3 )
-operation = 2
-width = 6.0
-height = 12.0
-depth = 12.0
+[node name="CSGTorus" type="CSGTorus" parent="Fountain/CSGCylinder"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 5, 0 )
 
 [node name="Flowerbeds" type="Spatial" parent="."]
 
@@ -1991,6 +2030,147 @@ collision_mask = 9
 width = 90.0
 height = 50.0
 depth = 58.0
+
+[node name="Ladder" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3389, 0, -17 )
+height = 50.0
+
+[node name="CSGBox" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox3" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox4" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox5" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox6" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox7" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox9" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, 28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox8" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox10" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox11" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox12" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox13" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox14" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox15" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox16" type="CSGBox" parent="Castle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 29, -28 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox20" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 21.8 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox21" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, 10.2 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox22" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -1 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox23" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -26 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox24" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44, 29, -13.5 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox25" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 21.8 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox26" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, 10.2 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox27" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -1 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox28" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -26 )
+width = 6.0
+height = 8.0
+
+[node name="CSGBox29" type="CSGBox" parent="Castle"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 29, -13.5 )
+width = 6.0
+height = 8.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Castle"]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -2, 0, 1.5, -8.74228e-08, 0, -19, 17 )
+operation = 2
+radius = 9.0
+height = 16.0
+sides = 10
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 20 )
@@ -2033,6 +2213,43 @@ collision_mask = 16
 [node name="CollisionShape" type="CollisionShape" parent="TriggerSpeech"]
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 22 )
+
+[node name="CSGBox7" type="CSGBox" parent="."]
+transform = Transform( 0, 0, -1.5, 0, 1.3, 0, 1.43, 0, 0, -58.0041, 6.38123, 37.676 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox3" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -3.00586, 0 )
+operation = 2
+width = 6.0
+height = 8.79256
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+operation = 2
+width = 6.0
+height = 5.55789
+depth = 10.0
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, -2.12132, 0, 1.41421, 2.12132, 0, 6.46758, 5 )
+operation = 2
+width = 11.3291
+height = 3.3
+depth = 2.5433
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, 2.12132, 0, -1.41421, 2.12132, 0, 6.468, -5 )
+operation = 2
+width = 11.3291
+height = 3.3
+depth = 2.75392
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
 [connection signal="area_entered" from="TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]
