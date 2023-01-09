@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "savefile",
+"language": "GDScript",
+"path": "res://savefile.gd"
+} ]
+_global_script_class_icons={
+"savefile": ""
+}
+
 [application]
 
 config/name="RealSerf"
@@ -17,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://global.gd"
+savef="*res://savefile.gd"
 
 [display]
 

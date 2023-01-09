@@ -26,6 +26,7 @@ var bushcount = 0
 var walking = false
 onready var rustle = $Rustler
 onready var midtext = $HUD/Label2
+var sav
 
 var rng = RandomNumberGenerator.new()
 
@@ -33,6 +34,38 @@ var steplength = 0.5
 var passed = 0.4
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if get_tree().get_current_scene().get_name() == "Level1":
+		sav = savefile.new()
+		sav.lvl_name = "Level1.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Village1":
+		sav = savefile.new()
+		sav.lvl_name = "Village1.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Level2":
+		sav = savefile.new()
+		sav.lvl_name = "Level2.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Village2":
+		sav = savefile.new()
+		sav.lvl_name = "Village2.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Level3":
+		sav = savefile.new()
+		sav.lvl_name = "Level3.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Village3":
+		sav = savefile.new()
+		sav.lvl_name = "Village3.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Level4":
+		sav = savefile.new()
+		sav.lvl_name = "Level4.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
+	elif get_tree().get_current_scene().get_name() == "Village0":
+		sav = savefile.new()
+		sav.lvl_name = "Home Village.tscn"
+		ResourceSaver.save("user://serf_savegame.tres", sav)
 	rng.randomize()
 	BushGetter.monitorable = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -103,11 +136,6 @@ func _process_input(delta):
 		global.hidden = true
 	else:
 		global.hidden = false
-	if Input.is_action_just_pressed("ui_cancel"):
-			if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			else:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	# Jump
 	if Input.is_action_pressed("jump") && on_floor && state != State.FALL && (frames == 0 || frames > JUMP_FRAMES + 1):

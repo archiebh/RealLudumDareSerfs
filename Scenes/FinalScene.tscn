@@ -3201,3 +3201,4 @@ autoplay = true
 
 [connection signal="area_entered" from="WorldThing/ENDZONE" to="WorldThing/ENDZONE" method="_on_ENDZONE_area_entered"]
 [connection signal="area_entered" from="WorldThing/TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
