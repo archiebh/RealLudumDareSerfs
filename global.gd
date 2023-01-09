@@ -20,9 +20,10 @@ var current_level = "Home Village.tscn"
 func _ready():
 	pass # Replace with function body.
 
-func _process_input(delta):
+func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
+		print("Crannerfarm")
+		get_tree().change_scene("res://Scenes/Menu.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

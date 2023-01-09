@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/FinalSceneScript.gd" type="Script" id=1]
-[ext_resource path="res://Working Textures/bed.png" type="Texture" id=2]
+[ext_resource path="res://Real Textures/flag.png" type="Texture" id=2]
 [ext_resource path="res://Real Textures/People/Man 1.png" type="Texture" id=3]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Materials/plank.tres" type="Material" id=5]

@@ -12,7 +12,7 @@
 [ext_resource path="res://Models/LowerArmRight Base Color.png" type="Texture" id=10]
 [ext_resource path="res://Models/LowerLegRight Base Color.png" type="Texture" id=11]
 [ext_resource path="res://Models/guy.dae" type="PackedScene" id=12]
-[ext_resource path="res://Working Textures/faketorch.png" type="Texture" id=13]
+[ext_resource path="res://Real Textures/Torch.png" type="Texture" id=13]
 [ext_resource path="res://Idle.tres" type="Animation" id=14]
 [ext_resource path="res://Scripts/guy_animate.gd" type="Script" id=15]
 
