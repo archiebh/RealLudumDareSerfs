@@ -10,6 +10,7 @@ var wheat = 0
 var bar = 0
 var village_done = false
 var seenby = 0
+var current_level = "Home Village.tscn"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -19,7 +20,9 @@ var seenby = 0
 func _ready():
 	pass # Replace with function body.
 
-
+func _process_input(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

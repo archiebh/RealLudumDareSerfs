@@ -2267,3 +2267,5 @@ theme = SubResource( 38 )
 icon = ExtResource( 11 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
+[connection signal="pressed" from="Camera/CanvasLayer/New Game" to="Camera" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="Camera/CanvasLayer/Continue" to="Camera" method="_on_Continue_pressed"]
