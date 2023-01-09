@@ -35,7 +35,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_level:
-		if global.wheat > 100:
+		if global.wheat >= 100:
 			open.visible=true
 			closed.visible=false
 		else:

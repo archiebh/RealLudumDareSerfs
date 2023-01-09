@@ -220,6 +220,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226503, -0.0938621, 6.62749 
 [node name="Tree" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02881, 7.21664, 22.0846 )
 billboard = 2
+shaded = true
 texture = ExtResource( 4 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree"]
@@ -255,6 +256,7 @@ texture = ExtResource( 14 )
 [node name="Tree2" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.774, 7.21664, -14.7592 )
 billboard = 2
+shaded = true
 texture = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree2"]
@@ -266,6 +268,7 @@ height = 13.4869
 [node name="Tree3" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.09, 7.24694, 8.97081 )
 billboard = 2
+shaded = true
 texture = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree3"]
@@ -405,55 +408,68 @@ stream = ExtResource( 20 )
 
 [node name="Sprite3D" type="Sprite3D" parent="Scenery"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 149.668, -63.9465 )
+shaded = true
 texture = ExtResource( 21 )
 
 [node name="Sprite3D2" type="Sprite3D" parent="Scenery"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 76.4534, 149.668, -148.269 )
+shaded = true
 texture = ExtResource( 22 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Scenery"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -11.962, 111.419, -203.454 )
+shaded = true
 texture = ExtResource( 23 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="Scenery"]
 transform = Transform( 1.99938, 0.049667, 0, -0.049667, 1.99938, 0, 0, 0, 2, 23.4353, 17.5678, -45.8677 )
+shaded = true
 texture = ExtResource( 24 )
 
 [node name="Sprite3D5" type="Sprite3D" parent="Scenery"]
 transform = Transform( -9.97363, 0, -0.725768, 0, 10, 0, 0.725768, 0, -9.97363, 25.2048, 148.948, 69.3247 )
+shaded = true
 texture = ExtResource( 21 )
 
 [node name="Sprite3D6" type="Sprite3D" parent="Scenery"]
 transform = Transform( -9.97363, 0, -0.725768, 0, 10, 0, 0.725768, 0, -9.97363, -44.9271, 148.948, 158.974 )
+shaded = true
 texture = ExtResource( 22 )
 
 [node name="Sprite3D7" type="Sprite3D" parent="Scenery"]
 transform = Transform( -9.97363, 0, -0.725768, 0, 10, 0, 0.725768, 0, -9.97363, 47.2603, 110.698, 207.596 )
+shaded = true
 texture = ExtResource( 23 )
 
 [node name="Sprite3D8" type="Sprite3D" parent="Scenery"]
 transform = Transform( -1.99411, -0.049536, -0.145154, -0.049667, 1.99938, 0, 0.145109, 0.00360467, -1.99473, 0.51923, 16.8471, 52.9945 )
+shaded = true
 texture = ExtResource( 24 )
 
 [node name="Sprite3D9" type="Sprite3D" parent="Scenery"]
 transform = Transform( -0.204713, 0, -9.9979, 0, 10, 0, 9.9979, 0, -0.204713, 197.181, 149.668, -23.7036 )
+shaded = true
 texture = ExtResource( 25 )
 
 [node name="Sprite3D10" type="Sprite3D" parent="Scenery"]
 transform = Transform( -0.204713, 0, -9.9979, 0, 10, 0, 9.9979, 0, -0.204713, 249.995, 61.6589, -8.62163 )
+shaded = true
 texture = ExtResource( 26 )
 
 [node name="Sprite3D11" type="Sprite3D" parent="Scenery"]
 transform = Transform( 0.640621, 0, 9.97946, 0, 10, 0, -9.97946, 0, 0.640621, -109.48, 149.285, -10.2351 )
+shaded = true
 texture = ExtResource( 21 )
 
 [node name="Sprite3D12" type="Sprite3D" parent="Scenery"]
 transform = Transform( 0.640621, 0, 9.97946, 0, 10, 0, -9.97946, 0, 0.640621, -163.496, 96.1113, -10.2351 )
+shaded = true
 texture = ExtResource( 27 )
 
 [node name="Sprite3D13" type="Sprite3D" parent="Scenery"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -4.92642, 39.0914, -29.0757 )
 billboard = 1
+shaded = true
 texture = ExtResource( 28 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
