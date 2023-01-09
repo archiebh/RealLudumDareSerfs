@@ -17,7 +17,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if takeable == 1 and Input.is_action_just_pressed("grab"):
+	if takeable == 1 and Input.is_action_pressed("grab"):
 		global.wheat = global.wheat + 1
 		print(global.wheat)
 		took()

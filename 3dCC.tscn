@@ -3,7 +3,7 @@
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
 [ext_resource path="res://Working Textures/comphair.png" type="Texture" id=3]
-[ext_resource path="res://Working Textures/leafs.png" type="Texture" id=4]
+[ext_resource path="res://Real Textures/Leafborder.png" type="Texture" id=4]
 [ext_resource path="res://Visible HUD.gd" type="Script" id=5]
 [ext_resource path="res://Real Textures/Wheat.png" type="Texture" id=6]
 [ext_resource path="res://Real Textures/meter.png" type="Texture" id=7]
@@ -297,6 +297,7 @@ texture = ExtResource( 3 )
 
 [node name="Hidden" type="Sprite" parent="HUD"]
 visible = false
+modulate = Color( 1, 1, 1, 0.686275 )
 position = Vector2( 959, 538.5 )
 scale = Vector2( 1.00729, 1.00648 )
 texture = ExtResource( 4 )
