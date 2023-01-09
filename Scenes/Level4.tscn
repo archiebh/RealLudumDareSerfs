@@ -81,13 +81,13 @@ _data = {
 
 [sub_resource type="Curve3D" id=14]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -52.7665, 0, -106.986, 0, 0, 0, 0, 0, 0, 14.7278, 0, -106.352, 0, 0, 0, 0, 0, 0, -53.2418, 0, -74.3479, 0, 0, 0, 0, 0, 0, 15.6784, 0, -75.1401, 0, 0, 0, 0, 0, 0, -52.9249, 0, -42.9774, 0, 0, 0, 0, 0, 0, 1.2606, 0, -42.9774, 0, 0, 0, 0, 0, 0, -52.7665, 0, -106.986 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -68, 0, -122, 0, 0, 0, 0, 0, 0, 25, 0, -122, 0, 0, 0, 0, 0, 0, -68, 0, -77, 0, 0, 0, 0, 0, 0, 26, 0, -79, 0, 0, 0, 0, 0, 0, -69, 0, -40, 0, 0, 0, 0, 0, 0, 26, 0, -42, 0, 0, 0, 0, 0, 0, -68, 0, -122 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="Curve3D" id=15]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999, 0, 0, 0, 0, 0, 0, -21.9746, 0, -106.993, 0, 0, 0, 0, 0, 0, 23.5299, 0, -95.5828, 0, 0, 0, 0, 0, 0, -59.6007, 0, -60.4017, 0, 0, 0, 0, 0, 0, -59.7366, 0, -95.1753, 0, 0, 0, 0, 0, 0, 22.9865, 0, -63.2542, 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999, 0, 0, 0, 0, 0, 0, -24, 0, -126, 0, 0, 0, 0, 0, 0, 26, 0, -100, 0, 0, 0, 0, 0, 0, -67, 0, -55, 0, 0, 0, 0, 0, 0, -68, 0, -103, 0, 0, 0, 0, 0, 0, 27, 0, -63, 0, 0, 0, 0, 0, 0, -21.2955, 0, -42.1999 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
@@ -118,9 +118,6 @@ uv1_triplanar = true
 albedo_texture = ExtResource( 6 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=3]
-size = Vector2( 30, 30 )
-
 [sub_resource type="PanoramaSky" id=19]
 radiance_size = 1
 panorama = ExtResource( 11 )
@@ -139,6 +136,8 @@ fog_depth_end = 61.9
 
 [sub_resource type="BoxShape" id=21]
 extents = Vector3( 10, 10, 4 )
+
+[sub_resource type="BoxShape" id=22]
 
 [node name="Level4" type="Spatial"]
 script = ExtResource( 15 )
@@ -346,6 +345,49 @@ stopcount = 2
 stops = [ 0.299, 0.395 ]
 times = [ 0.0, 0.0 ]
 
+[node name="CSGBox6" type="CSGBox" parent="."]
+transform = Transform( 2.1528, 0, 0, 0, 2.64, 0, 0, 0, 6.02198, -64.026, -2.34004, -31.1734 )
+visible = false
+use_collision = true
+width = 150.0
+height = 42.0
+depth = 60.0
+material = SubResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="CSGBox6"]
+transform = Transform( 0.464511, 0, 0, 0, 5.68182, 0, 0, 0, 0.166058, 29.7408, 19.447, 5.1766 )
+operation = 2
+
+[node name="CSGBox5" type="CSGBox" parent="CSGBox6/CSGCombiner"]
+transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 0.770863, -101.026, -2.34004, -11.1734 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 150.0
+height = 5.0
+depth = 60.0
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="CSGBox6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.026, -2.34004, -44 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 102.0
+height = 5.0
+depth = 178.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="CSGBox6/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6659, -2.34004, -160.832 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 6.75945
+height = 5.0
+depth = 60.0
+material = SubResource( 1 )
+
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 0.770863, -101.026, -2.34004, -11.1734 )
 use_collision = true
@@ -384,6 +426,16 @@ operation = 2
 radius = 2.0
 height = 32.0
 sides = 15
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6659, -2.34004, -160.832 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 6.75945
+height = 5.0
+depth = 60.0
+material = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, -26, 0.17, 7 )
@@ -1940,42 +1992,6 @@ width = 90.0
 height = 50.0
 depth = 58.0
 
-[node name="Staird" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -20.7429, 7.05807, -127.928 )
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-mesh = SubResource( 3 )
-
-[node name="CSGBox4" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6659, -2.34004, -160.832 )
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 6.75945
-height = 5.0
-depth = 60.0
-material = SubResource( 1 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="CSGBox4"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.0493, 0.218044, 11.8144 )
-operation = 2
-radius = 2.0
-height = 30.0
-
-[node name="CSGCylinder2" type="CSGCylinder" parent="CSGBox4"]
-transform = Transform( 1, 0, 0, 0, -0.15, 0.866025, 0, -0.259808, -0.5, 43.0493, 2.68672, 30.6895 )
-operation = 2
-radius = 2.0
-height = 40.0
-
-[node name="CSGCylinder3" type="CSGCylinder" parent="CSGBox4"]
-transform = Transform( 1, 0, 0, 0, 0.15, 0.866025, 0, -0.259808, 0.5, 43.0493, 1.72816, -5.22069 )
-operation = 2
-radius = 2.0
-height = 32.0
-sides = 15
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 20 )
 
@@ -2009,4 +2025,14 @@ script = ExtResource( 18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -82 )
 shape = SubResource( 21 )
 
+[node name="TriggerSpeech" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.7356, 2, -140 )
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="TriggerSpeech"]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+shape = SubResource( 22 )
+
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
+[connection signal="area_entered" from="TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]

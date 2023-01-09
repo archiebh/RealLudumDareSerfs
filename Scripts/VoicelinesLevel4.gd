@@ -17,11 +17,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if global.wheat >= 100 and !mid_played:
-		tickerstart = true
-	if tickerstart:
-		ticker+=delta
-	if ticker > 5 and !mid_played:
-		midvoice.play()
+#func _process(delta):
+#	pass
+
+
+func _on_TriggerSpeech_area_entered(area):
+	if area.is_in_group("player") and !mid_played:
 		mid_played = true
+		midvoice.play()
