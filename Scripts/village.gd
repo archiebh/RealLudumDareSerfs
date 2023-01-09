@@ -1,4 +1,4 @@
-extends CSGBox
+extends Sprite3D
 
 
 # Declare member variables here. Examples:

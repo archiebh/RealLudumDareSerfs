@@ -1,17 +1,17 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
-[ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=4]
-[ext_resource path="res://Working Textures/tree.png" type="Texture" id=5]
-[ext_resource path="res://Working Textures/fence.png" type="Texture" id=6]
+[ext_resource path="res://Real Textures/Poor Door.png" type="Texture" id=4]
+[ext_resource path="res://Real Textures/Tree 1.png" type="Texture" id=5]
+[ext_resource path="res://Real Textures/Poor Fence.png" type="Texture" id=6]
 [ext_resource path="res://Working Textures/wheat.jpeg" type="Texture" id=7]
-[ext_resource path="res://Working Textures/straw.jpg" type="Texture" id=8]
-[ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
+[ext_resource path="res://Materials/plank.tres" type="Material" id=8]
+[ext_resource path="res://Materials/thatch.tres" type="Material" id=9]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/village.gd" type="Script" id=11]
-[ext_resource path="res://Working Textures/peasna.jpeg" type="Texture" id=12]
+[ext_resource path="res://Real Textures/People/Man 1.png" type="Texture" id=12]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Sounds/Birdsong.mp3" type="AudioStream" id=15]
@@ -25,30 +25,21 @@
 [ext_resource path="res://Real Textures/Sky Objects/Hill 3.png" type="Texture" id=23]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 1.png" type="Texture" id=24]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 2.png" type="Texture" id=25]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 3 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
+[ext_resource path="res://Real Textures/People/Woman 2.png" type="Texture" id=26]
+[ext_resource path="res://Real Textures/People/Woman 1.png" type="Texture" id=27]
+[ext_resource path="res://Real Textures/People/Man 2.png" type="Texture" id=28]
+[ext_resource path="res://Real Textures/People/Chief 2.png" type="Texture" id=29]
+[ext_resource path="res://Materials/Grass.tres" type="Material" id=30]
+[ext_resource path="res://Real Textures/Tree 2.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=32]
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 7 )
 
-[sub_resource type="SpatialMaterial" id=5]
-flags_world_triplanar = true
-albedo_texture = ExtResource( 4 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_texture = ExtResource( 8 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
-
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 10, 10, 4 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
@@ -71,6 +62,25 @@ glow_intensity = 2.55
 adjustment_brightness = 1.43
 adjustment_saturation = 1.21
 
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 0.303, 0, 0.393 )
+uv1_offset = Vector3( 0, 0, -0.486 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=19]
+material = SubResource( 18 )
+size = Vector2( 50, 2.5 )
+
+[sub_resource type="PlaneMesh" id=20]
+material = SubResource( 18 )
+size = Vector2( 50, 2.5 )
+
+[sub_resource type="PlaneMesh" id=21]
+material = SubResource( 18 )
+size = Vector2( 22, 2.5 )
+
 [node name="Village2" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
@@ -79,7 +89,7 @@ use_collision = true
 width = 1000.0
 height = 1.0
 depth = 1000.0
-material = SubResource( 3 )
+material = ExtResource( 30 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.5723, 3.66422, 0 )
@@ -93,29 +103,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95579, -0.0938621, -8.03282 
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226503, -0.0938621, 6.62749 )
 
-[node name="Tree" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.02881, 7.21664, 22.0846 )
-billboard = 2
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Tree"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
 [node name="fence" type="Spatial" parent="."]
 
 [node name="Fence" type="Sprite3D" parent="fence"]
-transform = Transform( 0.85, 0, 0, 0, 0.5, 0, 0, 0, 0.85, 1.94267, 0.815202, 2.72034 )
+transform = Transform( 0.256, 0, 0, 0, 0.215, 0, 0, 0, 0.85, 3.46408, 1.52027, 2.72 )
+shaded = true
 texture = ExtResource( 6 )
 
-[node name="Fence2" type="Sprite3D" parent="fence"]
-transform = Transform( -3.71547e-08, 0, 0.85, 0, 0.5, 0, -0.85, 0, -3.71547e-08, 5.31161, 0.815202, -0.610547 )
+[node name="Fence4" type="Sprite3D" parent="fence"]
+transform = Transform( 0.256, 0, 0, 0, 0.215, 0, 0, 0, 0.85, 0.215686, 1.52027, 2.72 )
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="Fence5" type="Sprite3D" parent="fence"]
+transform = Transform( 0.256, 0, 0, 0, 0.215, 0, 0, 0, 0.85, 3.46408, 1.52027, -3.92982 )
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="Fence6" type="Sprite3D" parent="fence"]
+transform = Transform( 0.256, 0, 0, 0, 0.215, 0, 0, 0, 0.85, 0.215686, 1.52027, -3.92982 )
+shaded = true
 texture = ExtResource( 6 )
 
 [node name="Fence3" type="Sprite3D" parent="fence"]
-transform = Transform( 0.85, 0, 0, 0, 0.5, 0, 0, 0, 0.85, 1.94267, 0.815202, -3.96703 )
+transform = Transform( -1.11901e-08, 0, 0.85, 0, 0.215, 0, -0.256, 0, -3.71547e-08, 5.19266, 1.52027, -2.25589 )
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="Fence7" type="Sprite3D" parent="fence"]
+transform = Transform( -1.11901e-08, 0, 0.85, 0, 0.215, 0, -0.256, 0, -3.71547e-08, 5.19266, 1.52027, 0.992505 )
+shaded = true
 texture = ExtResource( 6 )
 
 [node name="CSGBox" type="CSGBox" parent="fence"]
@@ -138,159 +155,6 @@ unit_size = 2.0
 attenuation_filter_cutoff_hz = 14000.0
 attenuation_filter_db = -6.0
 
-[node name="House" type="CSGCombiner" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.244, 0, 0, 0, 1, 6.01443, 1.91775, -9.80812 )
-
-[node name="CSGBox2" type="CSGBox" parent="House"]
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 5.75075
-height = 2.8614
-depth = 5.18124
-material = SubResource( 5 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="House"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
-radius = 4.52776
-height = 2.33014
-sides = 4
-cone = true
-material = SubResource( 6 )
-
-[node name="Sprite3D" type="Sprite3D" parent="House"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
-
-[node name="Tree2" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.774, 7.21664, -14.7592 )
-billboard = 2
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Tree2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree3" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.09, 7.21664, 8.97081 )
-billboard = 2
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Tree3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree3" type="Sprite3D" parent="Tree3"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.56157, -6.90646, -26.5769 )
-billboard = 2
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Tree3/Tree3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="House2" type="CSGCombiner" parent="."]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1.244, 0, 0.707107, 0, 0.707107, 4.19738, 1.95202, 7.78442 )
-
-[node name="CSGBox2" type="CSGBox" parent="House2"]
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 5.75075
-height = 2.8614
-depth = 5.18124
-material = SubResource( 5 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="House2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
-radius = 4.52776
-height = 2.33014
-sides = 4
-cone = true
-material = SubResource( 6 )
-
-[node name="Sprite3D" type="Sprite3D" parent="House2"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
-
-[node name="House3" type="CSGCombiner" parent="."]
-transform = Transform( 0.866026, 0, 0.5, 0, 1.244, 0, -0.5, 0, 0.866026, 5.16045, 1.95202, -17.2156 )
-
-[node name="CSGBox2" type="CSGBox" parent="House3"]
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 5.75075
-height = 2.8614
-depth = 5.18124
-material = SubResource( 5 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="House3"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
-radius = 4.52776
-height = 2.33014
-sides = 4
-cone = true
-material = SubResource( 6 )
-
-[node name="Sprite3D" type="Sprite3D" parent="House3"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
-
-[node name="House4" type="CSGCombiner" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.244, 0, 0, 0, 1, 3.01443, 1.91775, 15.8385 )
-
-[node name="CSGBox2" type="CSGBox" parent="House4"]
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 5.75075
-height = 2.8614
-depth = 5.18124
-material = SubResource( 5 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="House4"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
-radius = 4.52776
-height = 2.33014
-sides = 4
-cone = true
-material = SubResource( 6 )
-
-[node name="Sprite3D" type="Sprite3D" parent="House4"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
-
-[node name="House5" type="CSGCombiner" parent="."]
-transform = Transform( 0.965926, 0, -0.258819, 0, 1.244, 0, 0.258819, 0, 0.965926, 9.01443, 1.91775, 21.1919 )
-
-[node name="CSGBox2" type="CSGBox" parent="House5"]
-use_collision = true
-collision_layer = 9
-collision_mask = 9
-width = 5.75075
-height = 2.8614
-depth = 5.18124
-material = SubResource( 5 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="House5"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
-radius = 4.52776
-height = 2.33014
-sides = 4
-cone = true
-material = SubResource( 6 )
-
-[node name="Sprite3D" type="Sprite3D" parent="House5"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
-
 [node name="ENDZONE" type="Area" parent="."]
 transform = Transform( -1.09278e-07, 0, -1, 0, 1, 0, 2.5, 0, -4.37114e-08, -55, 0, 0 )
 collision_layer = 16
@@ -301,10 +165,11 @@ script = ExtResource( 10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -82 )
 shape = SubResource( 7 )
 
-[node name="Guy" type="CSGBox" parent="."]
-transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -3, 1.5, 3 )
-width = 1.0
-depth = 1.0
+[node name="Guy" type="Sprite3D" parent="."]
+transform = Transform( 0.259808, 0, -0.15, 0, 0.3, 0, 0.15, 0, 0.259808, -3, 2, 3 )
+billboard = 1
+shaded = true
+texture = ExtResource( 29 )
 script = ExtResource( 11 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Guy"]
@@ -313,6 +178,110 @@ unit_db = 8.0
 unit_size = 2.0
 attenuation_filter_cutoff_hz = 14000.0
 attenuation_filter_db = -6.0
+
+[node name="Crowd" type="Spatial" parent="."]
+
+[node name="serf4" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -3.54145, 1.56179, -7.29271 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf10" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -7.66492, 1.56179, 7.53592 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf0" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -0.484644, 1.56179, 5.3988 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf1" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -2, 1.56179, -9 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf11" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -6.20277, 1.56179, -8.52422 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf9" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -4.66492, 1.56179, 8.53592 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf3" type="Sprite3D" parent="Crowd"]
+transform = Transform( -0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, -0.141421, -4.54145, 1.56179, 5.70729 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf12" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -4.74422, 1.56179, -5.81692 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf13" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -5.92038, 1.56179, -6.93587 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf6" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -1.29478, 1.56179, -8.372 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf2" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -0.541454, 1.56179, -6.29271 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf5" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -2.75332, 1.56179, -11.0793 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf7" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -4.29478, 1.56179, -9.372 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf8" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -6.12347, 1.56179, 5.82862 )
+billboard = 1
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="serf14" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 7.00511, 1.56179, -3.16924 )
+billboard = 1
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="serf15" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 7.00511, 1.56179, -1.43563 )
+billboard = 1
+shaded = true
+texture = ExtResource( 26 )
+
+[node name="serf16" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 6.97112, 1.56179, 0.36597 )
+billboard = 1
+shaded = true
+texture = ExtResource( 26 )
 
 [node name="SOUNDS" type="Spatial" parent="."]
 
@@ -334,7 +303,7 @@ use_collision = true
 width = 64.0
 height = 38.0
 depth = 66.0
-material = SubResource( 10 )
+material = SubResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="CSGBox3"]
 operation = 2
@@ -342,7 +311,7 @@ use_collision = true
 width = 50.0
 height = 28.0
 depth = 50.0
-material = SubResource( 10 )
+material = SubResource( 3 )
 
 [node name="Scenery" type="Spatial" parent="."]
 
@@ -402,91 +371,183 @@ texture = ExtResource( 22 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 16 )
 
-[node name="Crowd" type="Spatial" parent="."]
+[node name="House6" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.244, 0, 0, 0, 1, 6.01443, 1.91775, -9.80812 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 
-[node name="serf0" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.484644, 1.56179, 5.3988 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGBox2" type="CSGBox" parent="House6"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = ExtResource( 8 )
 
-[node name="serf1" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -2, 1.56179, -9 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGCylinder" type="CSGCylinder" parent="House6"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = ExtResource( 9 )
 
-[node name="serf2" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -0.541454, 1.56179, -6.29271 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="Sprite3D" type="Sprite3D" parent="House6"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.161, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.292349, 0 )
+texture = ExtResource( 4 )
 
-[node name="serf4" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.54145, 1.56179, -7.29271 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="House7" type="CSGCombiner" parent="."]
+transform = Transform( 0.932972, 0, -0.359948, 0, 1.244, 0, 0.359948, 0, 0.932972, 6.01443, 1.91775, 9.64018 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 
-[node name="serf3" type="Sprite3D" parent="Crowd"]
-transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -4.54145, 1.56179, 5.70729 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGBox2" type="CSGBox" parent="House7"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = ExtResource( 8 )
 
-[node name="serf5" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -2.75332, 1.56179, -11.0793 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGCylinder" type="CSGCylinder" parent="House7"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = ExtResource( 9 )
 
-[node name="serf6" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -1.29478, 1.56179, -8.372 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="Sprite3D" type="Sprite3D" parent="House7"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.161, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.292349, 0 )
+texture = ExtResource( 4 )
 
-[node name="serf7" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.29478, 1.56179, -9.372 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="House8" type="CSGCombiner" parent="."]
+transform = Transform( 0.916034, 0, 0.401101, 0, 1.244, 0, -0.401101, 0, 0.916034, 1.88955, 1.91775, -17.473 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 
-[node name="serf8" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -6.12347, 1.56179, 5.82862 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGBox2" type="CSGBox" parent="House8"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = ExtResource( 8 )
 
-[node name="serf9" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -4.66492, 1.56179, 8.53592 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGCylinder" type="CSGCylinder" parent="House8"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = ExtResource( 9 )
 
-[node name="serf10" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.66492, 1.56179, 7.53592 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="Sprite3D" type="Sprite3D" parent="House8"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.161, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.292349, 0 )
+texture = ExtResource( 4 )
 
-[node name="serf11" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -6.20277, 1.56179, -8.52422 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="House9" type="CSGCombiner" parent="."]
+transform = Transform( 0.87959, 0, -0.475732, 0, 1.244, 0, 0.475732, 0, 0.87959, -1.02553, 1.91775, 14.9661 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 
-[node name="serf12" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -4.74422, 1.56179, -5.81692 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGBox2" type="CSGBox" parent="House9"]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 5.75075
+height = 2.8614
+depth = 5.18124
+material = ExtResource( 8 )
 
-[node name="serf13" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -5.92038, 1.56179, -6.93587 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGCylinder" type="CSGCylinder" parent="House9"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = ExtResource( 9 )
 
-[node name="serf14" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.00511, 1.56179, -3.16924 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="Sprite3D" type="Sprite3D" parent="House9"]
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.161, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.292349, 0 )
+texture = ExtResource( 4 )
 
-[node name="serf15" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.00511, 1.56179, -1.43563 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="Tree" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02881, 7.21664, 22.0846 )
+billboard = 2
+shaded = true
+texture = ExtResource( 31 )
 
-[node name="serf16" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.97112, 1.56179, 0.36597 )
-billboard = 1
-texture = ExtResource( 12 )
+[node name="CSGBox" type="CSGBox" parent="Tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Tree2" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.774, 7.21664, -14.7592 )
+billboard = 2
+shaded = true
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Tree3" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.09, 7.24694, 8.97081 )
+billboard = 2
+shaded = true
+texture = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Tree4" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4071, 7.21664, -6.44286 )
+billboard = 2
+shaded = true
+texture = ExtResource( 31 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Spatial" parent="." instance=ExtResource( 32 )]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 24.274, 0.433634, 0 )
+
+[node name="Fence" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.307382, 1.4, -25.0941 )
+mesh = SubResource( 19 )
+
+[node name="Fence2" type="CSGMesh" parent="."]
+transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -0.307382, 1.4, 25.4124 )
+mesh = SubResource( 19 )
+
+[node name="Fence3" type="CSGMesh" parent="."]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -24.968, 1.4, -0.12669 )
+mesh = SubResource( 20 )
+
+[node name="Fence4" type="CSGMesh" parent="."]
+transform = Transform( 1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, 25.1017, 1.4, -14.2773 )
+mesh = SubResource( 21 )
+
+[node name="Fence5" type="CSGMesh" parent="."]
+transform = Transform( 1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, 25.1017, 1.4, 14.6649 )
+mesh = SubResource( 21 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]

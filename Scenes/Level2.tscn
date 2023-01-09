@@ -1,10 +1,10 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Working Textures/brick.jpg" type="Texture" id=5]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Working Textures/level plan 2.png" type="Texture" id=7]
 [ext_resource path="res://Real Textures/Tree 2.png" type="Texture" id=8]
@@ -80,10 +80,6 @@ _data = {
 "points": PoolVector3Array( -1.91214, 0, 2.22204, 1.91214, 0, -2.22204, -40.4121, 0, -24.6994, -0.836266, 0, 0.817579, 0.836266, 0, -0.817579, -35.4962, 0, -28.7024, -1.20619, 0, 0.936939, 1.20619, 0, -0.936939, -29.5269, 0, -33.3374, -1.1954, 0, 1.10658, 1.1954, 0, -1.10658, -26.2262, 0, -37.4808, -0.632521, 0, -0.318966, 0.632521, 0, 0.318966, -22.153, 0, -40.1494, 0.0502911, 0, -1.28105, -0.0502911, 0, 1.28105, -20.1867, 0, -34.6717, 0.0502911, 0, -1.06921, -0.0502911, 0, 1.06921, -20.1867, 0, -29.826, -0.292408, 0, -1.13283, 0.292408, 0, 1.13283, -19.9042, 0, -27.5347, -0.28071, 0, -0.777035, 0.28071, 0, 0.777035, -19.5546, 0, -24.6994, -1.00244, 0, -0.144505, 1.00244, 0, 0.144505, -16.1837, 0, -23.2246, -1.17006, 0, -0.224752, 1.17006, 0, 0.224752, -3.19166, 0, -23.0842, -0.737719, 0, -0.0336246, 0.737719, 0, 0.0336246, 0.53039, 0, -21.0476, -0.436193, 0, 1.39048, 0.436193, 0, -1.39048, 2.63721, 0, -24.6994, -0.0248508, 0, 1.72013, 0.0248508, 0, -1.72013, 2.28607, 0, -31.2306, -0.0948849, 0, 2.10026, 0.0948849, 0, -2.10026, 3.19903, 0, -36.4274, 0.617411, 0, 0.433304, -0.617411, 0, -0.433304, 2.42652, 0, -41.6242, 1.81002, 0, 0.0118446, -1.81002, 0, -0.0118446, -4.24507, 0, -41.6242, 1.04561, 0, -0.168591, -1.04561, 0, 0.168591, -11.9701, 0, -40.7815, 1.13463, 0, -0.349121, -1.13463, 0, 0.349121, -17.6585, 0, -40.3601, 0.321379, 0, -1.69307, -0.321379, 0, 1.69307, -19.5546, 0, -37.2701, 0.662203, 0, -0.716345, -0.662203, 0, 0.716345, -21.0996, 0, -22.5926, 2.10519, 0, -0.134199, -2.10519, 0, 0.134199, -29.9483, 0, -22.0308, 0.416649, 0, 0.658535, -0.416649, 0, -0.658535, -41.7465, 0, -22.101, 0, 0, 0, 0, 0, 0, -40.4121, 0, -24.6994 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 5 )
-uv1_triplanar = true
 
 [sub_resource type="PanoramaSky" id=22]
 radiance_size = 1
@@ -293,7 +289,7 @@ collision_mask = 9
 width = 16.0
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.999746, 0, 0.0225123, 0, 1.244, 0, -0.0225123, 0, 0.999746, -114.138, 0.32978, 3.27383 )
@@ -303,7 +299,7 @@ collision_mask = 9
 width = 16.0
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox4" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.999746, 0, 0.0225123, 0, 1.244, 0, -0.0225123, 0, 0.999746, -84.138, 1.32978, -36.7262 )
@@ -313,7 +309,7 @@ collision_mask = 9
 width = 10.0
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox5" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.0225123, 0, -0.999746, 0, 1.244, 0, 0.999746, 0, 0.0225123, -89.138, 1.32978, -31.7262 )
@@ -323,7 +319,7 @@ collision_mask = 9
 width = 10.0
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox6" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.0225123, 0, -0.999746, 0, 1.244, 0, 0.999746, 0, 0.0225123, -79.138, 1.32978, -31.7262 )
@@ -333,7 +329,7 @@ collision_mask = 9
 width = 10.0
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox7" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.027171, 0, -0.999631, 0, 1.244, 0, 0.999631, 0, 0.027171, -102.867, 0.32978, -1.20173 )
@@ -343,7 +339,7 @@ collision_mask = 9
 width = 10.5785
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox8" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.935832, 0, -0.352447, 0, 1.244, 0, 0.352447, 0, 0.935832, -64.4981, 0.32978, 21.763 )
@@ -353,7 +349,7 @@ collision_mask = 9
 width = 12.5517
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox9" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.394841, 0, 0.91875, 0, 1.244, 0, -0.91875, 0, 0.394841, -72.251, 0.0577234, 23.8986 )
@@ -363,7 +359,7 @@ collision_mask = 9
 width = 10.1568
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox10" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.0406904, 0, 0.999172, 0, 1.244, 0, -0.999172, 0, 0.0406904, -41.1835, -0.0190932, 12.0604 )
@@ -373,7 +369,7 @@ collision_mask = 9
 width = 24.0496
 height = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox11" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.00286287, 0, 0.999996, 0, 1.244, 0, -0.999996, 0, 0.00286287, -21.882, 0.27089, 8.78216 )
@@ -382,7 +378,7 @@ collision_layer = 9
 collision_mask = 9
 width = 8.48842
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox12" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.00286287, 0, 0.999996, 0, 1.244, 0, -0.999996, 0, 0.00286287, -9.64706, 0.27089, 8.78216 )
@@ -392,7 +388,7 @@ collision_mask = 9
 width = 8.48842
 height = 4.21903
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox13" type="CSGBox" parent="Obstructors"]
 transform = Transform( -0.999999, 0, 0.00164111, 0, 1.244, 0, -0.00164111, 0, -0.999999, -15.6703, 0.27089, 12.6022 )
@@ -402,7 +398,7 @@ collision_mask = 9
 width = 12.5579
 height = 4.21903
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox14" type="CSGBox" parent="Obstructors"]
 transform = Transform( -0.999999, 0, 0.00164111, 0, 1.244, 0, -0.00164111, 0, -0.999999, -11.8782, 0.27089, 4.95654 )
@@ -412,7 +408,7 @@ collision_mask = 9
 width = 4.0
 height = 4.21903
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox15" type="CSGBox" parent="Obstructors"]
 transform = Transform( -0.999999, 0, 0.00164111, 0, 1.244, 0, -0.00164111, 0, -0.999999, -19.8782, 0.27089, 4.95654 )
@@ -421,7 +417,7 @@ collision_layer = 9
 collision_mask = 9
 width = 4.0
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox16" type="CSGBox" parent="Obstructors"]
 transform = Transform( -0.999999, 0, 0.00164111, 0, 1.244, 0, -0.00164111, 0, -0.999999, -10.345, 0.27089, -30.7971 )
@@ -431,7 +427,7 @@ collision_mask = 9
 width = 12.5579
 height = 4.21903
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox17" type="CSGBox" parent="Obstructors"]
 transform = Transform( -0.00930299, 0, -0.999957, 0, 1.244, 0, 0.999957, 0, -0.00930299, -10.5382, 0.27089, -30.8937 )
@@ -441,7 +437,7 @@ collision_mask = 9
 width = 9.17526
 height = 4.21903
 depth = 0.807702
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox17" type="CSGBox" parent="Obstructors/CSGBox17"]
 transform = Transform( -0.00930299, 0, -0.999957, 0, 1.244, 0, 0.999957, 0, -0.00930299, -10.5006, -3.28964, -26.8457 )
@@ -451,7 +447,7 @@ collision_mask = 9
 width = 15.6859
 height = 4.80896
 depth = 4.47767
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="Bushes" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208618, -0.630356, -5.63309 )
@@ -1250,6 +1246,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.116, 3.8147e-06, 2.31965 
 [node name="tower" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6893, 0, -4.76975 )
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 radius = 8.09664
 height = 37.8515
 cone = true
@@ -1562,96 +1560,128 @@ texture = ExtResource( 12 )
 transform = Transform( 0.461899, -1.94593, 8.50594e-08, 0, -8.74228e-08, -2, 1.94593, 0.461899, -2.01902e-08, -1.84264, 2.84222, 12.0392 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh2" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.70872, 1.03937, -4.54321e-08, 0, -8.74228e-08, -2, -1.03937, -1.70872, 7.46905e-08, 13.5028, 2.84222, 33.5432 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh3" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99821, 0.0845884, -3.69748e-09, 0, -8.74228e-08, -2, -0.0845884, -1.99821, 8.73446e-08, 38.4712, 2.84222, 41.5919 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh4" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99821, 0.0845884, -3.69748e-09, 0, -8.74228e-08, -2, -0.0845884, -1.99821, 8.73446e-08, 45.2054, 2.84222, 41.5919 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh5" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99983, 0.0258761, -1.13108e-09, 0, -8.74228e-08, -2, -0.0258761, -1.99983, 8.74155e-08, 64.6883, 2.14705, 42.1779 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh6" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99989, -0.0205597, 8.98694e-10, 0, -8.74228e-08, -2, 0.0205597, -1.99989, 8.74182e-08, 84.5434, 2.84222, 42.0576 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh7" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99898, 0.0639032, -2.7933e-09, 0, -8.74228e-08, -2, -0.0639032, -1.99898, 8.73782e-08, 111.322, 2.84222, 42.0576 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh8" type="CSGMesh" parent="Boundary"]
 transform = Transform( -0.0282038, -1.9998, 8.74141e-08, 0, -8.74228e-08, -2, 1.9998, -0.0282038, 1.23283e-09, -5.26017, 2.84222, -22.6567 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh9" type="CSGMesh" parent="Boundary"]
 transform = Transform( -0.193394, -1.99063, 8.70131e-08, 0, -8.74228e-08, -2, 1.99063, -0.193394, 8.45353e-09, -3.72979, 2.84222, -50.303 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh10" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99946, 0.0463872, -2.02765e-09, 0, -8.74228e-08, -2, -0.0463872, -1.99946, 8.73993e-08, 5.8602, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh11" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99946, 0.0463872, -2.02765e-09, 0, -8.74228e-08, -2, -0.0463872, -1.99946, 8.73993e-08, 5.8602, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh12" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99989, -0.0205941, 9.00195e-10, 0, -8.74228e-08, -2, 0.0205941, -1.99989, 8.74182e-08, 33.5345, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh13" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 61.4237, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh14" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99983, 0.0258761, -1.13108e-09, 0, -8.74228e-08, -2, -0.0258761, -1.99983, 8.74155e-08, 81.7971, 2.14705, -54.3652 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh15" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 101.903, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="CSGMesh16" type="CSGMesh" parent="Boundary"]
 transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 116.434, 2.84222, -54.2203 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 19 )
 
 [node name="World Border" type="Spatial" parent="."]
@@ -1660,18 +1690,24 @@ mesh = SubResource( 19 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -50.1416, 1.7986, -49.5946 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 20 )
 
 [node name="CSGMesh2" type="CSGMesh" parent="World Border"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -50.1416, 1.7986, 49.1581 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 20 )
 
 [node name="CSGMesh3" type="CSGMesh" parent="World Border"]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 10.9627, 1.7986, 11.0934 )
 visible = false
 use_collision = true
+collision_layer = 9
+collision_mask = 9
 mesh = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="World Border/CSGMesh3"]
@@ -2444,5 +2480,26 @@ texture = ExtResource( 37 )
 transform = Transform( -1.46825, 0, -9.89162, 0, 10, 0, 9.89162, 0, -1.46825, 165.215, 30.6269, 10.2795 )
 shaded = true
 texture = ExtResource( 38 )
+
+[node name="Border" type="CSGBox" parent="."]
+transform = Transform( 0.999957, 0, -0.00930294, 0, 1.244, 0, 0.00930294, 0, 0.999957, 18.4994, 0.71036, -45.8457 )
+visible = false
+use_collision = true
+width = 15.6859
+height = 4.80896
+depth = 4.47767
+material = ExtResource( 11 )
+
+[node name="Border2" type="CSGBox" parent="."]
+transform = Transform( 0.999957, 0, -0.00930295, 0, 1.244, 0, 0.00930295, 0, 0.999957, 18.4994, 0.71036, -36.8457 )
+visible = false
+use_collision = true
+width = 15.6859
+height = 4.80896
+depth = 4.47767
+material = ExtResource( 11 )
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 25.3554, -0.362926, -41.0591 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
