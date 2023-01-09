@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://3dCC.gd" type="Script" id=1]
 [ext_resource path="res://crosshair_material.tres" type="Material" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Sounds/Death.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Sounds/Player Footstep.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Sounds/Leaf Rustle.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Materials/Fonter.tres" type="DynamicFont" id=12]
 
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.469099
@@ -21,15 +22,6 @@ radius = 0.5
 height = 0.5
 
 [sub_resource type="Theme" id=5]
-
-[sub_resource type="DynamicFontData" id=6]
-font_path = "res://Font/medieval_sharp/MedievalSharp.ttf"
-
-[sub_resource type="DynamicFont" id=7]
-size = 114
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 6 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Death"
@@ -340,7 +332,7 @@ margin_left = 180.0
 margin_top = 913.0
 margin_right = 398.0
 margin_bottom = 1053.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = ExtResource( 12 )
 text = "0"
 
 [node name="ColorRect2" type="ColorRect" parent="HUD"]
@@ -364,10 +356,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -946.5
-margin_top = -70.0
+margin_top = 62.0
 margin_right = 946.5
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 7 )
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 12 )
 text = "The Gate Hath Opened"
 align = 1
 

@@ -3,12 +3,12 @@
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Working Textures/garss.jpg" type="Texture" id=3]
-[ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=4]
-[ext_resource path="res://Working Textures/tree.png" type="Texture" id=5]
+[ext_resource path="res://Real Textures/Tree 2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Man.gd" type="Script" id=6]
 [ext_resource path="res://Working Textures/peasna.jpeg" type="Texture" id=7]
-[ext_resource path="res://Working Textures/straw.jpg" type="Texture" id=8]
-[ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
+[ext_resource path="res://Real Textures/Tree 1.png" type="Texture" id=8]
+[ext_resource path="res://Materials/plank.tres" type="Material" id=9]
 [ext_resource path="res://Working Textures/bed.png" type="Texture" id=10]
 [ext_resource path="res://Working Textures/peans.jpeg" type="Texture" id=11]
 [ext_resource path="res://Scenes/AnimationPlayer.gd" type="Script" id=12]
@@ -30,22 +30,8 @@
 [ext_resource path="res://Real Textures/Sun.png" type="Texture" id=28]
 [ext_resource path="res://Real Textures/indicator.png" type="Texture" id=29]
 [ext_resource path="res://Scenes/Wheat.tscn" type="PackedScene" id=30]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 3 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=5]
-flags_world_triplanar = true
-albedo_texture = ExtResource( 4 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_texture = ExtResource( 8 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
+[ext_resource path="res://Materials/thatch.tres" type="Material" id=31]
+[ext_resource path="res://Materials/Grass.tres" type="Material" id=32]
 
 [sub_resource type="SpatialMaterial" id=12]
 albedo_texture = ExtResource( 15 )
@@ -203,6 +189,11 @@ glow_intensity = 2.55
 adjustment_brightness = 1.43
 adjustment_saturation = 1.21
 
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
 [node name="Village0" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
@@ -211,7 +202,7 @@ use_collision = true
 width = 1000.0
 height = 1.0
 depth = 1000.0
-material = SubResource( 3 )
+material = ExtResource( 32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.99587, 0, -0.090789, 0, 1, 0, 0.090789, 0, -0.99587, -19.5723, 1.80981, -4.26426 )
@@ -227,9 +218,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95579, -0.0938621, -8.03282 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226503, -0.0938621, 6.62749 )
 
 [node name="Tree" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.02881, 7.21664, 22.0846 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02881, 7.21664, 22.0846 )
 billboard = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
@@ -247,7 +238,7 @@ collision_mask = 9
 width = 5.75075
 height = 2.8614
 depth = 5.18124
-material = SubResource( 5 )
+material = ExtResource( 9 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="House"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513253, 2.39527, -0.0450621 )
@@ -255,16 +246,16 @@ radius = 4.52776
 height = 2.33014
 sides = 4
 cone = true
-material = SubResource( 6 )
+material = ExtResource( 31 )
 
 [node name="Sprite3D" type="Sprite3D" parent="House"]
-transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.088, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.00409508, 0 )
-texture = ExtResource( 9 )
+transform = Transform( -5.98846e-09, 0, 0.07, 0, 0.161, 0, -0.137, 0, -3.0598e-09, -2.87828, -0.292349, 0 )
+texture = ExtResource( 14 )
 
 [node name="Tree2" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.774, 7.21664, -14.7592 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.774, 7.21664, -14.7592 )
 billboard = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
@@ -273,22 +264,11 @@ use_collision = true
 height = 13.4869
 
 [node name="Tree3" type="Sprite3D" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.09, 7.21664, 8.97081 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.09, 7.24694, 8.97081 )
 billboard = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="CSGBox" type="CSGBox" parent="Tree3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
-visible = false
-use_collision = true
-height = 13.4869
-
-[node name="Tree3" type="Sprite3D" parent="Tree3"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.56157, -6.90646, -26.5769 )
-billboard = 2
-texture = ExtResource( 5 )
-
-[node name="CSGBox" type="CSGBox" parent="Tree3/Tree3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
 visible = false
 use_collision = true
@@ -312,7 +292,7 @@ radius = 4.52776
 height = 2.33014
 sides = 4
 cone = true
-material = SubResource( 6 )
+material = ExtResource( 31 )
 
 [node name="Sprite3D" type="Sprite3D" parent="House2"]
 transform = Transform( -7.45058e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -7.45058e-09, -2.87828, -0.263885, 7.15256e-07 )
@@ -326,7 +306,7 @@ collision_mask = 9
 width = 5.75075
 height = 7.19343
 depth = 11.6711
-material = SubResource( 5 )
+material = ExtResource( 9 )
 
 [node name="CSGBox3" type="CSGBox" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.995024, 0 )
@@ -337,7 +317,7 @@ collision_mask = 9
 width = 5.20844
 height = 4.02148
 depth = 11.0522
-material = SubResource( 5 )
+material = ExtResource( 9 )
 
 [node name="CSGBox4" type="CSGBox" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21795, 0.457625, 0 )
@@ -348,11 +328,22 @@ collision_mask = 9
 width = 5.20844
 height = 2.93907
 depth = 2.27686
-material = SubResource( 5 )
+material = ExtResource( 9 )
 
 [node name="Sprite3D" type="Sprite3D" parent="CSGBox2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.27577 )
 texture = ExtResource( 10 )
+
+[node name="Spatial" type="Spatial" parent="CSGBox2"]
+transform = Transform( 1.179, 0, 0, 0, 1.848, 0, 0, 0, 2.034, 0, -3.42496, 0.056375 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGBox2/Spatial"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.0513248, 4.74933, -0.0450621 )
+radius = 4.52776
+height = 2.33014
+sides = 4
+cone = true
+material = ExtResource( 31 )
 
 [node name="Woan" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7645, 1.52017, 4.33259 )
@@ -495,5 +486,19 @@ texture = ExtResource( 29 )
 
 [node name="Wheat" parent="." instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9332, 0.781646, -3.25791 )
+
+[node name="Tree4" type="Sprite3D" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.3092, 3.76341, -4.31764 )
+billboard = 2
+texture = ExtResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="Tree4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194233, -12.0639, -0.380531 )
+visible = false
+use_collision = true
+height = 13.4869
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 35.7901, 0.433634, 0 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
