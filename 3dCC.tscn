@@ -278,6 +278,7 @@ shape = SubResource( 1 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="HUD" type="Control" parent="."]
+visible = false
 margin_right = 1922.0
 margin_bottom = 1071.0
 script = ExtResource( 5 )
