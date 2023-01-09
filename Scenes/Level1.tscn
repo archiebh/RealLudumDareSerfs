@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sounds/Voice/Serf/11.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Materials/Path.tres" type="Material" id=17]
 [ext_resource path="res://Water.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Materials/thatch.tres" type="Material" id=20]
 
 [sub_resource type="Curve3D" id=9]
 _data = {
@@ -575,6 +576,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.877062, 0, -0.480377, 0, 1.244, 0, 0.480377, 0, 0.877062, -50.1384, 1.32978, -11.7262 )
@@ -682,6 +684,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox5" type="CSGBox" parent="Obstructors/CSGBox11"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -712,6 +715,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox14"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -728,7 +732,7 @@ height = 6.50471
 depth = 11.0033
 
 [node name="CSGBox15" type="CSGBox" parent="Obstructors"]
-transform = Transform( -0.217979, 0, 0.335388, 0, 0.4, 0, -0.335388, 0, -0.217979, 8.89537, 1.868, -65.8801 )
+transform = Transform( 0.398081, 0, -0.0391299, 0, 0.4, 0, 0.0391299, 0, 0.398081, 8.89537, 1.868, -65.8801 )
 use_collision = true
 collision_layer = 9
 collision_mask = 9
@@ -742,6 +746,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox15"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -772,6 +777,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox16"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -802,6 +808,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox17"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -818,7 +825,7 @@ height = 6.50471
 depth = 11.0033
 
 [node name="CSGBox18" type="CSGBox" parent="Obstructors"]
-transform = Transform( -0.217979, 0, 0.335388, 0, 0.4, 0, -0.335388, 0, -0.217979, 5.11093, 1.868, -58.1353 )
+transform = Transform( 0.392397, 0, 0.077619, 0, 0.4, 0, -0.077619, 0, 0.392397, 5.11093, 1.868, -58.1353 )
 use_collision = true
 collision_layer = 9
 collision_mask = 9
@@ -832,6 +839,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox18"]
 transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
@@ -862,6 +870,7 @@ radius = 8.34088
 height = 5.0
 sides = 4
 cone = true
+material = ExtResource( 20 )
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox19"]
 transform = Transform( 1.50823, 0, 1.49012e-08, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
