@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=9]
 [ext_resource path="res://Scenes/Tower.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Materials/Brick.tres" type="Material" id=11]
-[ext_resource path="res://Working Textures/wall-2833964_960_720.png" type="Texture" id=12]
-[ext_resource path="res://Working Textures/gate.png" type="Texture" id=13]
+[ext_resource path="res://Real Textures/Boundary Wall.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=14]
 [ext_resource path="res://Real Textures/Real Night Sky Taler.png" type="Texture" id=15]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=16]
@@ -1011,7 +1010,7 @@ collision_mask = 9
 width = 13.973
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox5" type="CSGBox" parent="Buildings"]
 transform = Transform( 0.938614, 0, 0.34497, 0, 1.244, 0, -0.34497, 0, 0.938614, -53.1844, 1.32978, -13.6216 )
@@ -1021,7 +1020,7 @@ collision_mask = 9
 width = 13.973
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox6" type="CSGBox" parent="Buildings"]
 transform = Transform( 0.922794, 0, -0.385294, 0, 1.244, 0, 0.385294, 0, 0.922794, -26.5946, 1.32978, -14.9687 )
@@ -1031,7 +1030,7 @@ collision_mask = 9
 width = 13.973
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox7" type="CSGBox" parent="Buildings"]
 transform = Transform( 0.994893, 0, -0.100935, 0, 1.244, 0, 0.100935, 0, 0.994893, -8.70173, 1.32978, -13.7406 )
@@ -1041,7 +1040,7 @@ collision_mask = 9
 width = 13.973
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox8" type="CSGBox" parent="Buildings"]
 transform = Transform( 0.999875, 0, -0.01583, 0, 1.244, 0, 0.01583, 0, 0.999875, -35.1365, 1.32978, 27.301 )
@@ -1051,7 +1050,7 @@ collision_mask = 9
 width = 13.973
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox9" type="CSGBox" parent="Buildings"]
 transform = Transform( 0.999746, 0, 0.0225123, 0, 1.244, 0, -0.0225123, 0, 0.999746, -110.496, 1.32978, -39.2668 )
@@ -1061,7 +1060,7 @@ collision_mask = 9
 width = 11.314
 height = 7.34164
 depth = 8.6682
-material = SubResource( 4 )
+material = ExtResource( 11 )
 
 [node name="CSGBox" type="CSGBox" parent="Buildings/CSGBox9"]
 transform = Transform( 1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 0, 0.998587, 0 )
@@ -1425,177 +1424,177 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -97.1965, -0.0938583, -30.9625
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.603, 0, 5.07187 )
 
 [node name="Sprite3D" type="Sprite3D" parent="Boundary"]
-transform = Transform( 0.692849, 0, -2.9189, 0, 3, 0, 2.9189, 0, 0.692849, -1.84264, 4.9903, 12.0392 )
+transform = Transform( 0.461899, 0, -1.94593, 0, 2, 0, 1.94593, 0, 0.461899, -1.84264, -2.73241, 12.0392 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D2" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.56308, 0, 1.55905, 0, 3, 0, -1.55905, 0, -2.56308, 13.5028, 4.9903, 33.5432 )
+transform = Transform( -1.70872, 0, 1.03937, 0, 2, 0, -1.03937, 0, -1.70872, 13.5028, -2.73241, 33.5432 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D2"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99732, 0, 0.126883, 0, 3, 0, -0.126883, 0, -2.99732, 38.4712, 4.9903, 41.5919 )
+transform = Transform( -1.99821, 0, 0.0845884, 0, 2, 0, -0.0845884, 0, -1.99821, 38.4712, -2.73241, 41.5919 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D3"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99732, 0, 0.126883, 0, 3, 0, -0.126883, 0, -2.99732, 45.2054, 4.9903, 41.5919 )
+transform = Transform( -1.99821, 0, 0.0845884, 0, 2, 0, -0.0845884, 0, -1.99821, 45.2054, -2.73241, 41.5919 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D4"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D5" type="Sprite3D" parent="Boundary"]
-transform = Transform( -1.00944, 0, -0.296088, 0, 1.27084, 0, -0.0130614, 0, -2.98296, 64.6883, 4.29513, 42.1779 )
+transform = Transform( -1.99983, 0, 0.0258761, 0, 2, 0, -0.0258761, 0, -1.99983, 64.6883, -3.42758, 42.1779 )
 shaded = true
-texture = ExtResource( 13 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D5"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
+texture = ExtResource( 12 )
 
 [node name="Sprite3D6" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99984, 0, -0.0308393, 0, 3, 0, 0.0308393, 0, -2.99984, 84.5434, 4.9903, 42.0576 )
+transform = Transform( -1.99989, 0, -0.0205597, 0, 2, 0, 0.0205597, 0, -1.99989, 84.5434, -2.73241, 42.0576 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D6"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D7" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99847, 0, 0.0958548, 0, 3, 0, -0.0958548, 0, -2.99847, 111.322, 4.9903, 42.0576 )
+transform = Transform( -1.99898, 0, 0.0639032, 0, 2, 0, -0.0639032, 0, -1.99898, 111.322, -2.73241, 42.0576 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D7"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D8" type="Sprite3D" parent="Boundary"]
-transform = Transform( -0.0423056, 0, -2.9997, 0, 3, 0, 2.9997, 0, -0.0423056, -5.26017, 4.9903, -22.6567 )
+transform = Transform( -0.0282038, 0, -1.9998, 0, 2, 0, 1.9998, 0, -0.0282038, -5.26017, -2.73241, -22.6567 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D8"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D9" type="Sprite3D" parent="Boundary"]
-transform = Transform( -0.290091, 0, -2.98594, 0, 3, 0, 2.98594, 0, -0.290091, -3.72979, 4.9903, -50.303 )
+transform = Transform( -0.193394, 0, -1.99063, 0, 2, 0, 1.99063, 0, -0.193394, -3.72979, -2.73241, -50.303 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D9"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D10" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99919, 0, 0.0695805, 0, 3, 0, -0.0695805, 0, -2.99919, 5.8602, 4.9903, -54.2203 )
+transform = Transform( -1.99946, 0, 0.0463872, 0, 2, 0, -0.0463872, 0, -1.99946, 5.8602, -2.73241, -54.2203 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D10"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D11" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99919, 0, 0.0695805, 0, 3, 0, -0.0695805, 0, -2.99919, 5.8602, 4.9903, -54.2203 )
+transform = Transform( -1.99946, 0, 0.0463872, 0, 2, 0, -0.0463872, 0, -1.99946, 5.8602, -2.73241, -54.2203 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D11"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D12" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.99984, 0, -0.0308913, 0, 3, 0, 0.0308913, 0, -2.99984, 33.5345, 4.9903, -54.2203 )
+transform = Transform( -1.99989, 0, -0.0205941, 0, 2, 0, 0.0205941, 0, -1.99989, 33.5345, -2.73241, -54.2203 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D12"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D13" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.9998, 0, -0.0348181, 0, 3, 0, 0.0348181, 0, -2.9998, 61.4237, 4.9903, -54.2203 )
+transform = Transform( -1.99987, 0, -0.0232122, 0, 2, 0, 0.0232122, 0, -1.99987, 61.4237, -2.73241, -54.2203 )
 shaded = true
 texture = ExtResource( 12 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D13"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
 
 [node name="Sprite3D14" type="Sprite3D" parent="Boundary"]
-transform = Transform( -1.00944, 0, -0.296088, 0, 1.27084, 0, -0.0130614, 0, -2.98296, 81.7971, 4.29513, -54.3652 )
+transform = Transform( -1.99983, 0, 0.0258761, 0, 2, 0, -0.0258761, 0, -1.99983, 81.7971, -3.42758, -54.3652 )
 shaded = true
-texture = ExtResource( 13 )
-
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D14"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
-visible = false
-use_collision = true
-mesh = SubResource( 19 )
+texture = ExtResource( 12 )
 
 [node name="Sprite3D15" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.9998, 0, -0.0348181, 0, 3, 0, 0.0348181, 0, -2.9998, 101.903, 4.9903, -54.2203 )
+transform = Transform( -1.99987, 0, -0.0232122, 0, 2, 0, 0.0232122, 0, -1.99987, 101.903, -2.73241, -54.2203 )
 shaded = true
 texture = ExtResource( 12 )
 
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D15"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
+[node name="Sprite3D16" type="Sprite3D" parent="Boundary"]
+transform = Transform( -1.99987, 0, -0.0232122, 0, 2, 0, 0.0232122, 0, -1.99987, 116.434, -2.73241, -54.2203 )
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Boundary"]
+transform = Transform( 0.461899, -1.94593, 8.50594e-08, 0, -8.74228e-08, -2, 1.94593, 0.461899, -2.01902e-08, -1.84264, 2.84222, 12.0392 )
 visible = false
 use_collision = true
 mesh = SubResource( 19 )
 
-[node name="Sprite3D16" type="Sprite3D" parent="Boundary"]
-transform = Transform( -2.9998, 0, -0.0348181, 0, 3, 0, 0.0348181, 0, -2.9998, 116.434, 4.9903, -54.2203 )
-shaded = true
-texture = ExtResource( 12 )
+[node name="CSGMesh2" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.70872, 1.03937, -4.54321e-08, 0, -8.74228e-08, -2, -1.03937, -1.70872, 7.46905e-08, 13.5028, 2.84222, 33.5432 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
 
-[node name="CSGMesh" type="CSGMesh" parent="Boundary/Sprite3D16"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.07404, 0 )
+[node name="CSGMesh3" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99821, 0.0845884, -3.69748e-09, 0, -8.74228e-08, -2, -0.0845884, -1.99821, 8.73446e-08, 38.4712, 2.84222, 41.5919 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh4" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99821, 0.0845884, -3.69748e-09, 0, -8.74228e-08, -2, -0.0845884, -1.99821, 8.73446e-08, 45.2054, 2.84222, 41.5919 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh5" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99983, 0.0258761, -1.13108e-09, 0, -8.74228e-08, -2, -0.0258761, -1.99983, 8.74155e-08, 64.6883, 2.14705, 42.1779 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh6" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99989, -0.0205597, 8.98694e-10, 0, -8.74228e-08, -2, 0.0205597, -1.99989, 8.74182e-08, 84.5434, 2.84222, 42.0576 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh7" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99898, 0.0639032, -2.7933e-09, 0, -8.74228e-08, -2, -0.0639032, -1.99898, 8.73782e-08, 111.322, 2.84222, 42.0576 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh8" type="CSGMesh" parent="Boundary"]
+transform = Transform( -0.0282038, -1.9998, 8.74141e-08, 0, -8.74228e-08, -2, 1.9998, -0.0282038, 1.23283e-09, -5.26017, 2.84222, -22.6567 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh9" type="CSGMesh" parent="Boundary"]
+transform = Transform( -0.193394, -1.99063, 8.70131e-08, 0, -8.74228e-08, -2, 1.99063, -0.193394, 8.45353e-09, -3.72979, 2.84222, -50.303 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh10" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99946, 0.0463872, -2.02765e-09, 0, -8.74228e-08, -2, -0.0463872, -1.99946, 8.73993e-08, 5.8602, 2.84222, -54.2203 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh11" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99946, 0.0463872, -2.02765e-09, 0, -8.74228e-08, -2, -0.0463872, -1.99946, 8.73993e-08, 5.8602, 2.84222, -54.2203 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh12" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99989, -0.0205941, 9.00195e-10, 0, -8.74228e-08, -2, 0.0205941, -1.99989, 8.74182e-08, 33.5345, 2.84222, -54.2203 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh13" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 61.4237, 2.84222, -54.2203 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh14" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99983, 0.0258761, -1.13108e-09, 0, -8.74228e-08, -2, -0.0258761, -1.99983, 8.74155e-08, 81.7971, 2.14705, -54.3652 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh15" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 101.903, 2.84222, -54.2203 )
+visible = false
+use_collision = true
+mesh = SubResource( 19 )
+
+[node name="CSGMesh16" type="CSGMesh" parent="Boundary"]
+transform = Transform( -1.99987, -0.0232122, 1.01464e-09, 0, -8.74228e-08, -2, 0.0232122, -1.99987, 8.74169e-08, 116.434, 2.84222, -54.2203 )
 visible = false
 use_collision = true
 mesh = SubResource( 19 )
