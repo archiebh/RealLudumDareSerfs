@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scripts/FinalSceneScript.gd" type="Script" id=1]
 [ext_resource path="res://Working Textures/bed.png" type="Texture" id=2]
@@ -8,9 +8,13 @@
 [ext_resource path="res://Working Textures/planks.jpeg" type="Texture" id=6]
 [ext_resource path="res://Materials/Brick.tres" type="Material" id=7]
 [ext_resource path="res://Real Textures/Sun.png" type="Texture" id=8]
+[ext_resource path="res://Real Textures/City Background.png" type="Texture" id=9]
+[ext_resource path="res://Real Textures/Sky Objects/Mountain 1.png" type="Texture" id=10]
+[ext_resource path="res://Real Textures/Sky Objects/Hill House.png" type="Texture" id=11]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Sounds/Crickets.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Real Textures/Sky Objects/Forest 1.png" type="Texture" id=15]
 [ext_resource path="res://Sounds/Voice/Serf/41.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/Voice/Serf/42.mp3" type="AudioStream" id=17]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=18]
@@ -22,6 +26,10 @@
 [ext_resource path="res://Materials/Grass.tres" type="Material" id=24]
 [ext_resource path="res://Real Textures/Tree 1.png" type="Texture" id=25]
 [ext_resource path="res://Real Textures/Pink Bush.png" type="Texture" id=26]
+[ext_resource path="res://Real Textures/Sky Objects/Hill 3.png" type="Texture" id=27]
+[ext_resource path="res://Real Textures/Sky Objects/Mountain 2.png" type="Texture" id=28]
+[ext_resource path="res://Real Textures/Sky Objects/Hill 1.png" type="Texture" id=29]
+[ext_resource path="res://Real Textures/Sky Objects/Hill 2.png" type="Texture" id=30]
 
 [sub_resource type="ProceduralSky" id=15]
 sky_horizon_color = Color( 1, 1, 1, 1 )
@@ -73,10 +81,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 7.9, 8, 13, 13.1, 17.9, 18, 27, 27.1, 33 ),
-"transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1 ),
+"times": PoolRealArray( 0, 7.9, 8, 13, 13.1, 17.9, 18, 27, 27.1, 33, 35.2 ),
+"transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -22.1945, 54.7689, -110.629 ), Vector3( -22.1945, 54.7689, -76.7259 ), Vector3( -121.212, 2.11993, -9.44577 ), Vector3( -113.496, 2.11993, -9.44577 ), Vector3( -59.5074, 4.1536, -12.84 ), Vector3( -51.5272, 4.1536, -12.84 ), Vector3( -21.7695, 4.1536, -39.8296 ), Vector3( -21.7695, 4.1536, -76.8163 ), Vector3( -75.6484, 43.0574, -123.675 ), Vector3( -75.6484, 43.0574, -123.675 ) ]
+"values": [ Vector3( -22.1945, 54.7689, -110.629 ), Vector3( -22.1945, 54.7689, -76.7259 ), Vector3( -121.212, 2.11993, -9.44577 ), Vector3( -113.496, 2.11993, -9.44577 ), Vector3( -59.5074, 4.1536, -12.84 ), Vector3( -51.5272, 4.1536, -12.84 ), Vector3( -21.7695, 4.1536, -39.8296 ), Vector3( -21.7695, 4.1536, -76.8163 ), Vector3( -75.6484, 43.0574, -123.675 ), Vector3( -75.6484, 43.0574, -123.675 ), Vector3( -75.6484, 43.0574, -123.675 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera:rotation_degrees")
@@ -85,10 +93,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 7.9, 8, 17.9, 18, 27, 27.1, 33, 37 ),
+"times": PoolRealArray( 0, 7.9, 8, 17.9, 18, 27, 27.1, 33, 35.2 ),
 "transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, -180, 0 ), Vector3( 0, -180, 0 ), Vector3( -30, -165, -6.06587e-06 ), Vector3( -30, -93.849, -6.06587e-06 ), Vector3( 81.0398, -111.917, -23.6007 ) ]
+"values": [ Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, -180, 0 ), Vector3( 0, -180, 0 ), Vector3( -30, -165, -6.06587e-06 ), Vector3( -30, -93.849, -6.06587e-06 ), Vector3( 9.74, -166.52, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Flagpole/Flag:translation")
@@ -281,6 +289,18 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( -21.8374, 0, -9.08765 ), Vector3( -21.8374, 0, -128.684 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Camera:fov")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 35.2, 37 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 70.0, 27.9 ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -500,6 +520,18 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( -21.8374, 0, -6.92118 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Camera:fov")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 70.0 ]
 }
 
 [sub_resource type="SpatialMaterial" id=32]
@@ -3089,10 +3121,77 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.38654
 mesh = SubResource( 31 )
 
 [node name="Sprite3D13" type="Sprite3D" parent="."]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -63.5485, 116.562, -119.829 )
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 3, 2.28289, 99.0841, 181.255 )
 billboard = 1
 shaded = true
 texture = ExtResource( 8 )
+
+[node name="Scenery" type="Spatial" parent="."]
+
+[node name="Sprite3D3" type="Sprite3D" parent="Scenery"]
+transform = Transform( 2.9152, 0, -9.56565, 0, 10, 0, 9.56565, 0, 2.9152, 174.063, 60.3828, -171.964 )
+shaded = true
+texture = ExtResource( 9 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenery"]
+transform = Transform( -10, 0, 8.74228e-07, 0, 10, 0, -8.74228e-07, 0, -10, 9.79098, 147.871, 108.969 )
+shaded = true
+texture = ExtResource( 29 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.31134e-06, 0, 10, 0, 10, 0, -10, 0, 1.31134e-06, -278.331, 149.668, 60.0772 )
+shaded = true
+texture = ExtResource( 30 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Scenery"]
+transform = Transform( -8.2808, 0, -5.6061, 0, 10, 0, 5.6061, 0, -8.2808, 144.375, 98.1284, 190.516 )
+shaded = true
+texture = ExtResource( 10 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="Scenery"]
+transform = Transform( -1.38416, -0.0343842, -1.44323, -0.049667, 1.99938, 0, 1.44278, 0.0358405, -1.38459, 87.5293, 17.5678, 54.3015 )
+shaded = true
+texture = ExtResource( 15 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Scenery"]
+transform = Transform( 9.97363, 0, 0.725767, 0, 10, 0, -0.725767, 0, 9.97363, -19.8044, 148.948, -282.71 )
+shaded = true
+texture = ExtResource( 29 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Scenery"]
+transform = Transform( 8.47798, 0, 5.30319, 0, 10, 0, -5.30319, 0, 8.47798, -193.77, 148.948, -205.998 )
+shaded = true
+texture = ExtResource( 30 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="Scenery"]
+transform = Transform( 9.97363, 0, 0.725767, 0, 10, 0, -0.725767, 0, 9.97363, -41.8599, 110.698, -306.678 )
+shaded = true
+texture = ExtResource( 10 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.56156, 0.0387909, 1.24902, -0.049667, 1.99938, 0, -1.24863, -0.0310174, 1.56204, -133.317, 16.8471, -86.0385 )
+shaded = true
+texture = ExtResource( 15 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Scenery"]
+transform = Transform( 0.204714, 0, 9.9979, 0, 10, 0, -9.9979, 0, 0.204714, -196.727, 149.668, -9.34047 )
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="Scenery"]
+transform = Transform( -9.9979, 0, 0.204714, 0, 10, 0, -0.204714, 0, -9.9979, -60.9796, 61.6589, 202.307 )
+shaded = true
+texture = ExtResource( 11 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="Scenery"]
+transform = Transform( -0.640622, 0, -9.97946, 0, 10, 0, 9.97946, 0, -0.640622, 160.933, 149.285, -22.8089 )
+shaded = true
+texture = ExtResource( 29 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="Scenery"]
+transform = Transform( -0.640622, 0, -9.97946, 0, 10, 0, 9.97946, 0, -0.640622, 235.071, 96.1113, 14.1107 )
+shaded = true
+texture = ExtResource( 28 )
 
 [connection signal="area_entered" from="WorldThing/ENDZONE" to="WorldThing/ENDZONE" method="_on_ENDZONE_area_entered"]
 [connection signal="area_entered" from="WorldThing/TriggerSpeech" to="." method="_on_TriggerSpeech_area_entered"]

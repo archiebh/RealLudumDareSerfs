@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://3dCC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bush.tscn" type="PackedScene" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Working Textures/door.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/ENDZONE.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/village.gd" type="Script" id=11]
-[ext_resource path="res://Working Textures/peasna.jpeg" type="Texture" id=12]
+[ext_resource path="res://Real Textures/People/Man 1.png" type="Texture" id=12]
 [ext_resource path="res://Sounds/Wheat Harvest.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Sounds/Gate Open.mp3" type="AudioStream" id=14]
 [ext_resource path="res://Sounds/Birdsong.mp3" type="AudioStream" id=15]
@@ -25,6 +25,9 @@
 [ext_resource path="res://Real Textures/Sky Objects/Hill 3.png" type="Texture" id=23]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 1.png" type="Texture" id=24]
 [ext_resource path="res://Real Textures/Sky Objects/Hill 2.png" type="Texture" id=25]
+[ext_resource path="res://Real Textures/People/Woman 2.png" type="Texture" id=26]
+[ext_resource path="res://Real Textures/People/Woman 1.png" type="Texture" id=27]
+[ext_resource path="res://Real Textures/People/Man 2.png" type="Texture" id=28]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 3 )
@@ -399,89 +402,106 @@ environment = SubResource( 16 )
 
 [node name="Crowd" type="Spatial" parent="."]
 
-[node name="serf0" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.484644, 1.56179, 5.3988 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf1" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -2, 1.56179, -9 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf2" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -0.541454, 1.56179, -6.29271 )
-billboard = 1
-texture = ExtResource( 12 )
-
 [node name="serf4" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.54145, 1.56179, -7.29271 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -3.54145, 1.56179, -7.29271 )
 billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf3" type="Sprite3D" parent="Crowd"]
-transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -4.54145, 1.56179, 5.70729 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf5" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -2.75332, 1.56179, -11.0793 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf6" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -1.29478, 1.56179, -8.372 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf7" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.29478, 1.56179, -9.372 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf8" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -6.12347, 1.56179, 5.82862 )
-billboard = 1
-texture = ExtResource( 12 )
-
-[node name="serf9" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -4.66492, 1.56179, 8.53592 )
-billboard = 1
+shaded = true
 texture = ExtResource( 12 )
 
 [node name="serf10" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.66492, 1.56179, 7.53592 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -7.66492, 1.56179, 7.53592 )
 billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf0" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -0.484644, 1.56179, 5.3988 )
+billboard = 1
+shaded = true
+texture = ExtResource( 12 )
+
+[node name="serf1" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -2, 1.56179, -9 )
+billboard = 1
+shaded = true
 texture = ExtResource( 12 )
 
 [node name="serf11" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -6.20277, 1.56179, -8.52422 )
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -6.20277, 1.56179, -8.52422 )
 billboard = 1
+shaded = true
 texture = ExtResource( 12 )
+
+[node name="serf9" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -4.66492, 1.56179, 8.53592 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf3" type="Sprite3D" parent="Crowd"]
+transform = Transform( -0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, -0.141421, -4.54145, 1.56179, 5.70729 )
+billboard = 1
+shaded = true
+texture = ExtResource( 28 )
 
 [node name="serf12" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -4.74422, 1.56179, -5.81692 )
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -4.74422, 1.56179, -5.81692 )
 billboard = 1
-texture = ExtResource( 12 )
+shaded = true
+texture = ExtResource( 28 )
 
 [node name="serf13" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -5.92038, 1.56179, -6.93587 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -5.92038, 1.56179, -6.93587 )
 billboard = 1
-texture = ExtResource( 12 )
+shaded = true
+texture = ExtResource( 28 )
+
+[node name="serf6" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -1.29478, 1.56179, -8.372 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf2" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.0517638, 0, -0.193185, 0, 0.2, 0, 0.193185, 0, 0.0517638, -0.541454, 1.56179, -6.29271 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf5" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -2.75332, 1.56179, -11.0793 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf7" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, -4.29478, 1.56179, -9.372 )
+billboard = 1
+shaded = true
+texture = ExtResource( 27 )
+
+[node name="serf8" type="Sprite3D" parent="Crowd"]
+transform = Transform( 0.1, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.1, -6.12347, 1.56179, 5.82862 )
+billboard = 1
+shaded = true
+texture = ExtResource( 26 )
 
 [node name="serf14" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.00511, 1.56179, -3.16924 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 7.00511, 1.56179, -3.16924 )
 billboard = 1
-texture = ExtResource( 12 )
+shaded = true
+texture = ExtResource( 26 )
 
 [node name="serf15" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.00511, 1.56179, -1.43563 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 7.00511, 1.56179, -1.43563 )
 billboard = 1
-texture = ExtResource( 12 )
+shaded = true
+texture = ExtResource( 26 )
 
 [node name="serf16" type="Sprite3D" parent="Crowd"]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.97112, 1.56179, 0.36597 )
+transform = Transform( 0.141421, 0, -0.141421, 0, 0.2, 0, 0.141421, 0, 0.141421, 6.97112, 1.56179, 0.36597 )
 billboard = 1
-texture = ExtResource( 12 )
+shaded = true
+texture = ExtResource( 26 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]
