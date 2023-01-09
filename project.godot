@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="RealSerf"
 run/main_scene="res://Scenes/Menu.tscn"
+boot_splash/image="res://Real Textures/Animation/Splashscreen.png"
 config/icon="res://icon.png"
 
 [autoload]
