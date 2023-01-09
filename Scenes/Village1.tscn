@@ -315,4 +315,21 @@ stream = ExtResource( 15 )
 volume_db = -11.361
 autoplay = true
 
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203217, 3.8147e-06, 0.260124 )
+visible = false
+use_collision = true
+width = 64.0
+height = 38.0
+depth = 66.0
+material = SubResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox3"]
+operation = 2
+use_collision = true
+width = 50.0
+height = 28.0
+depth = 50.0
+material = SubResource( 3 )
+
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]

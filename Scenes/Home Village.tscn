@@ -313,7 +313,7 @@ attenuation_filter_cutoff_hz = 14000.0
 attenuation_filter_db = 0.0
 
 [node name="ENDZONE" type="Area" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -54, 3, -0.0637045 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -44, 3, -0.0637045 )
 collision_layer = 16
 collision_mask = 16
 script = ExtResource( 13 )
@@ -392,5 +392,23 @@ texture = ExtResource( 28 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 14 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203217, 3.8147e-06, 0.260124 )
+visible = false
+use_collision = true
+width = 356.0
+height = 102.0
+depth = 330.0
+material = SubResource( 3 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGBox3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0 )
+operation = 2
+use_collision = true
+width = 70.0
+height = 82.0
+depth = 56.8
+material = SubResource( 3 )
 
 [connection signal="area_entered" from="ENDZONE" to="ENDZONE" method="_on_ENDZONE_area_entered"]

@@ -291,24 +291,34 @@ depth = 0.807702
 material = SubResource( 4 )
 
 [node name="CSGBox" type="CSGBox" parent="Obstructors"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.0041, 5, 30.676 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -92.004, 1.868, 30.676 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 width = 10.0
-height = 10.0
+height = 8.73011
 depth = 10.0
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
 operation = 2
 width = 6.0
 height = 10.0
 depth = 10.0
 
 [node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
 operation = 2
 width = 6.0
-height = 6.0
-depth = 10.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.877062, 0, -0.480377, 0, 1.244, 0, 0.480377, 0, 0.877062, -50.1384, 1.32978, -11.7262 )
@@ -348,83 +358,40 @@ material = SubResource( 4 )
 
 [node name="CSGBox7" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -15.0041, 5, 11.676 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
 width = 10.0
 height = 10.0
 depth = 10.0
 
 [node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox7"]
-transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -3.00586, 0 )
 operation = 2
 width = 6.0
-height = 10.0
+height = 8.79256
 depth = 10.0
 
 [node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox7"]
 transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
 operation = 2
 width = 6.0
-height = 6.0
+height = 5.55789
 depth = 10.0
 
-[node name="CSGBox8" type="CSGBox" parent="Obstructors"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9959, 5, -51.324 )
-width = 10.0
-height = 10.0
-depth = 10.0
-
-[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox8"]
-transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
+[node name="CSGBox" type="CSGBox" parent="Obstructors/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, -2.12132, 0, 1.41421, 2.12132, 0, 6.46758, 5 )
 operation = 2
-width = 6.0
-height = 10.0
-depth = 10.0
+width = 11.3291
+height = 3.3
+depth = 2.5433
 
-[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox8"]
-transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
+[node name="CSGBox2" type="CSGBox" parent="Obstructors/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1.41421, 2.12132, 0, -1.41421, 2.12132, 0, 6.468, -5 )
 operation = 2
-width = 6.0
-height = 6.0
-depth = 10.0
-
-[node name="CSGBox9" type="CSGBox" parent="Obstructors"]
-transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -16.0041, 5, -51.324 )
-width = 10.0
-height = 10.0
-depth = 10.0
-
-[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox9"]
-transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
-operation = 2
-width = 6.0
-height = 10.0
-depth = 10.0
-
-[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox9"]
-transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
-operation = 2
-width = 6.0
-height = 6.0
-depth = 10.0
-
-[node name="CSGBox10" type="CSGBox" parent="Obstructors"]
-transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -16.0041, 5, -67.324 )
-width = 10.0
-height = 10.0
-depth = 10.0
-
-[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox10"]
-transform = Transform( 1, 0, 0, 0, 1.04, 0, 0, 0, 0.9, 0, -1, 0 )
-operation = 2
-width = 6.0
-height = 10.0
-depth = 10.0
-
-[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox10"]
-transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2, 0 )
-operation = 2
-width = 6.0
-height = 6.0
-depth = 10.0
+width = 11.3291
+height = 3.3
+depth = 2.75392
 
 [node name="CSGBox12" type="CSGBox" parent="Obstructors"]
 transform = Transform( 0.7, 0, -3.0598e-08, 4.37114e-08, 2.37689e-15, 1, 0, -1.244, 1.91069e-15, -56.6671, -0.225046, -23.7262 )
@@ -443,6 +410,216 @@ collision_mask = 9
 width = 9.42397
 depth = 0.807702
 material = SubResource( 4 )
+
+[node name="CSGBox11" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.37557, 1.868, -50.7189 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox11"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox5" type="CSGBox" parent="Obstructors/CSGBox11"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox6" type="CSGBox" parent="Obstructors/CSGBox11"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox14" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.282843, 0, -0.282843, 0, 0.4, 0, 0.282843, 0, -0.282843, -14.033, 1.868, -58.8965 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox14"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox14"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox14"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox15" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.217979, 0, 0.335388, 0, 0.4, 0, -0.335388, 0, -0.217979, 8.89537, 1.868, -65.8801 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox15"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox15"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox15"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox16" type="CSGBox" parent="Obstructors"]
+transform = Transform( 0.39129, 0, -0.0830213, 0, 0.4, 0, 0.0830213, 0, 0.39129, 8.66982, 1.868, -45.2255 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox16"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox16"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox16"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox17" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.371993, 0, 0.147042, 0, 0.4, 0, -0.147042, 0, -0.371993, -17.8174, 1.868, -51.1517 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox17"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox17"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox17"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox18" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.217979, 0, 0.335388, 0, 0.4, 0, -0.335388, 0, -0.217979, 5.11093, 1.868, -58.1353 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox18"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox18"]
+transform = Transform( 1.50823, 0, 0, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox18"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
+
+[node name="CSGBox19" type="CSGBox" parent="Obstructors"]
+transform = Transform( -0.395252, 0, 0.0614496, 0, 0.4, 0, -0.0614496, 0, -0.395252, -11.4233, 1.868, -68.9073 )
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+width = 10.0
+height = 8.73011
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Obstructors/CSGBox19"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 6.77574, 3.8147e-06 )
+radius = 8.34088
+height = 5.0
+sides = 4
+cone = true
+
+[node name="CSGBox3" type="CSGBox" parent="Obstructors/CSGBox19"]
+transform = Transform( 1.50823, 0, 1.49012e-08, 0, 1.04, 0, 0, 0, 0.960327, 0, -1, 0 )
+operation = 2
+width = 6.0
+height = 10.0
+depth = 10.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstructors/CSGBox19"]
+transform = Transform( 1, 0, 0, 0, 1.248, 0, 0, 0, 0.36, -5, -2.21632, 0 )
+operation = 2
+width = 6.0
+height = 6.50471
+depth = 11.0033
 
 [node name="Wheatfield2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.4506, 0, -40.5409 )
@@ -1165,6 +1342,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1066, -0.0938583, -26.2609
 
 [node name="Bush135" parent="Bushes" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1066, -0.0938583, -27.4584 )
+
+[node name="Bush136" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -59.6885, 3.8147e-06, -29.7494 )
+
+[node name="Bush137" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -59.4572, -0.0938583, -30.78 )
+
+[node name="Bush138" parent="Bushes" instance=ExtResource( 2 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -58.8585, -0.0938583, -31.8171 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026001, -2.34004, -60 )
