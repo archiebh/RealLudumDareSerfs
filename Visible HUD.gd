@@ -14,15 +14,18 @@ onready var deathsound = $DeathSound
 onready var gateaudio = get_tree().current_scene.get_node("SOUNDS").get_node("GateSound")
 
 var open_played = false
+var deathplayed = false
+
+var is_village = true
 
 func _ready():
+	if "Level" in get_tree().get_current_scene().get_name():
+		is_village = false
 	global.seenby=0
 	anim.play("lvlstart")
-
-var deathplayed = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	if global.wheat >= 100 and !open_played:
+	if global.wheat >= 100 and !open_played and !is_village:
 		anim.play("Opened")
 		open_played=true
 		gateaudio.play()

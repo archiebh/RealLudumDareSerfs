@@ -59,7 +59,7 @@ func _process(delta):
 		rustle.stop()
 	global.playerhead = head.translation
 	global.bushcount = bushcount
-	rustle.volume_db = -10 + (velocity.x+velocity.y)*3
+	#rustle.volume_db = -10 + (velocity.x+velocity.y)*3
 	if input_dir != Vector3.ZERO and !crouching:
 		passed+=delta
 		if passed >= steplength:
